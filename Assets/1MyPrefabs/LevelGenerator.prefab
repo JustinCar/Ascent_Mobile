@@ -1,0 +1,216 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1702100788222518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4369957830351560}
+  - component: {fileID: 114239627336728858}
+  m_Layer: 0
+  m_Name: LevelGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4369957830351560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702100788222518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114239627336728858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702100788222518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8e89e67c9920041a3c1d9f895b778c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desertRoomOne:
+  - {fileID: 1735289423052350, guid: 7aad7920e175f8648a2a0acb9931b051, type: 3}
+  desertRoomTwo:
+  - {fileID: 1800727439524492, guid: e5ad492a72f169a4faec3bc407e94eb1, type: 3}
+  desertRoomThree:
+  - {fileID: 1040823495852546, guid: e20dbe5c04799974581131620e5e0a5b, type: 3}
+  desertRoomFour:
+  - {fileID: 1347644628447738, guid: d31f8b6ac271943449bd99df5eb99939, type: 3}
+  desertRoomFive:
+  - {fileID: 1625563157134418, guid: 63e8ed17b879d7649bf419f462263255, type: 3}
+  desertRoomSix:
+  - {fileID: 1684845476995460, guid: a9dda44961012504d92851b8cb7f4553, type: 3}
+  desertRoomSeven:
+  - {fileID: 1023257281851192, guid: 295d532c746bc0c4b8ed5ea2796a6b77, type: 3}
+  desertRoomEight:
+  - {fileID: 1613026421170624, guid: 917e9498596fd12428facef10f9b5100, type: 3}
+  desertRoomNine:
+  - {fileID: 1878815974398876, guid: ca49242694b99c447ae458a0d66b30a1, type: 3}
+  desertRoomTen:
+  - {fileID: 1541424101530064, guid: 7b49bbc7da606234caf9bb796e3a0a9a, type: 3}
+  desertRoomEleven:
+  - {fileID: 1252617284693728, guid: 7c4c9dcc6dfbff04e99580d23c90b101, type: 3}
+  desertRoomTwelve:
+  - {fileID: 1607308555064890, guid: a79ad2af690ff884e8d6f42a12dc6123, type: 3}
+  desertExitRoomsTopExit:
+  - {fileID: 1069598845219530, guid: 65c6b43092a779d40bdc41e21ec9eb60, type: 3}
+  desertExitRoomsRightExit:
+  - {fileID: 1023257281851192, guid: 3d8913b934ac95f4998f19fb96df6959, type: 3}
+  desertExitRoomsBottomExit:
+  - {fileID: 1938050300698688, guid: 40e1bbf0a6d3e2f49b65d87827654e0c, type: 3}
+  desertExitRoomsLeftExit:
+  - {fileID: 1114681609422454, guid: 3b11b4dbd5718c941ad567f9b65f0bcb, type: 3}
+  forestRoomOne:
+  - {fileID: 1735289423052350, guid: 3b689ab6aa240774a863680cd0ead4b9, type: 3}
+  forestRoomTwo:
+  - {fileID: 1800727439524492, guid: 9a8d15a193908d847a13b9e6dcc65675, type: 3}
+  forestRoomThree:
+  - {fileID: 1040823495852546, guid: e21e8311d10141343bf88d1d046c3e59, type: 3}
+  forestRoomFour:
+  - {fileID: 1347644628447738, guid: 09e494ae66622ff4f8d1b7b3d07163c9, type: 3}
+  forestRoomFive:
+  - {fileID: 1625563157134418, guid: 6ae6b87be144df14bba9ea9e3f762758, type: 3}
+  forestRoomSix:
+  - {fileID: 1684845476995460, guid: 8ef7cafdf1302f940ac8079bcab3f38b, type: 3}
+  forestRoomSeven:
+  - {fileID: 1023257281851192, guid: 8b0665f55ff4ed3408ec3679e392fb5d, type: 3}
+  forestRoomEight:
+  - {fileID: 1613026421170624, guid: 9c048115b0a4f1142a583e642c900870, type: 3}
+  forestRoomNine:
+  - {fileID: 1878815974398876, guid: 65443068b46f33d47a03e913d2a05515, type: 3}
+  forestRoomTen:
+  - {fileID: 1541424101530064, guid: 9957aa2d85c523e4385263c0bde34d70, type: 3}
+  forestRoomEleven:
+  - {fileID: 1252617284693728, guid: 410b053fdc4946a428cb0dbd2bd2beb6, type: 3}
+  forestRoomTwelve:
+  - {fileID: 1607308555064890, guid: cec2d090978f5c341a2a34b822745e91, type: 3}
+  forestExitRoomsTopExit:
+  - {fileID: 1069598845219530, guid: dc5798412077fe2418b71d8788196bd1, type: 3}
+  forestExitRoomsRightExit:
+  - {fileID: 1023257281851192, guid: 121743974774ae24ea5a2275f361d208, type: 3}
+  forestExitRoomsBottomExit:
+  - {fileID: 1938050300698688, guid: 9017f6d9437c033418d154cc20be45ca, type: 3}
+  forestExitRoomsLeftExit:
+  - {fileID: 1114681609422454, guid: 8fda7eea3cabbf543947c286e0c60b1e, type: 3}
+  iceRoomOne:
+  - {fileID: 1735289423052350, guid: 40da7cea1a336a54abe4f310cedd94bf, type: 3}
+  iceRoomTwo:
+  - {fileID: 1800727439524492, guid: 4eea522d35a44b34fa2e1201183451bc, type: 3}
+  iceRoomThree:
+  - {fileID: 1040823495852546, guid: 6a72c0b68e33ad74fa8426f7a2f83ed7, type: 3}
+  iceRoomFour:
+  - {fileID: 1347644628447738, guid: e330c239d1202134f91c28869280afa3, type: 3}
+  iceRoomFive:
+  - {fileID: 1625563157134418, guid: 668bde91875b7fa4aae2428c1ae7dc24, type: 3}
+  iceRoomSix:
+  - {fileID: 1684845476995460, guid: 08b268747128a30499fd6579a2486cc1, type: 3}
+  iceRoomSeven:
+  - {fileID: 1023257281851192, guid: 45d603922c7392d4fa2b865a4487f85a, type: 3}
+  iceRoomEight:
+  - {fileID: 1613026421170624, guid: 730dc4d2e046693459318743868f665e, type: 3}
+  iceRoomNine:
+  - {fileID: 1878815974398876, guid: 163f48e879048e845bdcfd516784ed0c, type: 3}
+  iceRoomTen:
+  - {fileID: 1541424101530064, guid: 279c6060039b68341b0131b97a597abe, type: 3}
+  iceRoomEleven:
+  - {fileID: 1252617284693728, guid: 6e7ab894a71654d49a9d399737f2fecb, type: 3}
+  iceRoomTwelve:
+  - {fileID: 1607308555064890, guid: 505c4827a39a8cd44a031cd85556b3f1, type: 3}
+  iceExitRoomsTopExit:
+  - {fileID: 1069598845219530, guid: 6b51b0a01480c2140ba30d557ad544aa, type: 3}
+  iceExitRoomsRightExit:
+  - {fileID: 1023257281851192, guid: 848aad48322a90c4ba92dc537a91e1ca, type: 3}
+  iceExitRoomsBottomExit:
+  - {fileID: 1938050300698688, guid: efa93f68d05667240961755f51496066, type: 3}
+  iceExitRoomsLeftExit:
+  - {fileID: 1114681609422454, guid: c7246e6a5b817214995deccef6b1b269, type: 3}
+  voidRoomOne:
+  - {fileID: 1735289423052350, guid: 25b6fdad6b583f743a29b957be1691ae, type: 3}
+  voidRoomTwo:
+  - {fileID: 1800727439524492, guid: 784ed0ac6c91a5e468fddb1a694baca2, type: 3}
+  voidRoomThree:
+  - {fileID: 1040823495852546, guid: 6937bc700b851444b80568d257f27997, type: 3}
+  voidRoomFour:
+  - {fileID: 1347644628447738, guid: 17ec8259036af09478be6f0e33642446, type: 3}
+  voidRoomFive:
+  - {fileID: 1625563157134418, guid: ff199182d5ced484980af3e88d7e5b27, type: 3}
+  voidRoomSix:
+  - {fileID: 1684845476995460, guid: 1cf540d14f454e647bd40cba3319a002, type: 3}
+  voidRoomSeven:
+  - {fileID: 1023257281851192, guid: 02c03be3c0258be4194149561b6fefb3, type: 3}
+  voidRoomEight:
+  - {fileID: 1613026421170624, guid: 35bd45447a548f74594e29a30f17d554, type: 3}
+  voidRoomNine:
+  - {fileID: 1878815974398876, guid: 2832c4fb30bd80d47ab33e8afa0e66dd, type: 3}
+  voidRoomTen:
+  - {fileID: 1541424101530064, guid: bdefb750201dd33409c2bb234905b1f5, type: 3}
+  voidRoomEleven:
+  - {fileID: 1252617284693728, guid: eff5946da2fe91a449c5876a17865440, type: 3}
+  voidRoomTwelve:
+  - {fileID: 1607308555064890, guid: 4eaec676390edf24bb8563b330bd9e51, type: 3}
+  voidExitRoomsTopExit:
+  - {fileID: 1069598845219530, guid: 2929584d7034a9a4284c2b4aa21bb06a, type: 3}
+  voidExitRoomsRightExit:
+  - {fileID: 1023257281851192, guid: 5e9da93cc8e50004a930e5d0679c9e9b, type: 3}
+  voidExitRoomsBottomExit:
+  - {fileID: 1938050300698688, guid: 5f478ca0a18da9244a15b3e3c029b54f, type: 3}
+  voidExitRoomsLeftExit:
+  - {fileID: 1114681609422454, guid: d0291c5ea20cd2441a0b3541a725ccdf, type: 3}
+  prototypeRoomOne:
+  - {fileID: 1509799997731730, guid: 4f0dadb75e7e8dd4681205bc6bc8da59, type: 3}
+  prototypeRoomTwo:
+  - {fileID: 1527102686516384, guid: 3ef6ca2fba88599429a6c539ddc9b6d9, type: 3}
+  prototypeRoomThree:
+  - {fileID: 1929273038450074, guid: e2240e54d09a79c4d89657ee32b176e7, type: 3}
+  prototypeRoomFour:
+  - {fileID: 1929273038450074, guid: 1c24f99fa1fda6c478953ed8211e361e, type: 3}
+  prototypeRoomFive:
+  - {fileID: 1946554176000304, guid: 65d493847742c09489a4bd2d9e73a76b, type: 3}
+  prototypeRoomSix:
+  - {fileID: 1530155965157658, guid: 1f4096ee6f2cbb34c9a837dbc64c453e, type: 3}
+  prototypeRoomSeven:
+  - {fileID: 1069538279952038, guid: a8a3099ae9081fd43a2588c7b13a33dd, type: 3}
+  prototypeRoomEight:
+  - {fileID: 1042310356760960, guid: 298650f491608824ea12ff2e2755e5ca, type: 3}
+  prototypeRoomNine:
+  - {fileID: 1946554176000304, guid: fbeef18a6c5bcea4ca193adfa9d2351a, type: 3}
+  prototypeRoomTen:
+  - {fileID: 1069538279952038, guid: c87ccdb5c3c7f6741a3a8d1259fb028d, type: 3}
+  prototypeRoomEleven:
+  - {fileID: 1069538279952038, guid: c7b120cf6f693c345b23805ea0f8d219, type: 3}
+  prototypeRoomTwelve:
+  - {fileID: 1946554176000304, guid: 40dd390b126a3bd4994602d63f948564, type: 3}
+  prototypeExitRoomsTopExit:
+  - {fileID: 1530155965157658, guid: 75f682a15ca3b714690a0cac57b0330f, type: 3}
+  prototypeExitRoomsRightExit:
+  - {fileID: 1069538279952038, guid: 5946c354ee45cfe4cb6986a8f37ec09a, type: 3}
+  prototypeExitRoomsBottomExit:
+  - {fileID: 1042310356760960, guid: 96813d1b15ad03445a3acc31a5a5b1b8, type: 3}
+  prototypeExitRoomsLeftExit:
+  - {fileID: 1946554176000304, guid: a56b111036fedb74f96e433dbf1c8159, type: 3}
+  grid: {fileID: 0}
+  rowCount: 0
+  columnCount: 0
+  horizontalMove: 2.72
+  verticalMove: 0.96
+  mainPathDirection: 2
+  numberOfRooms: 20
+  prototyping: 0
+  endRoomGenerationFailed: 0
+  biome: 0
+  startRoom: {fileID: 0}

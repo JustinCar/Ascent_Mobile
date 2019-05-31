@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1988123914008128}
+  m_IsPrefabAsset: 1
+--- !u!1 &1988123914008128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4670285684823624}
+  - component: {fileID: 114852021710932818}
+  m_Layer: 0
+  m_Name: LootSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4670285684823624
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1988123914008128}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.56, y: 0.78, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114852021710932818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1988123914008128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47006ba475d6b5249a48cea692491f2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityItems:
+  - {fileID: 1655893655236748, guid: f017fab93d17a6c4fb1ea1144e5c5e46, type: 2}
+  - {fileID: 1655893655236748, guid: ca3cf178186feb34587f2c77b4b1729e, type: 2}
+  - {fileID: 1655893655236748, guid: 9f482bca4e638df4580e7ea760170f58, type: 2}
+  - {fileID: 1655893655236748, guid: 66884f269e8ef4e49bc64850b5e402dd, type: 2}
+  - {fileID: 1793395310958582, guid: d5009ff2c8c9b4b4699ed7ac5dc284d6, type: 2}
+  - {fileID: 1655893655236748, guid: 953f9c8d91f652b4cbbee795880dc03f, type: 2}
+  bodyParts:
+  - {fileID: 1418362432658096, guid: 527fb270bff0ba44dba5cdb3fac81cc0, type: 2}
+  - {fileID: 1601382302511778, guid: c93c634a42eea124da06bbbed63f2813, type: 2}
+  - {fileID: 1032698556493936, guid: 86da2da10bf07024fa1bcb37088f40fa, type: 2}
+  - {fileID: 1024206590349814, guid: 65e2f97b7473009448a5ba303dc525ee, type: 2}
+  - {fileID: 1120763111535674, guid: 9eb9d8e384fb4ae4c9492fe4ece74555, type: 2}
+  - {fileID: 1141503567893350, guid: 364af35dceb4d1b45b8b88cf16e98336, type: 2}
+  - {fileID: 1459184467839542, guid: d072d138f1e501341a9cb5cf673fca30, type: 2}
+  - {fileID: 1451982285626796, guid: c5d6ad70eda2fbe48a488ff9ebdfb8d8, type: 2}
+  - {fileID: 1860236404367336, guid: cad49075485f8fd419f91a47b6ed1288, type: 2}
+  - {fileID: 1425301277411500, guid: 9c3a2bde3714d4e40b5f97aae071b1bf, type: 2}
+  - {fileID: 1626861592487626, guid: c4167151df83f864289edcd18a3fc853, type: 2}
+  - {fileID: 1753914207307076, guid: 33b333e7c3fb7db4ea55ff26946a9c82, type: 2}
+  - {fileID: 1185519563700666, guid: ae5162fa54535db4ca687f8b1339ca70, type: 2}
+  - {fileID: 1151583883256470, guid: 70b6b06e4c325074d9b748771de89b06, type: 2}
+  - {fileID: 1042618571057838, guid: 90e325e4ba80bd8499d91b1a14ec6707, type: 2}
+  - {fileID: 1207424772356644, guid: 35e9a112b1e2a0e42b6fe86185e13e19, type: 2}
+  snack: {fileID: 1340158731903910, guid: ecd31a14c820da94fa4c9d246c573973, type: 2}
+  meal: {fileID: 1786422492310308, guid: 0d2b689bd243ebe44ab5aecf396f621e, type: 2}
+  smallManaPot: {fileID: 1677352104267756, guid: 34aef344503452b438d5bfa4fe3c1108,
+    type: 2}
+  LargeManaPot: {fileID: 1430712807743204, guid: e38a2500f5d0fac4c96e54569c51c070,
+    type: 2}
+  smallHealthPot: {fileID: 1229470028050770, guid: 0529b30a23c64f24bb3be24b1f089b80,
+    type: 2}
+  LargeHealthPot: {fileID: 1008657716880920, guid: 9b610930c243db54ab3fbe72fe3eed64,
+    type: 2}
+  essenceVal: 0
+  bodyPartsSpawnOffset: 0.5
+  maxParts: 100

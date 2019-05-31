@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1527884354206608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4863679808177938}
+  - component: {fileID: 114480179724948890}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4863679808177938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527884354206608}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.75, y: -0.17, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114480179724948890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527884354206608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ed637032f1e8245b71671786ff9c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalEnemy: {fileID: 1554094071519804, guid: be841b6cc2691614f9a9f6498db02ef8,
+    type: 3}
+  goblinArcher: {fileID: 1445775276334246, guid: c44fc65dd167ba147ac9a6d3ae80496a,
+    type: 3}
+  goblinSwordsman: {fileID: 1860591163455760, guid: 8a25c2d6fc50b304f98bce9a7baa6613,
+    type: 3}
+  goblinShaman: {fileID: 1206534875517510, guid: d758c0a79ec205b4eb6f7f17db50ab7e,
+    type: 3}
+  goblinGrunt: {fileID: 1976150716764006, guid: fa5f77d41adc69449aaa544c832efdfe,
+    type: 3}
