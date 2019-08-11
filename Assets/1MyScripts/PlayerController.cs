@@ -40,6 +40,12 @@ public class PlayerController : MonoBehaviour {
 
 	public PlayerAudioManager audioManager;
 
+	public bool upButtonPressed = false;
+	public bool downButtonPressed = false;
+	public bool weaponButtonPressed = false;
+
+	public float move = 0;
+
 	// Use this for initialization
 	void Start () {
 		rigidBody = GetComponent<Rigidbody2D>();
@@ -57,7 +63,7 @@ public class PlayerController : MonoBehaviour {
 			attacked = false;
 		}
 
-		if (Input.GetKeyDown(KeyCode.W) && jumpCounter < 1 && !attacking) 
+		if ((Input.GetKeyDown(KeyCode.W) || upButtonPressed) && jumpCounter < 1 && !attacking) 
 		{
 			// Cancel any previous force
 			Vector2 v = rigidBody.velocity;
@@ -67,13 +73,14 @@ public class PlayerController : MonoBehaviour {
 			fazing = true;
 			character.enabled = false;
 			faze.gameObject.SetActive(true);
+			audioManager.phaseAudio();
 
 			rigidBody.AddForce(Vector2.up * jumpPower);
 
 			jumpCounter++;
 		}
 
-		if (Input.GetKeyDown(KeyCode.S) && !attacking) 
+		if ((Input.GetKeyDown(KeyCode.S) || downButtonPressed) && !attacking) 
 		{
 			//collider.enabled = false;
 			Physics2D.IgnoreLayerCollision(9, 12, true); // Ignore collisions between player and soft ground
@@ -110,11 +117,12 @@ public class PlayerController : MonoBehaviour {
 			grounded = true;
 		}
 	
-		if (Input.GetKeyDown(KeyCode.Space) && !attacking) 
+		if ((Input.GetKeyDown(KeyCode.Space) || weaponButtonPressed) && !attacking) 
 		{
+			weaponButtonPressed = false;
 			attacking = true;
 			rigidBody.velocity = Vector3.zero;
-		}	
+		}
 
 		if (!attacking) 
 		{
@@ -127,8 +135,9 @@ public class PlayerController : MonoBehaviour {
 			spaceButtonTimer -= Time.deltaTime;
 			//rigidBody.velocity = Vector3.zero;
 
-			if (Input.GetKeyDown(KeyCode.Space) && spaceButtonTimer <= 0) 
+			if ((Input.GetKeyDown(KeyCode.Space) || weaponButtonPressed) && spaceButtonTimer <= 0) 
 			{
+				weaponButtonPressed = false;
 				combo = true;
 				spaceButtonTimer = timeBetweenSpaceButtons;
 			}	
@@ -138,7 +147,10 @@ public class PlayerController : MonoBehaviour {
 
 		if (!attacking) 
 		{
-			float move = Input.GetAxis("Horizontal"); // a = -1 / d = 1
+			if (move == 0) 
+			{
+				move = Input.GetAxis("Horizontal"); // a = -1 / d = 1
+			}
 
 			rigidBody.velocity = new Vector2 (speed * move, rigidBody.velocity.y);	
 

@@ -26,6 +26,8 @@ public class UseAbility : MonoBehaviour {
 
     public PlayerAudioManager audioManager;
 
+    public bool activated = false;
+
     void Awake()
     {
         timer = timeBetweenAttacks;
@@ -69,7 +71,10 @@ public class UseAbility : MonoBehaviour {
         
 
         // If the Fire1 button is being pressed, it's time to fire...
-        if (Input.GetButton(button) && timer >= timeBetweenAttacks)
+        // if (Input.GetButton(button) && timer >= timeBetweenAttacks)
+        // {
+        
+        if (activated && timer >= timeBetweenAttacks)
         {
 
             // // Can't shoot if game is paused
@@ -77,6 +82,7 @@ public class UseAbility : MonoBehaviour {
             // {
             //     return;
             // }
+            activated = false;
 
             // ... shoot the gun.
             if (!((playerHealth.currentMana - manaCost) <= 0) && playerCtrl.enabled == true) 
@@ -87,7 +93,10 @@ public class UseAbility : MonoBehaviour {
                 showNoManaTxt = true;
                 noManaTxt.SetActive(true);
             }
-        }
+        } else 
+        {
+            activated = false;
+        } 
 
         if (showNoManaTxt) 
         {
@@ -108,10 +117,9 @@ public class UseAbility : MonoBehaviour {
         // Reset the timer.
         timer = 0f;
 
-        audioManager.spellCastAudio();
-
         if (ability) 
         {
+            audioManager.spellCastAudio();
             anim.SetTrigger("Cast");
             GameObject abilityInstance = Instantiate(ability, transform.position, transform.rotation) as GameObject;
             AbilityStats instanceStats = abilityInstance.GetComponent<AbilityStats>();

@@ -9,6 +9,8 @@ public class ItemPickupManager : MonoBehaviour {
 	float closestDistance;
 	GameObject player;
 
+	public GameObject pickupButton;
+
 	// Use this for initialization
 	void Start () {
 		itemsInRange = new List<GameObject>();
@@ -17,6 +19,15 @@ public class ItemPickupManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (itemsInRange.Count > 0) 
+		{
+			pickupButton.SetActive(true);
+		} else 
+		{
+			pickupButton.SetActive(false);
+		}
+
 		if (itemsInRange.Count == 1) 
 		{
 			if (itemsInRange[0] == null) 
@@ -27,7 +38,6 @@ public class ItemPickupManager : MonoBehaviour {
 				closestItem = itemsInRange[0];
 				closestDistance = Vector3.Distance(itemsInRange[0].transform.position, player.transform.position);				
 			}
-
 		}
 		if (itemsInRange.Count >= 2) 
 		{
@@ -46,5 +56,17 @@ public class ItemPickupManager : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	public void pickupClosestItem() 
+	{
+		if (closestItem.GetComponent<ItemPickup>()) 
+		{
+			closestItem.GetComponent<ItemPickup>().showAbilityOptions = true;
+		} else 
+		{
+			closestItem.GetComponent<UseItem>().consume();
+		}
+		
 	}
 }

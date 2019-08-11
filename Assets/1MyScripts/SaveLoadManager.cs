@@ -255,10 +255,52 @@ public static class SaveLoadManager {
         }
     }
 
-    
+    public static void SetFightingStyle(int fightingStyle)
+    {
+
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream stream = new FileStream(Application.persistentDataPath + "/fightingstyle.sav", FileMode.Create);
+
+        FightingStyleData data = new FightingStyleData(fightingStyle);
+
+        bf.Serialize(stream, data);
+        stream.Close();
+    }   
+
+    public static int getFightingStyle()
+    {
+        if (File.Exists(Application.persistentDataPath + "/fightingstyle.sav"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream stream = new FileStream(Application.persistentDataPath + "/fightingstyle.sav", FileMode.Open);
+
+            FightingStyleData data = bf.Deserialize(stream) as FightingStyleData;
+
+            stream.Close();
+            return data.fightingStyle;
+        }
+        else
+        {
+            return 0;
+        }
+    }
 
 }
 
+
+
+
+[Serializable]
+public class FightingStyleData
+{
+    public int fightingStyle;
+
+    public FightingStyleData(int fightingStyleVal)
+    {
+        fightingStyle = fightingStyleVal;
+    }
+
+}
 
 [Serializable]
 public class EssenceData

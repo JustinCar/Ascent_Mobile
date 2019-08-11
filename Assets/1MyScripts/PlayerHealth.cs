@@ -61,7 +61,7 @@ public class PlayerHealth : MonoBehaviour {
             if (deathTimer <= 0) 
             {
                 debugInfo.activate();
-                SceneManager.LoadScene("Town");
+                SceneManager.LoadScene("Main Menu (Mobile)");
             }
         }
 

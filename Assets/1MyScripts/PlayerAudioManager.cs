@@ -53,6 +53,7 @@ public class PlayerAudioManager : MonoBehaviour
 
     public void phaseAudio() 
     {
+        Debug.Log("AUDIO PLAYED");
         int index = Random.Range(0, phases.Count);
         playerAudio.PlayOneShot(phases[index], 1);
     }

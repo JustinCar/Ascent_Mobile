@@ -63,7 +63,7 @@ public class UseItem : MonoBehaviour {
 		}
 	}
 
-	void consume () 
+	public void consume () 
 	{
 		if (healthItem) 
 		{

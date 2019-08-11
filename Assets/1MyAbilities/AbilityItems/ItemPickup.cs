@@ -78,6 +78,7 @@ public class ItemPickup : MonoBehaviour {
 		{
 			abilityOptionsInstance = Instantiate(abilityOptions) as GameObject;
 			abilityOptionsInstance.transform.SetParent(canvas.transform, false);
+			abilityOptionsInstance.GetComponent<CloseAbilityOptions>().itemPickupScript = this;
 
 			AbilityStats stats;
 			if (gameObject.GetComponent<AbilityStats>()) 
