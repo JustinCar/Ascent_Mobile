@@ -9,6 +9,8 @@ public class PlayerAudioManager : MonoBehaviour
     public List<AudioClip> footSteps;
 
     public List<AudioClip> swordAttacks;
+    public List<AudioClip> missedMartialAttacks;
+    public List<AudioClip> martialAttacks;
 
     public List<AudioClip> buffs;
 
@@ -36,6 +38,18 @@ public class PlayerAudioManager : MonoBehaviour
     void Start()
     {
         playerAudio = GetComponent <AudioSource> ();
+    }
+
+    public void martialAttackAudio() 
+    {
+        int index = Random.Range(0, martialAttacks.Count);
+        playerAudio.PlayOneShot(martialAttacks[index], 1);
+    }
+
+    public void missedMartialAttackAudio() 
+    {
+        int index = Random.Range(0, missedMartialAttacks.Count);
+        playerAudio.PlayOneShot(missedMartialAttacks[index], 1);
     }
 
     // Play random sword attack sound

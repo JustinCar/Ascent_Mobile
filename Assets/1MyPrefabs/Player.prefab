@@ -35,7 +35,9 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4809298956175102}
+  - {fileID: 4842711831153544503}
   - {fileID: 4448299096254584}
+  - {fileID: 5375831601917944478}
   - {fileID: 4452286481601946}
   - {fileID: 4618945906746074}
   m_Father: {fileID: 0}
@@ -66,6 +68,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -179,7 +182,7 @@ MonoBehaviour:
   combo: 0
   comboNum: 1
   swordAtk: {fileID: 114682259674759264}
-  collider: {fileID: 61535363376176228}
+  bowAtk: {fileID: 0}
   jumpCounter: 0
   fazeTime: 0.4
   faze: {fileID: 212335596572655126}
@@ -189,6 +192,10 @@ MonoBehaviour:
   spaceButtonTimer: 0.1
   knockPower: 10
   audioManager: {fileID: 4258940741718391495}
+  upButtonPressed: 0
+  downButtonPressed: 0
+  weaponButtonPressed: 0
+  move: 0
 --- !u!114 &4258940741718391495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +374,7 @@ MonoBehaviour:
   noManaTxt: {fileID: 0}
   coolDownBar: {fileID: 0}
   audioManager: {fileID: 4258940741718391495}
+  activated: 0
 --- !u!114 &114430866939865220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,7 +444,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4290917153457350}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &212224970499557468
 SpriteRenderer:
@@ -463,6 +471,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -574,6 +583,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -646,7 +656,7 @@ Transform:
   - {fileID: 4640264310950462}
   - {fileID: 4006069595307872}
   m_Father: {fileID: 4290917153457350}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1886669772551266
 GameObject:
@@ -677,7 +687,7 @@ Transform:
   m_LocalScale: {x: -0.22, y: 0.38, z: 1}
   m_Children: []
   m_Father: {fileID: 4290917153457350}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114682259674759264
 MonoBehaviour:
@@ -752,6 +762,7 @@ MonoBehaviour:
   noManaTxt: {fileID: 0}
   coolDownBar: {fileID: 0}
   audioManager: {fileID: 4258940741718391495}
+  activated: 0
 --- !u!114 &114885062937132390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -790,3 +801,102 @@ MonoBehaviour:
   abilityIcon: {fileID: 0}
   abilityItem: {fileID: 0}
   newItem: 1
+--- !u!1 &174271786890043294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4842711831153544503}
+  - component: {fileID: 5485799066676012580}
+  m_Layer: 9
+  m_Name: Bow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4842711831153544503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174271786890043294}
+  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.14499998, y: -0.008999944, z: 0}
+  m_LocalScale: {x: -0.22, y: 0.38, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4290917153457350}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5485799066676012580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174271786890043294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c9e955de88a4e44abbc41dc2ea886b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atkPos: {fileID: 4842711831153544503}
+  damageLowerBound: 10
+  damageUpperBound: 20
+  plyerCtrl: {fileID: 114299865184839558}
+  arrow: {fileID: 1822859933652288, guid: c41aa00538640b44a815bfd0257ba78c, type: 3}
+--- !u!1 &4523088420050538124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5375831601917944478}
+  - component: {fileID: 3483951666914761246}
+  m_Layer: 9
+  m_Name: MartialArts
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5375831601917944478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4523088420050538124}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.145, y: -0.009, z: 0}
+  m_LocalScale: {x: -0.22, y: 0.38, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4290917153457350}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3483951666914761246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4523088420050538124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67547272a61c4684b952033dbe87f01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atkPos: {fileID: 5375831601917944478}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  atkRange: 0.19
+  damageLowerBound: 10
+  damageUpperBound: 20
+  plyerCtrl: {fileID: 114299865184839558}

@@ -78,7 +78,7 @@ public class StyleChoice : MonoBehaviour
             break;
 
             case style.SWORD :
-            SaveLoadManager.SetFightingStyle(3);
+            SaveLoadManager.SetFightingStyle(2);
             break;
         }
     }

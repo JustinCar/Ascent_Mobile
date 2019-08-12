@@ -146,7 +146,7 @@ public class GoblinSpellCasterController : MonoBehaviour {
 				{
 					if (facingLeft) 
 					{
-							hit = Physics2D.Raycast(transform.position, -Vector2.right, rayDistance, mask);
+							hit = Physics2D.Raycast(transform.position, -Vector2.right, rayDistance);
 							if (hit) 
 							{
 								if (hit.collider.gameObject.tag == "Player") 
@@ -161,7 +161,7 @@ public class GoblinSpellCasterController : MonoBehaviour {
 					}
 					else
 					{
-							hit = Physics2D.Raycast(transform.position, Vector2.right, rayDistance, mask);
+							hit = Physics2D.Raycast(transform.position, Vector2.right, rayDistance);
 							
 							if (hit) 
 							{

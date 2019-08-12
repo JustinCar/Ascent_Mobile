@@ -132,7 +132,7 @@ public class GoblinArcherController : MonoBehaviour {
 				{
 					if (facingLeft) 
 					{
-							hit = Physics2D.Raycast(transform.position, -Vector2.right, rayDistance, mask);
+							hit = Physics2D.Raycast(transform.position, -Vector2.right, rayDistance);
 							if (hit) 
 							{
 								if (hit.collider.gameObject.tag == "Player") 
@@ -147,7 +147,7 @@ public class GoblinArcherController : MonoBehaviour {
 					}
 					else
 					{
-							hit = Physics2D.Raycast(transform.position, Vector2.right, rayDistance, mask);
+							hit = Physics2D.Raycast(transform.position, Vector2.right, rayDistance);
 							
 							if (hit) 
 							{

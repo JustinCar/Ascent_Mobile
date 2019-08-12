@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour {
 	float atkAnimLength = 0.4f;
 	float timer;
 	public SwordAttack swordAtk;
-	public BoxCollider2D collider;
+	public BowAttack bowAtk;
+	public MartialAttack martialAtk;
 
 	public int jumpCounter = 0;
 
@@ -46,11 +47,14 @@ public class PlayerController : MonoBehaviour {
 
 	public float move = 0;
 
+	int weapon = 1;
+
 	// Use this for initialization
 	void Start () {
 		rigidBody = GetComponent<Rigidbody2D>();
 		timer = atkAnimLength;
 		spaceButtonTimer = timeBetweenSpaceButtons;
+		//weapon = SaveLoadManager.getFightingStyle();
 		// fazeTimer = fazeTime;
 	}
 	
@@ -173,34 +177,100 @@ public class PlayerController : MonoBehaviour {
 			}			
 		}
 
-		//attack animation
-		if (attacking && !attacked) 
+		if (weapon == 0) 
 		{
-			//anim.SetInteger("AnimState", 0);
+			//Bow attack animation
+			if (attacking && !attacked) 
+			{
 
-			if (comboNum == 1) 
-			{
-				anim.SetTrigger("Attack");
-			} else if (comboNum == 2) 
-			{
-				anim.SetTrigger("Attack2");
-			} else if (comboNum == 3) 
-			{
-				anim.SetTrigger("Attack3");
-			}
+				if (comboNum == 1) 
+				{
+					anim.SetTrigger("BowAttack");
+				} else if (comboNum == 2) 
+				{
+					anim.SetTrigger("BowAttack2");
+				}
 
-			if (facingLeft) 
-            {
-            	rigidBody.AddForce(new Vector2(-knockPower, knockPower));
-            }
-            else if(!facingLeft) 
-            {
-                rigidBody.AddForce(new Vector2(knockPower, knockPower));
-            } 
-			
-			swordAtk.attack();
-			attacked = true;
+				// Player gets knocked back slightly when shooting
+				if (facingLeft) 
+				{
+					rigidBody.AddForce(new Vector2(knockPower, knockPower));
+				}
+				else if(!facingLeft) 
+				{
+					rigidBody.AddForce(new Vector2(-knockPower, knockPower));
+				} 
+				
+				attacked = true;
+			}	
 		}
+		else if (weapon == 1) 
+		{
+			//Martial attack animation
+			if (attacking && !attacked) 
+			{
+
+				if (comboNum == 1) 
+				{
+					anim.SetTrigger("PunchAttack");
+				} else if (comboNum == 2) 
+				{
+					anim.SetTrigger("PunchAttack2");
+				} else if (comboNum == 3) 
+				{
+					anim.SetTrigger("PunchAttack3");
+				} else if (comboNum == 4) 
+				{
+					anim.SetTrigger("KickAttack");
+				} else if (comboNum == 5) 
+				{
+					anim.SetTrigger("KickAttack2");
+				}
+
+				if (facingLeft) 
+				{
+					rigidBody.AddForce(new Vector2(-knockPower, knockPower));
+				}
+				else if(!facingLeft) 
+				{
+					rigidBody.AddForce(new Vector2(knockPower, knockPower));
+				} 
+				
+				martialAtk.attack(comboNum);
+				attacked = true;
+			}	
+		}
+		else if (weapon == 2) 
+		{
+			//Sword attack animation
+			if (attacking && !attacked) 
+			{
+
+				if (comboNum == 1) 
+				{
+					anim.SetTrigger("Attack");
+				} else if (comboNum == 2) 
+				{
+					anim.SetTrigger("Attack2");
+				} else if (comboNum == 3) 
+				{
+					anim.SetTrigger("Attack3");
+				}
+
+				if (facingLeft) 
+				{
+					rigidBody.AddForce(new Vector2(-knockPower, knockPower));
+				}
+				else if(!facingLeft) 
+				{
+					rigidBody.AddForce(new Vector2(knockPower, knockPower));
+				} 
+				
+				swordAtk.attack(comboNum);
+				attacked = true;
+			}			
+		}
+
 
 		if (fazing) 
 		{
@@ -278,6 +348,68 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if (comboNum > 3) 
+		{
+			attacking = false;
+			attacked = false;	
+			comboNum = 1;
+			combo = false;
+			spaceButtonTimer = timeBetweenSpaceButtons;
+		}
+	}
+
+	public void endMartialAttack() 
+	{
+		rigidBody.velocity = Vector3.zero;
+		if (!combo) 
+		{
+			attacking = false;
+			attacked = false;	
+			comboNum = 1;
+			spaceButtonTimer = timeBetweenSpaceButtons;
+		} else 
+		{
+			attacked = false;
+			comboNum++;
+			combo = false;
+		}
+
+		if (comboNum > 5) 
+		{
+			attacking = false;
+			attacked = false;	
+			comboNum = 1;
+			combo = false;
+			spaceButtonTimer = timeBetweenSpaceButtons;
+		}
+	}
+
+	public void bowAttack () 
+	{
+		bowAtk.attack(1);
+	}
+
+	public void bowAttack2 () 
+	{
+		bowAtk.attack(2);
+	}
+
+	public void endBowAttack() 
+	{
+		rigidBody.velocity = Vector3.zero;
+		if (!combo) 
+		{
+			attacking = false;
+			attacked = false;	
+			comboNum = 1;
+			spaceButtonTimer = timeBetweenSpaceButtons;
+		} else 
+		{
+			attacked = false;
+			comboNum++;
+			combo = false;
+		}
+
+		if (comboNum > 2) 
 		{
 			attacking = false;
 			attacked = false;	
