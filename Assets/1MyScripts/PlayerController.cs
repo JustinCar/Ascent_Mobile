@@ -95,6 +95,7 @@ public class PlayerController : MonoBehaviour {
 			audioManager.phaseAudio();
 		}
 
+
 		if (fazing) 
 		{
 			fazeTimer -= Time.deltaTime;

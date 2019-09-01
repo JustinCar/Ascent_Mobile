@@ -47,7 +47,7 @@ public class PlayerHealth : MonoBehaviour {
         health.SetFloat("_Progress", convertRange(currentHealth, startingHealth));
         mana.SetFloat("_Progress", convertRange(currentMana, startingMana));
 
-        debugInfo = GameObject.Find("DebugInfoToggle").GetComponent<DebugInfo>();
+        //debugInfo = GameObject.Find("DebugInfoToggle").GetComponent<DebugInfo>();
     }
 
     void Update()
@@ -60,7 +60,7 @@ public class PlayerHealth : MonoBehaviour {
 
             if (deathTimer <= 0) 
             {
-                debugInfo.activate();
+                //debugInfo.activate();
                 SceneManager.LoadScene("Main Menu (Mobile)");
             }
         }

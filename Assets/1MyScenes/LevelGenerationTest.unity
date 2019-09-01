@@ -453,7 +453,7 @@ PrefabInstance:
     - target: {fileID: 3643348438305597069, guid: d4cf4bc2a0653e44ca8b86e49936faba,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3643348438305597068, guid: d4cf4bc2a0653e44ca8b86e49936faba,
         type: 3}
@@ -620,11 +620,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 3}
+    m_Font: {fileID: 12800000, guid: 75e9f78f3f43947499e996000c1b2c82, type: 3}
     m_FontSize: 300
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -1216,6 +1216,12 @@ PrefabInstance:
       propertyPath: noManaTxt
       value: 
       objectReference: {fileID: 4589401260046185974}
+    - target: {fileID: 5485799066676012580, guid: 4f66c7ede307a064ba1205940635b85a,
+        type: 3}
+      propertyPath: arrow
+      value: 
+      objectReference: {fileID: 1822859933652288, guid: 6011d75a34a68154ead43266c7d7b4a3,
+        type: 3}
     - target: {fileID: 4290917153457350, guid: 4f66c7ede307a064ba1205940635b85a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.326
@@ -1412,12 +1418,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.131
       objectReference: {fileID: 0}
-    - target: {fileID: 5485799066676012580, guid: 4f66c7ede307a064ba1205940635b85a,
-        type: 3}
-      propertyPath: arrow
-      value: 
-      objectReference: {fileID: 1822859933652288, guid: 6011d75a34a68154ead43266c7d7b4a3,
-        type: 3}
     - target: {fileID: 5375831601917944478, guid: 4f66c7ede307a064ba1205940635b85a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1495,6 +1495,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7738f61ff7c01bb429027c0bc216b0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &569175164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569175158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150ca8d7d75914e4aaa98d615a3be2b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponIcon: {fileID: 910621903}
+  bow: {fileID: 21300000, guid: 02ecb6fc3ef0ce84f9acad5d91fc9815, type: 3}
+  martial: {fileID: 21300000, guid: eefc141e13c57ca47afecfb07e22014e, type: 3}
+  sword: {fileID: 21300000, guid: eb0c2d56b7ae40e4e91883f326016e22, type: 3}
 --- !u!1001 &584728906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4796,11 +4812,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 3}
+    m_Font: {fileID: 12800000, guid: 75e9f78f3f43947499e996000c1b2c82, type: 3}
     m_FontSize: 200
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 0

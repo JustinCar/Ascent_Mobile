@@ -11,7 +11,7 @@ public class GoblinSpellCasterController : MonoBehaviour {
 	float move = -1;
 	public Animator anim;
 	bool patroling = false;
-	bool stunned = false;
+	public bool stunned = false;
 	public GameObject sprite;
 	public float rayDistance;
 	public GameObject player;
@@ -245,7 +245,6 @@ public class GoblinSpellCasterController : MonoBehaviour {
 					anim.SetInteger("AnimState", 2);
 					attacked = true;
 				}
-				
 			}
 
 			if (patroling) 
