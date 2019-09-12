@@ -12,13 +12,19 @@ public class GoblinSpellCasterAttack : MonoBehaviour {
     public int damageUpperBound; 
     public EnemyHealth enemyHealth;
     public GoblinSpellCasterController enemyCtrl;
-    public float attackCooldown; // The time between attacks
 
 	public GameObject castingFX;
 
 	public GameObject spell;
     LevelManager levelManager;
     public PlayerAudioManager audioManager;
+    public Animator anim;
+
+    public float attackTimer = 0; // Timer to track attack cooldown
+	public float attackCooldown; // The time between attacks
+
+    public float spellAttackTimer = 0; // Timer to track attack cooldown
+	public float spellAttackCooldown; // The time between attacks
 
     void Awake()
     {
@@ -26,6 +32,14 @@ public class GoblinSpellCasterAttack : MonoBehaviour {
         damageLowerBound =  (int)(damageLowerBound * (levelManager.floorNumber));
         damageUpperBound =  (int)(damageUpperBound * (levelManager.floorNumber));
         audioManager = GameObject.Find("Player").GetComponent<PlayerAudioManager>();
+        attackTimer = attackCooldown;
+        spellAttackTimer = spellAttackCooldown;
+    }
+
+    void Update()
+    {
+        attackTimer -= Time.deltaTime;
+        spellAttackTimer -= Time.deltaTime;
     }
 
     // Called from the attack animation 
@@ -59,8 +73,15 @@ public class GoblinSpellCasterAttack : MonoBehaviour {
     // Called from attack animation when attack has finished
     void attackFinished () 
     {
-        enemyCtrl.attacking = false;
-        enemyCtrl.attackTimer = enemyCtrl.attackCooldown;
+        if (anim.GetBool("isAttacking")) 
+        {
+            anim.SetBool("isAttacking", false);
+            attackTimer = attackCooldown;
+        } else if (anim.GetBool("isSecondAttacking")) 
+        {
+            anim.SetBool("isSecondAttacking", false);
+            spellAttackTimer = spellAttackCooldown;
+        }
     }
     
     void OnDrawGizmosSelected() 

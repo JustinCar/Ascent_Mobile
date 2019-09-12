@@ -1183,7 +1183,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4007663143238594}
   - component: {fileID: 114655542551571652}
-  - component: {fileID: 114571535724105768}
   - component: {fileID: 50584980359335060}
   - component: {fileID: 61703762707787194}
   - component: {fileID: 114429559468426418}
@@ -1254,38 +1253,6 @@ MonoBehaviour:
   move: -1
   player: {fileID: 0}
   sprite: {fileID: 1556321029456962}
---- !u!114 &114571535724105768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554094071519804}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cb2ae85b2fb1804d9cb5ef5587312eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidBody: {fileID: 0}
-  speed: 0.5
-  chaseSpeed: 1
-  facingLeft: 0
-  anim: {fileID: 95774840495126696}
-  sprite: {fileID: 1556321029456962}
-  rayDistance: 2
-  player: {fileID: 0}
-  playerIsLeft: 0
-  attackRange: 0.5
-  chasing: 0
-  attacking: 0
-  attackTimer: 0
-  attackCooldown: 2
-  patrolTimerLowerBound: 5
-  patrolTimerUpperBound: 10
-  idleTimerLowerBound: 3
-  idleTimerUpperBound: 6
-  disengageDistanceX: 1.87
-  disengageDistanceY: 1
 --- !u!50 &50584980359335060
 Rigidbody2D:
   serializedVersion: 4
@@ -1476,9 +1443,11 @@ MonoBehaviour:
   damageLowerBound: 5
   damageUpperBound: 10
   enemyHealth: {fileID: 114655542551571652}
-  enemyCtrl: {fileID: 114571535724105768}
+  enemyCtrl: {fileID: 0}
   audioManager: {fileID: 0}
   anim: {fileID: 95774840495126696}
+  attackTimer: 0
+  attackCooldown: 2
 --- !u!1 &1617839031633144
 GameObject:
   m_ObjectHideFlags: 0

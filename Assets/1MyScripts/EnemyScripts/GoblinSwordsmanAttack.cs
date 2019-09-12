@@ -16,10 +16,16 @@ public class GoblinSwordsmanAttack : MonoBehaviour {
 	public float spinAtkKnockPower;
     public EnemyHealth enemyHealth;
     public GoblinSwordsmanController enemyCtrl;
-    public float attackCooldown; // The time between attacks
     
     LevelManager levelManager;
     public PlayerAudioManager audioManager;
+    public Animator anim;
+
+    public float attackTimer = 0; // Timer to track attack cooldown
+	public float attackCooldown; // The time between attacks
+
+    public float spinAttackTimer = 0; // Timer to track attack cooldown
+	public float spinAttackCooldown; // The time between attacks
 
     void Awake()
     {
@@ -29,6 +35,14 @@ public class GoblinSwordsmanAttack : MonoBehaviour {
         spinDamageLowerBound =  (int)(spinDamageLowerBound * (levelManager.floorNumber));
         spinDamageUpperBound =  (int)(spinDamageUpperBound * (levelManager.floorNumber));
         audioManager = GameObject.Find("Player").GetComponent<PlayerAudioManager>();
+        attackTimer = attackCooldown;
+        spinAttackTimer = spinAttackCooldown;
+    }
+
+    void Update()
+    {
+        attackTimer -= Time.deltaTime;
+        spinAttackTimer -= Time.deltaTime;
     }
 
     // Called from the attack animation 
@@ -78,7 +92,16 @@ public class GoblinSwordsmanAttack : MonoBehaviour {
     // Called from attack animation when attack has finished
     void attackFinished () 
     {
-        enemyCtrl.attacking = false;
+        if (anim.GetBool("isAttacking")) 
+        {
+            anim.SetBool("isAttacking", false);
+            attackTimer = attackCooldown;
+        } else if (anim.GetBool("isSecondAttacking")) 
+        {
+            anim.SetBool("isSecondAttacking", false);
+            spinAttackTimer = spinAttackCooldown;
+        }
+        
     }
     
     void OnDrawGizmosSelected() 

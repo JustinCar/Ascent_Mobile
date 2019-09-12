@@ -2739,6 +2739,10 @@ MonoBehaviour:
   stunTime: 0
   lootSpawner: {fileID: 1988123914008128, guid: 5f7e4f01bab06914d81c6f9f06860221,
     type: 3}
+  facingLeft: 0
+  move: -1
+  player: {fileID: 0}
+  sprite: {fileID: 0}
 --- !u!114 &114578797153883384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2746,7 +2750,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860591163455760}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11484f1b82344694ebfb80d0290913cf, type: 3}
   m_Name: 
@@ -2932,9 +2936,9 @@ Animator:
   m_GameObject: {fileID: 1889066348723644}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 911f7e7a5a1c744458edb6ad4d392298, type: 2}
+  m_Controller: {fileID: 9100000, guid: d3ebd05836cbd3444944680c8d4678cb, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -2967,8 +2971,12 @@ MonoBehaviour:
   spinAtkKnockPower: 1000
   enemyHealth: {fileID: 114439744154736732}
   enemyCtrl: {fileID: 114578797153883384}
-  attackCooldown: 2
   audioManager: {fileID: 0}
+  anim: {fileID: 95134867105096846}
+  attackTimer: 0
+  attackCooldown: 2
+  spinAttackTimer: 0
+  spinAttackCooldown: 4
 --- !u!1 &1903229251978344
 GameObject:
   m_ObjectHideFlags: 0

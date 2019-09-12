@@ -18,10 +18,9 @@ public class VoidDwellerChase : StateMachineBehaviour
     public float disengageDistanceX; // The distance on the x axis before the enemy will stop chasing
 	public float disengageDistanceY; // The distance on the y axis before the enemy will stop chasing
 
-    float attackTimer = 0; // Timer to track attack cooldown
-	public float attackCooldown; // The time between attacks
     public float attackRange;
     Transform attackPos;
+    EnemyAttack enemyAttack;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -30,7 +29,7 @@ public class VoidDwellerChase : StateMachineBehaviour
         sprite = animator.gameObject;
         rigidBody = animator.gameObject.GetComponentInParent<Rigidbody2D>();
         health = animator.gameObject.GetComponentInParent<EnemyHealth>();
-        attackTimer = attackCooldown;
+        enemyAttack = animator.gameObject.GetComponent<EnemyAttack>();
         attackPos = animator.gameObject.transform.GetChild(0);
     }
 
@@ -53,14 +52,17 @@ public class VoidDwellerChase : StateMachineBehaviour
 
         if (!stunned) 
         {
-            attackTimer -= Time.deltaTime;
 
             if (Vector2.Distance(attackPos.transform.position, playerPos.position) > attackRange) 
             {
-                animator.transform.parent.transform.position = Vector2.MoveTowards(animator.transform.parent.transform.position, playerPos.position, speed * Time.deltaTime);						
-            }
+                animator.transform.parent.transform.position = Vector2.MoveTowards(animator.transform.parent.transform.position, playerPos.position, speed * Time.deltaTime);	
+                animator.SetBool("isInRange", false);					
+            } else if (Vector2.Distance(attackPos.transform.position, playerPos.position) < attackRange) 
+            {
+                animator.SetBool("isInRange", true);
+            } 
 
-            if (Vector2.Distance(attackPos.transform.position, playerPos.position) < attackRange && attackTimer <= 0) 
+            if (Vector2.Distance(attackPos.transform.position, playerPos.position) < attackRange && enemyAttack.attackTimer <= 0) 
             {
                 animator.SetBool("isAttacking", true);
                 rigidBody.velocity = new Vector2(0,0);

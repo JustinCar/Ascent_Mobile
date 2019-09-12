@@ -12,18 +12,26 @@ public class GoblinArcherAttack : MonoBehaviour {
     public int damageUpperBound; 
     public EnemyHealth enemyHealth;
     public GoblinArcherController enemyCtrl;
-    public float attackCooldown; // The time between attacks
 
 	public GameObject arrow;
 
     
     LevelManager levelManager;
+    public Animator anim;
+    public float attackTimer = 0; // Timer to track attack cooldown
+	public float attackCooldown; // The time between attacks
 
     void Awake()
     {
         levelManager = GameObject.Find("Manager").GetComponent<LevelManager>();
         damageLowerBound =  (int)(damageLowerBound * (levelManager.floorNumber));
         damageUpperBound =  (int)(damageUpperBound * (levelManager.floorNumber));
+        attackTimer = attackCooldown;
+    }
+
+    void Update()
+    {
+        attackTimer -= Time.deltaTime;
     }
 
     // Called from the attack animation 
@@ -57,9 +65,8 @@ public class GoblinArcherAttack : MonoBehaviour {
     // Called from attack animation when attack has finished
     void attackFinished () 
     {
-        enemyCtrl.attacking = false;
-        Debug.Log ("ATTACK FINISHED");
-        enemyCtrl.attackTimer = enemyCtrl.attackCooldown;
+        anim.SetBool("isAttacking", false);
+        attackTimer = attackCooldown;
     }
     
     void OnDrawGizmosSelected() 

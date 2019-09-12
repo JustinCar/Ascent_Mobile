@@ -451,9 +451,9 @@ Animator:
   m_GameObject: {fileID: 1126490746289232}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 75d47cb3a6304cd4ca7caeab69e02b5f, type: 2}
+  m_Controller: {fileID: 9100000, guid: e917f58f8f919114f882af439161defe, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -482,10 +482,14 @@ MonoBehaviour:
   damageUpperBound: 15
   enemyHealth: {fileID: 114601753259367608}
   enemyCtrl: {fileID: 114347806750236338}
-  attackCooldown: 3
   castingFX: {fileID: 1826657427569734}
   spell: {fileID: 1822859933652288, guid: 495936d8cf3c3d64eadbaaa8f63d40dc, type: 3}
   audioManager: {fileID: 0}
+  anim: {fileID: 95114304368183618}
+  attackTimer: 0
+  attackCooldown: 1
+  spellAttackTimer: 0
+  spellAttackCooldown: 3
 --- !u!1 &1148467571201666
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,6 +701,10 @@ MonoBehaviour:
   stunTime: 0.5
   lootSpawner: {fileID: 1988123914008128, guid: 5f7e4f01bab06914d81c6f9f06860221,
     type: 3}
+  facingLeft: 0
+  move: -1
+  player: {fileID: 0}
+  sprite: {fileID: 0}
 --- !u!114 &114347806750236338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -704,7 +712,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1206534875517510}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b9d811d15854684bb7582ff01052a65, type: 3}
   m_Name: 

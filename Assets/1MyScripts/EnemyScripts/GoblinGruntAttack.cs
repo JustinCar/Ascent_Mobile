@@ -18,7 +18,6 @@ public class GoblinGruntAttack : MonoBehaviour {
 	float bellySmashKnockBackTimer;
     public EnemyHealth enemyHealth;
     public GoblinGruntController enemyCtrl;
-    public float attackCooldown; // The time between attacks
 
 	bool bellySmashed = false;
 
@@ -28,6 +27,10 @@ public class GoblinGruntAttack : MonoBehaviour {
     public CameraShake cameraShake;
 
     public PlayerAudioManager audioManager;
+    public Animator anim;
+
+    public float attackTimer = 0; // Timer to track attack cooldown
+	public float attackCooldown; // The time between attacks
 
 	void Start () 
 	{
@@ -43,10 +46,13 @@ public class GoblinGruntAttack : MonoBehaviour {
         bellySmashDamageLowerBound =  (int)(bellySmashDamageLowerBound * (levelManager.floorNumber));
         bellySmashDamageUpperBound =  (int)(bellySmashDamageUpperBound * (levelManager.floorNumber));
         audioManager = GameObject.Find("Player").GetComponent<PlayerAudioManager>();
+
+        attackTimer = attackCooldown;
 	}
 
 	void Update () 
 	{	
+        attackTimer -= Time.deltaTime;
 		if (bellySmashed) 
 		{
 			//playerRB = GameObject.Find("Player").GetComponent<Rigidbody2D>();
@@ -100,11 +106,8 @@ public class GoblinGruntAttack : MonoBehaviour {
     // Called from attack animation when attack has finished
     void attackFinished () 
     {
-        enemyCtrl.attacking = false;
-		if (enemyCtrl.isBellySmashing) 
-		{
-			enemyCtrl.isBellySmashing = false;
-		}
+        anim.SetBool("isAttacking", false);
+        attackTimer = attackCooldown;
     }
     
     void OnDrawGizmosSelected() 

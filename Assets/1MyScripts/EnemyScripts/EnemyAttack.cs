@@ -17,17 +17,21 @@ public class EnemyAttack : MonoBehaviour {
 
     public Animator anim;
 
+    public float attackTimer = 0; // Timer to track attack cooldown
+	public float attackCooldown; // The time between attacks
+
     void Awake()
     {
         levelManager = GameObject.Find("Manager").GetComponent<LevelManager>();
         damageLowerBound =  (int)(damageLowerBound * (levelManager.floorNumber));
         damageUpperBound =  (int)(damageUpperBound * (levelManager.floorNumber));
         audioManager = GameObject.Find("Player").GetComponent<PlayerAudioManager>();
+        attackTimer = attackCooldown;
     }
 
     void Update()
     {
-
+        attackTimer -= Time.deltaTime;
     }
 
     // Called from the attack animation 
@@ -37,7 +41,7 @@ public class EnemyAttack : MonoBehaviour {
         Collider2D[] player = Physics2D.OverlapCircleAll(atkPos.position, atkRange, playerLayer);
         if (player.Length > 0 && enemyHealth.currentHealth > 0) 
         {
-            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound), enemyCtrl.playerIsLeft);
+            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound), enemyHealth.playerToLeft());
         }
     } 
 
@@ -45,6 +49,7 @@ public class EnemyAttack : MonoBehaviour {
     void attackFinished () 
     {
         anim.SetBool("isAttacking", false);
+        attackTimer = attackCooldown;
     }
     
     void OnDrawGizmosSelected() 
