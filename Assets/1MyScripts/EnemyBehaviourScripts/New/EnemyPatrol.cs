@@ -21,7 +21,8 @@ public class EnemyPatrol : StateMachineBehaviour
     EnemyHealth health;
     bool stunned = false;
     public bool facingLeft;
-    LayerMask mask;
+    int enemyLayer = 8;
+    int mask;
     public float rayDistance;
     GameObject sprite;
     public bool isSpellCaster;
@@ -34,7 +35,7 @@ public class EnemyPatrol : StateMachineBehaviour
         timer = 0.0f;
         timeToSpendWandering = Random.Range(timeToSpendWanderingLowerBound, timeToSpendWanderingUpperBound);
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-        mask = LayerMask.GetMask("Player");
+        mask = ~(1 << enemyLayer); //Exclude enemy layer
         sprite = animator.gameObject;
         rigidBody = animator.gameObject.GetComponentInParent<Rigidbody2D>();
         health = animator.gameObject.GetComponentInParent<EnemyHealth>();

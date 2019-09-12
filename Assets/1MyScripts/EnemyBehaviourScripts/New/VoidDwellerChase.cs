@@ -6,7 +6,6 @@ public class VoidDwellerChase : StateMachineBehaviour
 {
     private Transform playerPos;
     public float speed;
-    public float attackDistance;
 
 
     EnemyHealth health;
@@ -22,6 +21,7 @@ public class VoidDwellerChase : StateMachineBehaviour
     float attackTimer = 0; // Timer to track attack cooldown
 	public float attackCooldown; // The time between attacks
     public float attackRange;
+    Transform attackPos;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -30,6 +30,8 @@ public class VoidDwellerChase : StateMachineBehaviour
         sprite = animator.gameObject;
         rigidBody = animator.gameObject.GetComponentInParent<Rigidbody2D>();
         health = animator.gameObject.GetComponentInParent<EnemyHealth>();
+        attackTimer = attackCooldown;
+        attackPos = animator.gameObject.transform.GetChild(0);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -53,12 +55,12 @@ public class VoidDwellerChase : StateMachineBehaviour
         {
             attackTimer -= Time.deltaTime;
 
-            if (Vector2.Distance(animator.transform.parent.transform.position, playerPos.position) > attackRange) 
+            if (Vector2.Distance(attackPos.transform.position, playerPos.position) > attackRange) 
             {
                 animator.transform.parent.transform.position = Vector2.MoveTowards(animator.transform.parent.transform.position, playerPos.position, speed * Time.deltaTime);						
             }
 
-            if (Vector2.Distance(animator.transform.parent.transform.position, playerPos.position) < attackRange && attackTimer <= 0) 
+            if (Vector2.Distance(attackPos.transform.position, playerPos.position) < attackRange && attackTimer <= 0) 
             {
                 animator.SetBool("isAttacking", true);
                 rigidBody.velocity = new Vector2(0,0);

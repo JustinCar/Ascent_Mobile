@@ -17,7 +17,8 @@ public class EnemyIdle : StateMachineBehaviour
     EnemyHealth health;
     bool stunned = false;
     public bool facingLeft;
-    LayerMask mask;
+    int enemyLayer = 8;
+    int mask;
     public float rayDistance;
     GameObject sprite;
     public bool isSpellCaster;
@@ -29,7 +30,7 @@ public class EnemyIdle : StateMachineBehaviour
         timer = 0.0f;
         timeToSpendIdle = Random.Range(timeToSpendIdleLowerBound, timeToSpendIdleUpperBound);
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-        mask = LayerMask.GetMask("Player");
+        mask = ~(1 << enemyLayer); //Exclude enemy layer
         sprite = animator.gameObject;
         health = animator.gameObject.GetComponentInParent<EnemyHealth>();
     }
@@ -69,6 +70,7 @@ public class EnemyIdle : StateMachineBehaviour
 				hit = Physics2D.Raycast(animator.transform.parent.transform.position, -Vector2.right, rayDistance, mask);
 				if (hit) 
 				{
+                    Debug.Log(hit.collider.gameObject.tag);
 					if (hit.collider.gameObject.tag == "Player") 
 					{
 						Debug.Log("Player seen");
@@ -84,6 +86,7 @@ public class EnemyIdle : StateMachineBehaviour
 							
 				if (hit) 
 				{
+                    Debug.Log(hit.collider.gameObject.tag);
 					if (hit.collider.gameObject.tag == "Player") 
 					{
 						Debug.Log("Player seen");
