@@ -36,6 +36,10 @@ public class EnemyHealth : MonoBehaviour {
     float damageModifier;
 
     float deathTimer = 5f;
+    public bool facingLeft = false;
+    public float move = -1;
+    public GameObject player;
+    public GameObject sprite;
 
     void Awake()
     {
@@ -47,6 +51,7 @@ public class EnemyHealth : MonoBehaviour {
         stunTimer = stunTime;
 
         damageModifier = 1f + (SaveLoadManager.getDamageModifier() / 100f);
+        player = GameObject.Find("Player");
     }
 
     void Update()
@@ -226,7 +231,8 @@ public class EnemyHealth : MonoBehaviour {
 
     void showFloatingText(int amount, bool toRight, bool shouldStun)
     {
-        GameObject text = Instantiate(floatingText, gameObject.GetComponentInChildren<Canvas>().transform.position, Quaternion.identity, transform) as GameObject;
+        Vector3 pos = gameObject.GetComponentInChildren<Canvas>().transform.position;
+        GameObject text = Instantiate(floatingText, pos, Quaternion.identity, transform) as GameObject;
         text.gameObject.transform.SetParent(gameObject.GetComponentInChildren<Canvas>().transform);
         text.GetComponent<FloatingText>().damageOverTime = !shouldStun;
         text.GetComponent<TextMesh>().text = "" + amount;
@@ -244,7 +250,7 @@ public class EnemyHealth : MonoBehaviour {
         gameObject.layer = 13; // Change the enemies layer to FX, so that player cant interact with it anymore
 
         // Tell the animator that the enemy is dead.
-        anim.SetBool("Dead", true);
+        anim.SetBool("isDead", true);
     }
 
     public void spawnLoot () 
@@ -253,5 +259,44 @@ public class EnemyHealth : MonoBehaviour {
         LootSystem script = loot.GetComponent<LootSystem>();
         script.essenceVal = this.essenceValue;
         script.spawnBodyParts();
+	}
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+		Debug.Log("trigger");
+        if (other.gameObject.tag == "PlatformEdge" && !anim.GetBool("isChasing")) 
+		{
+			Debug.Log("edge found");
+			if (move == -1) 
+			{
+				move = 1;
+			} else if (move == 1) 
+			{
+				move = -1;
+			}
+		}
+        
+    }
+
+	public bool playerToLeft() 
+		{
+			if ((transform.position.x - player.transform.position.x) < 0) 
+			{
+				return false;
+			}
+			if ((transform.position.x - player.transform.position.x) > 0) 
+			{
+				return true;
+			}
+			Debug.Log("ERROR");
+			return false;
+		}
+
+    void flip() 
+	{
+		facingLeft = !facingLeft;
+		Vector3 scale = sprite.transform.localScale;
+		scale.x *= -1;
+		sprite.transform.localScale = scale;
 	}
 }

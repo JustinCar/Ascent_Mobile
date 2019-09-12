@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour {
 		rigidBody = GetComponent<Rigidbody2D>();
 		timer = atkAnimLength;
 		spaceButtonTimer = timeBetweenSpaceButtons;
-		//weapon = SaveLoadManager.getFightingStyle();
+		weapon = SaveLoadManager.getFightingStyle();
 		// fazeTimer = fazeTime;
 	}
 	
@@ -147,15 +147,39 @@ public class PlayerController : MonoBehaviour {
 				spaceButtonTimer = timeBetweenSpaceButtons;
 			}	
 		}
+
+		if (!attacking) 
+		{
+			if (Input.GetKeyDown(KeyCode.A)) 
+			{
+				move = -1;	
+			}
+			if (Input.GetKeyDown(KeyCode.D)) 
+			{
+				move = 1;	
+			}
+			if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) 
+			{
+				move = 0;
+			}
+		}
 	}
 	void FixedUpdate () {
 
 		if (!attacking) 
 		{
-			if (move == 0) 
-			{
-				move = Input.GetAxis("Horizontal"); // a = -1 / d = 1
-			}
+			// if (Input.GetKeyDown(KeyCode.A)) 
+			// {
+			// 	move = -1;	
+			// }
+			// if (Input.GetKeyDown(KeyCode.D)) 
+			// {
+			// 	move = 1;	
+			// }
+			// if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D)) 
+			// {
+			// 	move = 0;
+			// }
 
 			rigidBody.velocity = new Vector2 (speed * move, rigidBody.velocity.y);	
 

@@ -79,8 +79,8 @@ Tilemap:
   m_Tiles:
   - first: {x: -10, y: -4, z: 0}
     second:
-      m_TileIndex: 4
-      m_TileSpriteIndex: 4
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -412,8 +412,8 @@ Tilemap:
       m_ColliderType: 1
   - first: {x: 6, y: 1, z: 0}
     second:
-      m_TileIndex: 2
-      m_TileSpriteIndex: 2
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -425,15 +425,15 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: ea12a14b44b078b48972dec914d4fb63, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: d1817d5e193106c4c9112617d318433b, type: 2}
-  - m_RefCount: 15
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 16
     m_Data: {fileID: 11400000, guid: 60335e73771696340841842c5b097b2d, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 23c4118303abaca4dac8ac453936c633, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: c8e876091faedbd46967afbb88c89c90, type: 2}
-  - m_RefCount: 4
+  - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: 6579405ff03b6a24392df6b0428f7cae, type: 2}
   - m_RefCount: 15
     m_Data: {fileID: 11400000, guid: d8bb63769a0cea44c941d4e07bf88350, type: 2}
@@ -442,15 +442,15 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300154, guid: c3be75844d691f5429cd0115200fe9f7, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300222, guid: c3be75844d691f5429cd0115200fe9f7, type: 3}
-  - m_RefCount: 15
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 16
     m_Data: {fileID: 21300156, guid: c3be75844d691f5429cd0115200fe9f7, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300192, guid: c3be75844d691f5429cd0115200fe9f7, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300190, guid: c3be75844d691f5429cd0115200fe9f7, type: 3}
-  - m_RefCount: 4
+  - m_RefCount: 5
     m_Data: {fileID: 21300184, guid: c3be75844d691f5429cd0115200fe9f7, type: 3}
   - m_RefCount: 15
     m_Data: {fileID: 21300160, guid: c3be75844d691f5429cd0115200fe9f7, type: 3}
@@ -524,6 +524,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -558,6 +559,8 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!50 &50166139030966466
 Rigidbody2D:
   serializedVersion: 4
@@ -599,273 +602,244 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 2113883504336592088}
     m_ColliderPaths:
-    - - X: 11200000
-        Y: 3000000
-      - X: 10900000
-        Y: 3200000
+    - - X: -14399986
+        Y: -6400100
+      - X: -14399811
+        Y: -5300000
       - X: 9600000
-        Y: 3200000
-      - X: 9600000
-        Y: 1600000
+        Y: -5300145
+      - X: 9600087
+        Y: -6399942
       - X: 11200000
-        Y: 1600000
-    - - X: 9599999
-        Y: 3200000
-      - X: 8099999
-        Y: 3200000
-      - X: 7999999
-        Y: 3100000
-      - X: 7999999
-        Y: 3200000
-      - X: 6500000
-        Y: 3200000
-      - X: 6400000
-        Y: 3100000
-      - X: 6400000
-        Y: 3200000
-      - X: 4900000
-        Y: 3200000
-      - X: 4799999
-        Y: 3100000
-      - X: 4799999
-        Y: 3200000
-      - X: 3299999
-        Y: 3200000
-      - X: 3200000
-        Y: 3100000
-      - X: 3200000
-        Y: 3200000
-      - X: 1699999
-        Y: 3200000
-      - X: 1600000
-        Y: 3100000
-      - X: 1600000
-        Y: 3200000
-      - X: 99999
-        Y: 3200000
-      - X: 0
-        Y: 3100000
-      - X: 0
-        Y: 3200000
-      - X: -1499999
-        Y: 3200000
-      - X: -1600000
-        Y: 3100000
-      - X: -1600000
-        Y: 3200000
-      - X: -3100000
-        Y: 3200000
-      - X: -3200000
-        Y: 3100000
-      - X: -3200000
-        Y: 3200000
-      - X: -4700000
-        Y: 3200000
-      - X: -4800000
-        Y: 3100000
-      - X: -4800000
-        Y: 3200000
-      - X: -6300000
-        Y: 3200000
-      - X: -6400000
-        Y: 3100000
-      - X: -6400000
-        Y: 3200000
-      - X: -7899999
-        Y: 3200000
-      - X: -7999999
-        Y: 3100000
-      - X: -7999999
-        Y: 1600000
-      - X: 9599999
-        Y: 1600000
-    - - X: -14399998
-        Y: -5300000
-      - X: -8000000
-        Y: -5300000
-      - X: -8000000
+        Y: -6399855
+      - X: 11199855
         Y: -4800000
-      - X: -14399998
-        Y: -4800000
-      - X: -14399998
+      - X: -14399942
+        Y: -4799988
+      - X: -14399853
         Y: 1600000
+      - X: 11200041
+        Y: 1599958
+      - X: 11199983
+        Y: 3200100
+      - X: 9699931
+        Y: 3200069
+      - X: 9599846
+        Y: 3100138
+      - X: 9599784
+        Y: 3199996
+      - X: 8099969
+        Y: 3199960
+      - X: 7999999
+        Y: 3100430
+      - X: 7999854
+        Y: 3200000
+      - X: 6499970
+        Y: 3199960
+      - X: 6400000
+        Y: 3100430
+      - X: 6399855
+        Y: 3200000
+      - X: 4899970
+        Y: 3199960
+      - X: 4799999
+        Y: 3100430
+      - X: 4799854
+        Y: 3200000
+      - X: 3299969
+        Y: 3199960
+      - X: 3200000
+        Y: 3100430
+      - X: 3199855
+        Y: 3200000
+      - X: 1699969
+        Y: 3199960
+      - X: 1600000
+        Y: 3100430
+      - X: 1599855
+        Y: 3200000
+      - X: 99969
+        Y: 3199960
+      - X: 0
+        Y: 3100430
+      - X: -145
+        Y: 3200000
+      - X: -1500029
+        Y: 3199960
+      - X: -1600000
+        Y: 3100430
+      - X: -1600145
+        Y: 3200000
+      - X: -3100030
+        Y: 3199960
+      - X: -3200000
+        Y: 3100430
+      - X: -3200145
+        Y: 3200000
+      - X: -4700030
+        Y: 3199960
+      - X: -4800000
+        Y: 3100430
+      - X: -4800145
+        Y: 3200000
+      - X: -6300030
+        Y: 3199960
+      - X: -6400000
+        Y: 3100430
+      - X: -6400145
+        Y: 3200000
+      - X: -7900029
+        Y: 3199960
       - X: -8000000
-        Y: 1600000
-      - X: -8000000
+        Y: 3100429
+      - X: -8000145
         Y: 3200000
-      - X: -9500000
-        Y: 3200000
+      - X: -9500030
+        Y: 3199960
       - X: -9600000
-        Y: 3100000
-      - X: -9600000
+        Y: 3100430
+      - X: -9600145
         Y: 3200000
-      - X: -11100000
-        Y: 3200000
+      - X: -11100030
+        Y: 3199960
       - X: -11199999
-        Y: 3100001
-      - X: -11199999
+        Y: 3100431
+      - X: -11200144
         Y: 3200000
-      - X: -12700000
-        Y: 3200000
+      - X: -12700030
+        Y: 3199960
       - X: -12799999
-        Y: 3100001
-      - X: -12799999
+        Y: 3100431
+      - X: -12800144
         Y: 3200000
-      - X: -14299999
-        Y: 3200000
+      - X: -14300029
+        Y: 3199960
       - X: -14399999
-        Y: 3100000
-      - X: -14399999
-        Y: 2900000
-      - X: -14699999
+        Y: 3099940
+      - X: -14400209
+        Y: 2900065
+      - X: -14700019
         Y: 3000000
-      - X: -15299999
-        Y: 3000000
+      - X: -15300044
+        Y: 2999945
       - X: -15799998
-        Y: 2300000
-      - X: -15799998
-        Y: 1799999
-      - X: -15599998
+        Y: 2299965
+      - X: -15799958
+        Y: 1799969
+      - X: -15600428
         Y: 1600000
       - X: -15999999
-        Y: 1600000
-      - X: -15999999
-        Y: 200000
-      - X: -15799998
+        Y: 1599855
+      - X: -15999959
+        Y: 199970
+      - X: -15800428
         Y: 0
       - X: -15999999
-        Y: 0
-      - X: -15999999
-        Y: -1400000
-      - X: -15799998
+        Y: -145
+      - X: -15999959
+        Y: -1400030
+      - X: -15800428
         Y: -1600000
       - X: -15999999
-        Y: -1600000
-      - X: -15999999
-        Y: -3000000
-      - X: -15799998
+        Y: -1600145
+      - X: -15999959
+        Y: -3000030
+      - X: -15800428
         Y: -3200000
       - X: -15999999
-        Y: -3200000
-      - X: -15999999
-        Y: -4600000
-      - X: -15799998
-        Y: -4800000
-      - X: -15999999
-        Y: -4800000
-      - X: -15999999
-        Y: -6200000
-      - X: -15699998
-        Y: -6400000
-      - X: -14399998
-        Y: -6400000
-    - - X: 11200000
-        Y: -4800000
-      - X: 9600000
-        Y: -4800000
-      - X: 9600000
-        Y: -6400000
-      - X: 11200000
-        Y: -6400000
-    - - X: 9599999
-        Y: -4800000
-      - X: -7999999
-        Y: -4800000
-      - X: -7999999
-        Y: -5300000
-      - X: 9599999
-        Y: -5300000
+        Y: -3200145
+      - X: -15999959
+        Y: -4600030
+      - X: -15800332
+        Y: -4799900
+      - X: -16000099
+        Y: -4799988
+      - X: -16000076
+        Y: -6200063
+      - X: -15800006
+        Y: -6400100
   m_CompositePaths:
     m_Paths:
-    - - {x: 1.12, y: 0.3}
-      - {x: 1.09, y: 0.32}
-      - {x: 0.96000004, y: 0.32}
-      - {x: 0.96000004, y: 0.16}
-      - {x: 1.12, y: 0.16}
-    - - {x: 0.9599999, y: 0.32}
-      - {x: 0.8099999, y: 0.32}
-      - {x: 0.7999999, y: 0.31}
-      - {x: 0.7999999, y: 0.32}
-      - {x: 0.65000004, y: 0.32}
-      - {x: 0.64, y: 0.31}
-      - {x: 0.64, y: 0.32}
-      - {x: 0.49, y: 0.32}
-      - {x: 0.4799999, y: 0.31}
-      - {x: 0.4799999, y: 0.32}
-      - {x: 0.3299999, y: 0.32}
-      - {x: 0.32, y: 0.31}
-      - {x: 0.32, y: 0.32}
-      - {x: 0.1699999, y: 0.32}
-      - {x: 0.16, y: 0.31}
-      - {x: 0.16, y: 0.32}
-      - {x: 0.0099999, y: 0.32}
-      - {x: 0, y: 0.31}
-      - {x: 0, y: 0.32}
-      - {x: -0.1499999, y: 0.32}
-      - {x: -0.16, y: 0.31}
-      - {x: -0.16, y: 0.32}
-      - {x: -0.31, y: 0.32}
-      - {x: -0.32, y: 0.31}
-      - {x: -0.32, y: 0.32}
-      - {x: -0.47, y: 0.32}
-      - {x: -0.48000002, y: 0.31}
-      - {x: -0.48000002, y: 0.32}
-      - {x: -0.63, y: 0.32}
-      - {x: -0.64, y: 0.31}
-      - {x: -0.64, y: 0.32}
-      - {x: -0.7899999, y: 0.32}
-      - {x: -0.7999999, y: 0.31}
-      - {x: -0.7999999, y: 0.16}
-      - {x: 0.9599999, y: 0.16}
-    - - {x: -1.4399998, y: -0.53000003}
-      - {x: -0.8, y: -0.53000003}
-      - {x: -0.8, y: -0.48000002}
-      - {x: -1.4399998, y: -0.48000002}
-      - {x: -1.4399998, y: 0.16}
-      - {x: -0.8, y: 0.16}
-      - {x: -0.8, y: 0.32}
-      - {x: -0.95, y: 0.32}
-      - {x: -0.96000004, y: 0.31}
-      - {x: -0.96000004, y: 0.32}
-      - {x: -1.11, y: 0.32}
-      - {x: -1.1199999, y: 0.3100001}
-      - {x: -1.1199999, y: 0.32}
-      - {x: -1.27, y: 0.32}
-      - {x: -1.28, y: 0.3100001}
-      - {x: -1.28, y: 0.32}
-      - {x: -1.43, y: 0.32}
-      - {x: -1.4399999, y: 0.31}
-      - {x: -1.4399999, y: 0.29}
-      - {x: -1.4699999, y: 0.3}
-      - {x: -1.53, y: 0.3}
-      - {x: -1.5799998, y: 0.23}
-      - {x: -1.5799998, y: 0.1799999}
-      - {x: -1.5599998, y: 0.16}
-      - {x: -1.5999999, y: 0.16}
-      - {x: -1.5999999, y: 0.02}
-      - {x: -1.5799998, y: 0}
-      - {x: -1.5999999, y: 0}
-      - {x: -1.5999999, y: -0.14}
-      - {x: -1.5799998, y: -0.16}
-      - {x: -1.5999999, y: -0.16}
-      - {x: -1.5999999, y: -0.3}
-      - {x: -1.5799998, y: -0.32}
-      - {x: -1.5999999, y: -0.32}
-      - {x: -1.5999999, y: -0.46}
-      - {x: -1.5799998, y: -0.48000002}
-      - {x: -1.5999999, y: -0.48000002}
-      - {x: -1.5999999, y: -0.62}
-      - {x: -1.5699998, y: -0.64}
-      - {x: -1.4399998, y: -0.64}
-    - - {x: 1.12, y: -0.48000002}
-      - {x: 0.96000004, y: -0.48000002}
-      - {x: 0.96000004, y: -0.64}
-      - {x: 1.12, y: -0.64}
-    - - {x: 0.9599999, y: -0.48000002}
-      - {x: -0.7999999, y: -0.48000002}
-      - {x: -0.7999999, y: -0.53000003}
-      - {x: 0.9599999, y: -0.53000003}
+    - - {x: -1.4400015, y: -0.64001}
+      - {x: -1.4399782, y: -0.53000003}
+      - {x: 0.96000004, y: -0.53001744}
+      - {x: 0.9600116, y: -0.6399942}
+      - {x: 1.12, y: -0.6399826}
+      - {x: 1.1199826, y: -0.48000002}
+      - {x: -1.4399942, y: -0.4799959}
+      - {x: -1.4399824, y: 0.16}
+      - {x: 1.120004, y: 0.1599987}
+      - {x: 1.1199954, y: 0.32001}
+      - {x: 0.9699925, y: 0.3200061}
+      - {x: 0.9599846, y: 0.3100224}
+      - {x: 0.95997554, y: 0.3199996}
+      - {x: 0.8099963, y: 0.3199952}
+      - {x: 0.7999999, y: 0.3100515}
+      - {x: 0.7999825, y: 0.32}
+      - {x: 0.6499964, y: 0.3199952}
+      - {x: 0.64, y: 0.3100515}
+      - {x: 0.6399826, y: 0.32}
+      - {x: 0.4899964, y: 0.3199952}
+      - {x: 0.4799999, y: 0.3100515}
+      - {x: 0.4799825, y: 0.32}
+      - {x: 0.32999632, y: 0.3199952}
+      - {x: 0.32, y: 0.3100515}
+      - {x: 0.31998262, y: 0.32}
+      - {x: 0.1699963, y: 0.3199952}
+      - {x: 0.16, y: 0.3100515}
+      - {x: 0.1599826, y: 0.32}
+      - {x: 0.009996301, y: 0.3199952}
+      - {x: 0, y: 0.3100515}
+      - {x: -0.0000174, y: 0.32}
+      - {x: -0.15000351, y: 0.3199952}
+      - {x: -0.16, y: 0.3100515}
+      - {x: -0.1600174, y: 0.32}
+      - {x: -0.3100036, y: 0.3199952}
+      - {x: -0.32, y: 0.3100515}
+      - {x: -0.3200174, y: 0.32}
+      - {x: -0.4700036, y: 0.3199952}
+      - {x: -0.48000002, y: 0.3100515}
+      - {x: -0.4800174, y: 0.32}
+      - {x: -0.63000363, y: 0.3199952}
+      - {x: -0.64, y: 0.3100515}
+      - {x: -0.6400174, y: 0.32}
+      - {x: -0.79000354, y: 0.3199952}
+      - {x: -0.8, y: 0.3100514}
+      - {x: -0.8000174, y: 0.32}
+      - {x: -0.9500036, y: 0.3199952}
+      - {x: -0.96000004, y: 0.3100515}
+      - {x: -0.9600174, y: 0.32}
+      - {x: -1.1100036, y: 0.3199952}
+      - {x: -1.1199999, y: 0.3100516}
+      - {x: -1.1200173, y: 0.32}
+      - {x: -1.2700036, y: 0.3199952}
+      - {x: -1.28, y: 0.3100516}
+      - {x: -1.2800173, y: 0.32}
+      - {x: -1.4300035, y: 0.3199952}
+      - {x: -1.4399999, y: 0.3099928}
+      - {x: -1.4400251, y: 0.2900078}
+      - {x: -1.4700023, y: 0.3}
+      - {x: -1.5300053, y: 0.2999934}
+      - {x: -1.5799998, y: 0.2299958}
+      - {x: -1.579995, y: 0.1799963}
+      - {x: -1.5600514, y: 0.16}
+      - {x: -1.5999999, y: 0.1599826}
+      - {x: -1.5999951, y: 0.0199964}
+      - {x: -1.5800514, y: 0}
+      - {x: -1.5999999, y: -0.0000174}
+      - {x: -1.5999951, y: -0.1400036}
+      - {x: -1.5800514, y: -0.16}
+      - {x: -1.5999999, y: -0.1600174}
+      - {x: -1.5999951, y: -0.30000362}
+      - {x: -1.5800514, y: -0.32}
+      - {x: -1.5999999, y: -0.3200174}
+      - {x: -1.5999951, y: -0.4600036}
+      - {x: -1.5800418, y: -0.47999}
+      - {x: -1.6000099, y: -0.48000172}
+      - {x: -1.6000068, y: -0.6200069}
+      - {x: -1.5799994, y: -0.64001}
   m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.000005
 --- !u!251 &251889363032831972
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -1118,6 +1092,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1265,6 +1240,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1344,6 +1320,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1423,6 +1400,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1502,6 +1480,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1581,6 +1560,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1660,6 +1640,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1739,6 +1720,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1818,6 +1800,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1897,6 +1880,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1976,6 +1960,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2055,6 +2040,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2134,6 +2120,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2213,6 +2200,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2292,6 +2280,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2371,6 +2360,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2450,6 +2440,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2529,6 +2520,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2608,6 +2600,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2687,6 +2680,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2766,6 +2760,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2845,6 +2840,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2924,6 +2920,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3003,6 +3000,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3082,6 +3080,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3161,6 +3160,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3240,6 +3240,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

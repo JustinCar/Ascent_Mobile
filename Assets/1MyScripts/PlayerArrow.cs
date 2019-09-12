@@ -12,6 +12,7 @@ public class PlayerArrow : MonoBehaviour
 	
     LevelManager levelManager;
     public PlayerAudioManager audioManager;
+    public Animator anim;
 
     // Use this for initialization
     void Start()
@@ -36,7 +37,7 @@ public class PlayerArrow : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.tag);
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Ability") 
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Ability" || collision.gameObject.tag == "FX") 
         {
             return;
         }
@@ -49,9 +50,10 @@ public class PlayerArrow : MonoBehaviour
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(Random.Range(damageLowerBound, damageUpperBound), travelingLeft, false, 0);
 			Destroy(gameObject);
         }
-        else if (collision.gameObject.tag != "FX" && collision.gameObject.tag != "Player")
+        else
         {
-			Destroy(gameObject);
+            anim.enabled = true;
+			Destroy(gameObject,7);
         }
     }
 }

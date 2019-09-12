@@ -71,14 +71,17 @@ public class StyleChoice : MonoBehaviour
         {
             case style.BOW :
             SaveLoadManager.SetFightingStyle(0);
+            Debug.Log("FIGHTING STYLE = BOW");
             break;
 
             case style.MARTIAL :
             SaveLoadManager.SetFightingStyle(1);
+            Debug.Log("FIGHTING STYLE = MARTIAL");
             break;
 
             case style.SWORD :
             SaveLoadManager.SetFightingStyle(2);
+            Debug.Log("FIGHTING STYLE = SWORD");
             break;
         }
     }

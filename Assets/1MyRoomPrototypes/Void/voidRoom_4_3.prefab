@@ -328,6 +328,7 @@ TilemapRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -362,6 +363,8 @@ TilemapCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!50 &50638599070271594
 Rigidbody2D:
   serializedVersion: 4
@@ -403,87 +406,70 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 2113883504083360376}
     m_ColliderPaths:
-    - - X: -14399998
-        Y: 3200000
-      - X: -15499998
-        Y: 3200000
-      - X: -15999999
-        Y: 2699999
-      - X: -15999999
+    - - X: 11199971
         Y: 1600000
-      - X: -14399998
-        Y: 1600000
-    - - X: 11200000
-        Y: 2600000
-      - X: 10699999
+      - X: 11199994
+        Y: 2600006
+      - X: 10699987
         Y: 3200000
       - X: 9600000
-        Y: 3200000
-      - X: 9600000
+        Y: 3199971
+      - X: 9600029
         Y: 1600000
+    - - X: -14400027
+        Y: 1600000
+      - X: -14400027
+        Y: 3200000
+      - X: -15500004
+        Y: 3199992
+      - X: -15999999
+        Y: 2699987
+      - X: -15999970
+        Y: 1600000
+    - - X: -14400027
+        Y: -6400000
+      - X: -14399969
+        Y: -5300000
+      - X: 9600000
+        Y: -5300029
+      - X: 9600029
+        Y: -6400000
+      - X: 10700005
+        Y: -6399992
       - X: 11200000
-        Y: 1600000
-    - - X: -14399998
-        Y: -5300000
-      - X: -8000000
-        Y: -5300000
-      - X: -8000000
+        Y: -5899987
+      - X: 11199971
         Y: -4800000
       - X: -15999999
-        Y: -4800000
-      - X: -15999999
-        Y: -5899999
-      - X: -15499998
-        Y: -6400000
-      - X: -14399998
-        Y: -6400000
-    - - X: 9599999
-        Y: -4800000
-      - X: -7999999
-        Y: -4800000
-      - X: -7999999
-        Y: -5300000
-      - X: 9599999
-        Y: -5300000
-    - - X: 11200000
-        Y: -5899999
-      - X: 11200000
-        Y: -4800000
-      - X: 9600000
-        Y: -4800000
-      - X: 9600000
-        Y: -6400000
-      - X: 10699999
+        Y: -4800029
+      - X: -15999991
+        Y: -5900005
+      - X: -15499986
         Y: -6400000
   m_CompositePaths:
     m_Paths:
-    - - {x: -1.4399998, y: 0.32}
-      - {x: -1.5499998, y: 0.32}
-      - {x: -1.5999999, y: 0.2699999}
-      - {x: -1.5999999, y: 0.16}
-      - {x: -1.4399998, y: 0.16}
-    - - {x: 1.12, y: 0.26}
-      - {x: 1.0699999, y: 0.32}
-      - {x: 0.96000004, y: 0.32}
-      - {x: 0.96000004, y: 0.16}
-      - {x: 1.12, y: 0.16}
-    - - {x: -1.4399998, y: -0.53000003}
-      - {x: -0.8, y: -0.53000003}
-      - {x: -0.8, y: -0.48000002}
-      - {x: -1.5999999, y: -0.48000002}
-      - {x: -1.5999999, y: -0.5899999}
-      - {x: -1.5499998, y: -0.64}
-      - {x: -1.4399998, y: -0.64}
-    - - {x: 0.9599999, y: -0.48000002}
-      - {x: -0.7999999, y: -0.48000002}
-      - {x: -0.7999999, y: -0.53000003}
-      - {x: 0.9599999, y: -0.53000003}
-    - - {x: 1.12, y: -0.5899999}
-      - {x: 1.12, y: -0.48000002}
-      - {x: 0.96000004, y: -0.48000002}
-      - {x: 0.96000004, y: -0.64}
-      - {x: 1.0699999, y: -0.64}
+    - - {x: -1.4400057, y: 0.16}
+      - {x: -1.4400057, y: 0.32}
+      - {x: -1.550001, y: 0.3199984}
+      - {x: -1.5999999, y: 0.2699975}
+      - {x: -1.5999941, y: 0.16}
+    - - {x: 1.1199942, y: 0.16}
+      - {x: 1.1199988, y: 0.2600012}
+      - {x: 1.0699975, y: 0.32}
+      - {x: 0.96000004, y: 0.3199942}
+      - {x: 0.9600058, y: 0.16}
+    - - {x: -1.4400057, y: -0.64}
+      - {x: -1.439994, y: -0.53000003}
+      - {x: 0.96000004, y: -0.5300058}
+      - {x: 0.9600058, y: -0.64}
+      - {x: 1.0700011, y: -0.63999844}
+      - {x: 1.12, y: -0.58999753}
+      - {x: 1.1199942, y: -0.48000002}
+      - {x: -1.5999999, y: -0.4800058}
+      - {x: -1.5999984, y: -0.5900011}
+      - {x: -1.5499974, y: -0.64}
   m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.000005
 --- !u!251 &251635249796901328
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -622,6 +608,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -769,6 +756,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -848,6 +836,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -927,6 +916,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1006,6 +996,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1085,6 +1076,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1164,6 +1156,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1243,6 +1236,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1322,6 +1316,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1401,6 +1396,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1480,6 +1476,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1559,6 +1556,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

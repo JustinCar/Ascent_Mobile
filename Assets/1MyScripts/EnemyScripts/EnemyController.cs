@@ -272,7 +272,7 @@ public class EnemyController : MonoBehaviour {
 			return false;
 		}
 
-		void OnDrawGizmosSelected() 
+	void OnDrawGizmosSelected() 
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawLine(transform.position, new Vector3 (disengageDistanceX, transform.position.y, transform.position.z));

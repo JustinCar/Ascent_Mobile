@@ -11,10 +11,11 @@ public class EnemyAttack : MonoBehaviour {
     public int damageUpperBound; 
     public EnemyHealth enemyHealth;
     public EnemyController enemyCtrl;
-    public float attackCooldown; // The time between attacks
 
     LevelManager levelManager;
     public PlayerAudioManager audioManager;
+
+    public Animator anim;
 
     void Awake()
     {
@@ -37,15 +38,13 @@ public class EnemyAttack : MonoBehaviour {
         if (player.Length > 0 && enemyHealth.currentHealth > 0) 
         {
             player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound), enemyCtrl.playerIsLeft);
-            player[0].gameObject.GetComponent<PlayerController>().attacking = false;
-            player[0].gameObject.GetComponent<PlayerController>().attacked = false;
         }
     } 
 
     // Called from attack animation when attack has finished
     void attackFinished () 
     {
-        enemyCtrl.attacking = false;
+        anim.SetBool("isAttacking", false);
     }
     
     void OnDrawGizmosSelected() 
