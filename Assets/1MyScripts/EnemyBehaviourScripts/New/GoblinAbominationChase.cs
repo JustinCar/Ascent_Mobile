@@ -20,7 +20,7 @@ public class GoblinAbominationChase : StateMachineBehaviour
 
     public float attackRange;
     Transform attackPos;
-    EnemyAttack enemyAttack;
+    GoblinGruntAttack enemyAttack;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -29,7 +29,7 @@ public class GoblinAbominationChase : StateMachineBehaviour
         sprite = animator.gameObject;
         rigidBody = animator.gameObject.GetComponentInParent<Rigidbody2D>();
         health = animator.gameObject.GetComponentInParent<EnemyHealth>();
-        enemyAttack = animator.gameObject.GetComponent<EnemyAttack>();
+        enemyAttack = animator.gameObject.GetComponent<GoblinGruntAttack>();
         attackPos = animator.gameObject.transform.GetChild(0);
     }
 
@@ -62,7 +62,15 @@ public class GoblinAbominationChase : StateMachineBehaviour
                 animator.SetBool("isInRange", true);
             } 
 
-            if (Vector2.Distance(attackPos.transform.position, playerPos.position) < attackRange && enemyAttack.attackTimer <= 0) 
+            // Always prioritise belly smash
+            if (Vector2.Distance(attackPos.transform.position, playerPos.position) < attackRange && enemyAttack.bellySmashTimer <= 0
+            && !animator.GetBool("isAttacking"))
+            {
+                animator.SetBool("isSecondAttacking", true);
+                rigidBody.velocity = new Vector2(0,0);
+            }
+            if (Vector2.Distance(attackPos.transform.position, playerPos.position) < attackRange && enemyAttack.attackTimer <= 0
+            && !animator.GetBool("isSecondAttacking")) 
             {
                 animator.SetBool("isAttacking", true);
                 rigidBody.velocity = new Vector2(0,0);

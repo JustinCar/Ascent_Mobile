@@ -11,7 +11,6 @@ public class GoblinArcherAttack : MonoBehaviour {
     public int damageLowerBound;
     public int damageUpperBound; 
     public EnemyHealth enemyHealth;
-    public GoblinArcherController enemyCtrl;
 
 	public GameObject arrow;
 
@@ -21,17 +20,22 @@ public class GoblinArcherAttack : MonoBehaviour {
     public float attackTimer = 0; // Timer to track attack cooldown
 	public float attackCooldown; // The time between attacks
 
+    public float shootAttackTimer = 0; // Timer to track attack cooldown
+	public float shootAttackCooldown; // The time between attacks
+
     void Awake()
     {
         levelManager = GameObject.Find("Manager").GetComponent<LevelManager>();
         damageLowerBound =  (int)(damageLowerBound * (levelManager.floorNumber));
         damageUpperBound =  (int)(damageUpperBound * (levelManager.floorNumber));
         attackTimer = attackCooldown;
+        shootAttackTimer = shootAttackCooldown;
     }
 
     void Update()
     {
         attackTimer -= Time.deltaTime;
+        shootAttackTimer -= Time.deltaTime;
     }
 
     // Called from the attack animation 
@@ -40,7 +44,7 @@ public class GoblinArcherAttack : MonoBehaviour {
         Collider2D[] player = Physics2D.OverlapCircleAll(atkPos.position, atkRange, playerLayer);
         if (player.Length > 0 && enemyHealth.currentHealth > 0) 
         {
-            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound), enemyCtrl.playerIsLeft);
+            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound), enemyHealth.playerToLeft());
             player[0].gameObject.GetComponent<PlayerController>().attacking = false;
             player[0].gameObject.GetComponent<PlayerController>().attacked = false;
         }
@@ -54,7 +58,7 @@ public class GoblinArcherAttack : MonoBehaviour {
 		GameObject abilityInstance = Instantiate(arrow, atkPos.transform.position, arrow.transform.rotation) as GameObject;
 		Arrow arrowScript = abilityInstance.GetComponent<Arrow>();
 
-		if (enemyCtrl.facingLeft) 
+		if (enemyHealth.facingLeft) 
         {
 			arrowScript.travelingLeft = true;
             Quaternion target = Quaternion.Euler(0, 0, 45);
@@ -65,8 +69,15 @@ public class GoblinArcherAttack : MonoBehaviour {
     // Called from attack animation when attack has finished
     void attackFinished () 
     {
-        anim.SetBool("isAttacking", false);
-        attackTimer = attackCooldown;
+        if (anim.GetBool("isAttacking")) 
+        {
+            anim.SetBool("isAttacking", false);
+            attackTimer = attackCooldown;
+        } else if (anim.GetBool("isSecondAttacking")) 
+        {
+            anim.SetBool("isSecondAttacking", false);
+            shootAttackTimer = shootAttackCooldown;
+        }
     }
     
     void OnDrawGizmosSelected() 

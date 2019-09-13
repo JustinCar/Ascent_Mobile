@@ -109,6 +109,12 @@ public class EnemyHealth : MonoBehaviour {
 
         amount = (int) (amount * damageModifier); // Damage scales with the players damage modifier
 
+        if (!anim.GetBool("isChasing")) 
+        {
+            anim.SetBool("isChasing", true);
+        }
+        
+
         // Damage taken is doubled if poisened
         if (state.poisoned) 
         {
@@ -246,6 +252,8 @@ public class EnemyHealth : MonoBehaviour {
         spawnLoot();
 
         state.death();
+
+        canvas.enabled = false;
 
         gameObject.layer = 13; // Change the enemies layer to FX, so that player cant interact with it anymore
 

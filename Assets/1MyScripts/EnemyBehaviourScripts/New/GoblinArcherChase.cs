@@ -5,8 +5,6 @@ using UnityEngine;
 public class GoblinArcherChase : StateMachineBehaviour
 {
     private Transform playerPos;
-    public float speed;
-
 
     EnemyHealth health;
     bool stunned = false;
@@ -19,8 +17,9 @@ public class GoblinArcherChase : StateMachineBehaviour
 	public float disengageDistanceY; // The distance on the y axis before the enemy will stop chasing
 
     public float attackRange;
+    public float meleeAttackRange;
     Transform attackPos;
-    EnemyAttack enemyAttack;
+    GoblinArcherAttack enemyAttack;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -29,7 +28,7 @@ public class GoblinArcherChase : StateMachineBehaviour
         sprite = animator.gameObject;
         rigidBody = animator.gameObject.GetComponentInParent<Rigidbody2D>();
         health = animator.gameObject.GetComponentInParent<EnemyHealth>();
-        enemyAttack = animator.gameObject.GetComponent<EnemyAttack>();
+        enemyAttack = animator.gameObject.GetComponent<GoblinArcherAttack>();
         attackPos = animator.gameObject.transform.GetChild(0);
     }
 
@@ -53,18 +52,19 @@ public class GoblinArcherChase : StateMachineBehaviour
         if (!stunned) 
         {
 
-            if (Vector2.Distance(attackPos.transform.position, playerPos.position) > attackRange) 
+            if (Vector2.Distance(attackPos.transform.position, playerPos.position) < meleeAttackRange) 
             {
-                animator.transform.parent.transform.position = Vector2.MoveTowards(animator.transform.parent.transform.position, playerPos.position, speed * Time.deltaTime);	
-                animator.SetBool("isInRange", false);					
-            } else if (Vector2.Distance(attackPos.transform.position, playerPos.position) < attackRange) 
-            {
-                animator.SetBool("isInRange", true);
+
+                // Melee attack
+                if (enemyAttack.attackTimer <= 0) 
+                {
+                    animator.SetBool("isAttacking", true);
+                }
             } 
 
-            if (Vector2.Distance(attackPos.transform.position, playerPos.position) < attackRange && enemyAttack.attackTimer <= 0) 
+            if (Vector2.Distance(attackPos.transform.position, playerPos.position) < attackRange && enemyAttack.shootAttackTimer <= 0) 
             {
-                animator.SetBool("isAttacking", true);
+                animator.SetBool("isSecondAttacking", true);
                 rigidBody.velocity = new Vector2(0,0);
             }
 

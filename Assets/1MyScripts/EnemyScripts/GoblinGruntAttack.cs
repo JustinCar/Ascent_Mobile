@@ -17,7 +17,6 @@ public class GoblinGruntAttack : MonoBehaviour {
 	public float bellySmashKnockBackTime;
 	float bellySmashKnockBackTimer;
     public EnemyHealth enemyHealth;
-    public GoblinGruntController enemyCtrl;
 
 	bool bellySmashed = false;
 
@@ -32,6 +31,8 @@ public class GoblinGruntAttack : MonoBehaviour {
     public float attackTimer = 0; // Timer to track attack cooldown
 	public float attackCooldown; // The time between attacks
 
+    public float bellySmashTimer = 0; // Timer to track attack cooldown
+	public float bellySmashCooldown; // The time between attacks
 	void Start () 
 	{
 		playerRB = GameObject.Find("Player").GetComponent<Rigidbody2D>();
@@ -48,11 +49,14 @@ public class GoblinGruntAttack : MonoBehaviour {
         audioManager = GameObject.Find("Player").GetComponent<PlayerAudioManager>();
 
         attackTimer = attackCooldown;
+        bellySmashTimer = attackCooldown;
 	}
 
 	void Update () 
 	{	
         attackTimer -= Time.deltaTime;
+        bellySmashTimer -= Time.deltaTime;
+
 		if (bellySmashed) 
 		{
 			//playerRB = GameObject.Find("Player").GetComponent<Rigidbody2D>();
@@ -60,7 +64,7 @@ public class GoblinGruntAttack : MonoBehaviour {
 
 			bellySmashKnockBackTimer -= Time.deltaTime;
 
-			if (enemyCtrl.playerIsLeft) 
+			if (enemyHealth.playerToLeft()) 
 			{
             	playerRB.AddForce(new Vector2(-bellySmashAtkKnockPower, 10));
 			} else 
@@ -84,7 +88,7 @@ public class GoblinGruntAttack : MonoBehaviour {
         Collider2D[] player = Physics2D.OverlapCircleAll(normalAtkPos.position, normalAtkRange, playerLayer);
         if (player.Length > 0 && enemyHealth.currentHealth > 0) 
         {
-            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(normalDamageLowerBound, normalDamageUpperBound), enemyCtrl.playerIsLeft);
+            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(normalDamageLowerBound, normalDamageUpperBound), enemyHealth.playerToLeft());
             player[0].gameObject.GetComponent<PlayerController>().attacking = false;
             player[0].gameObject.GetComponent<PlayerController>().attacked = false;
         }
@@ -95,7 +99,7 @@ public class GoblinGruntAttack : MonoBehaviour {
         Collider2D[] player = Physics2D.OverlapCircleAll(bellySmashAtkPos.position, bellySmashAtkRange, playerLayer);
         if (player.Length > 0 && enemyHealth.currentHealth > 0) 
         {
-            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(bellySmashDamageLowerBound, bellySmashDamageUpperBound), enemyCtrl.playerIsLeft);
+            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(bellySmashDamageLowerBound, bellySmashDamageUpperBound), enemyHealth.playerToLeft());
             player[0].gameObject.GetComponent<PlayerController>().attacking = false;
             player[0].gameObject.GetComponent<PlayerController>().attacked = false;
 
@@ -106,8 +110,15 @@ public class GoblinGruntAttack : MonoBehaviour {
     // Called from attack animation when attack has finished
     void attackFinished () 
     {
-        anim.SetBool("isAttacking", false);
-        attackTimer = attackCooldown;
+        if (anim.GetBool("isAttacking")) 
+        {
+            anim.SetBool("isAttacking", false);
+            attackTimer = attackCooldown;
+        } else if (anim.GetBool("isSecondAttacking")) 
+        {
+            anim.SetBool("isSecondAttacking", false);
+            bellySmashTimer = bellySmashCooldown;
+        }
     }
     
     void OnDrawGizmosSelected() 
@@ -126,7 +137,7 @@ public class GoblinGruntAttack : MonoBehaviour {
     {
         if (Vector3.Distance(transform.position, playerRB.transform.position) < 3) 
         {
-            StartCoroutine(cameraShake.Shake(0.1f, 1.5f));
+            StartCoroutine(cameraShake.Shake(0.1f, 1f));
             audioManager.gruntFootStepsAudio();
         }
         
