@@ -22,6 +22,10 @@ public class LevelManager : MonoBehaviour
     public int floorNumber = 1;
     public int biome; // 1 == Desert, 2 == Forest, 3 == Ice, 4 == Void
 
+    public GameObject tundraParticleSystem;
+    public GameObject wildsParticleSystem;
+    public GameObject wastesParticleSystem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,18 +44,30 @@ public class LevelManager : MonoBehaviour
             case 1:
             floorNumberTxt.text = "FLOOR " + floorNumber + "\n" + "WASTES" + "\n" + "FIRE DAMAGE INCREASED" + "\n" + "ICE DAMAGE DECREASED";  
             floorNumberTxt.color = Color.red;  
+            tundraParticleSystem.SetActive(false);
+            wildsParticleSystem.SetActive(false);
+            wastesParticleSystem.SetActive(true);
             break;
             case 2:
             floorNumberTxt.text = "FLOOR " + floorNumber + "\n" + "WILDS" + "\n" + "POISON DAMAGE INCREASED" + "\n" + "VOID DAMAGE DECREASED";
             floorNumberTxt.color = Color.green;  
+            tundraParticleSystem.SetActive(false);
+            wildsParticleSystem.SetActive(true);
+            wastesParticleSystem.SetActive(false);
             break;
             case 3:
             floorNumberTxt.text = "FLOOR " + floorNumber + "\n" + "TUNDRA" + "\n" + "ICE DAMAGE INCREASED" + "\n" + "FIRE DAMAGE DECREASED";  
             floorNumberTxt.color = Color.cyan;
+            tundraParticleSystem.SetActive(true);
+            wildsParticleSystem.SetActive(false);
+            wastesParticleSystem.SetActive(false);
             break;
             case 4:
             floorNumberTxt.text = "FLOOR " + floorNumber + "\n" + "THE VOID" + "\n" + "VOID DAMAGE INCREASED" + "\n" + "POISON DAMAGE DECREASED";  
             floorNumberTxt.color = Color.magenta;
+            tundraParticleSystem.SetActive(false);
+            wildsParticleSystem.SetActive(false);
+            wastesParticleSystem.SetActive(false);
             break;
             default:
             floorNumberTxt.text = "biome error";  
@@ -98,18 +114,31 @@ public class LevelManager : MonoBehaviour
         {
             case 1:
             floorNumberTxt.text = "FLOOR " + floorNumber + "\n" + "WASTES" + "\n" + "FIRE DAMAGE INCREASED" + "\n" + "ICE DAMAGE DECREASED";  
+            floorNumberTxt.color = Color.red;  
+            tundraParticleSystem.SetActive(false);
+            wildsParticleSystem.SetActive(false);
+            wastesParticleSystem.SetActive(true);
             break;
             case 2:
             floorNumberTxt.text = "FLOOR " + floorNumber + "\n" + "WILDS" + "\n" + "POISON DAMAGE INCREASED" + "\n" + "VOID DAMAGE DECREASED";
             floorNumberTxt.color = Color.green;  
+            tundraParticleSystem.SetActive(false);
+            wildsParticleSystem.SetActive(true);
+            wastesParticleSystem.SetActive(false);
             break;
             case 3:
             floorNumberTxt.text = "FLOOR " + floorNumber + "\n" + "TUNDRA" + "\n" + "ICE DAMAGE INCREASED" + "\n" + "FIRE DAMAGE DECREASED";  
             floorNumberTxt.color = Color.cyan;
+            tundraParticleSystem.SetActive(true);
+            wildsParticleSystem.SetActive(false);
+            wastesParticleSystem.SetActive(false);
             break;
             case 4:
             floorNumberTxt.text = "FLOOR " + floorNumber + "\n" + "THE VOID" + "\n" + "VOID DAMAGE INCREASED" + "\n" + "POISON DAMAGE DECREASED";  
             floorNumberTxt.color = Color.magenta;
+            tundraParticleSystem.SetActive(false);
+            wildsParticleSystem.SetActive(false);
+            wastesParticleSystem.SetActive(false);
             break;
             default:
             floorNumberTxt.text = "biome error";  
@@ -142,18 +171,31 @@ public class LevelManager : MonoBehaviour
         {
             case 1:
             floorNumberTxt.text = "FLOOR " + floorNumber + "\n" + "WASTES" + "\n" + "FIRE DAMAGE INCREASED" + "\n" + "ICE DAMAGE DECREASED";  
+            floorNumberTxt.color = Color.red;  
+            tundraParticleSystem.SetActive(false);
+            wildsParticleSystem.SetActive(false);
+            wastesParticleSystem.SetActive(true);
             break;
             case 2:
             floorNumberTxt.text = "FLOOR " + floorNumber + "\n" + "WILDS" + "\n" + "POISON DAMAGE INCREASED" + "\n" + "VOID DAMAGE DECREASED";
             floorNumberTxt.color = Color.green;  
+            tundraParticleSystem.SetActive(false);
+            wildsParticleSystem.SetActive(true);
+            wastesParticleSystem.SetActive(false);
             break;
             case 3:
             floorNumberTxt.text = "FLOOR " + floorNumber + "\n" + "TUNDRA" + "\n" + "ICE DAMAGE INCREASED" + "\n" + "FIRE DAMAGE DECREASED";  
             floorNumberTxt.color = Color.cyan;
+            tundraParticleSystem.SetActive(true);
+            wildsParticleSystem.SetActive(false);
+            wastesParticleSystem.SetActive(false);
             break;
             case 4:
             floorNumberTxt.text = "FLOOR " + floorNumber + "\n" + "THE VOID" + "\n" + "VOID DAMAGE INCREASED" + "\n" + "POISON DAMAGE DECREASED";  
             floorNumberTxt.color = Color.magenta;
+            tundraParticleSystem.SetActive(false);
+            wildsParticleSystem.SetActive(false);
+            wastesParticleSystem.SetActive(false);
             break;
             default:
             floorNumberTxt.text = "biome error";  

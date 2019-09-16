@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SwapAbility : MonoBehaviour {
 
-	AbilityStats itemToBePickedUpStats;
+	public AbilityStats itemToBePickedUpStats;
 	public UseAbility abilitySlot;
 	public GameObject item;
 	public GameObject ability;
@@ -47,16 +47,34 @@ public class SwapAbility : MonoBehaviour {
 	{
 		abilityPanel.sprite = itemToBePickedUpStats.abilityIcon;
 
+		// Drop current item
 		if (abilitySlot.ability) 
 		{
 			GameObject instance = Instantiate (abilitySlot.ability.GetComponent<AbilityStats>().abilityItem, player.transform.position, Quaternion.identity) as GameObject;
 			AbilityStats instanceStats = instance.GetComponent<AbilityStats>();
 			instanceStats.newItem = false;
-            instanceStats = stats;
+
+            AbilityStats statsToDrop = abilitySlot.gameObject.GetComponent<AbilityStats>();
+
+			instanceStats.newItem = false;
+			instanceStats.abilityName = statsToDrop.abilityName;
+			instanceStats.damageLowerBound = statsToDrop.damageLowerBound;
+			instanceStats.damageUpperBound = statsToDrop.damageUpperBound;
+			instanceStats.manaCost = statsToDrop.manaCost;
+			instanceStats.coolDown = statsToDrop.coolDown;
+			instanceStats.specialEffectName = statsToDrop.specialEffectName;
+			instanceStats.specialEffectDamage = statsToDrop.specialEffectDamage;
+			instanceStats.specialEffectDuration = statsToDrop.specialEffectDuration;
+			instanceStats.specialEffectRepeat = statsToDrop.specialEffectRepeat;
+			instanceStats.abilityIcon = statsToDrop.abilityIcon;
+			instanceStats.abilityItem = statsToDrop.abilityItem;
+			instanceStats.rarity = statsToDrop.rarity;
+			
 		}
 
 		audioManager.pickupAudio();
 		
+		// pickup new item
 		abilitySlot.ability = ability;
 		AbilityStats instanceStats2 = abilitySlot.gameObject.GetComponent<AbilityStats>();
 
@@ -72,6 +90,7 @@ public class SwapAbility : MonoBehaviour {
 		instanceStats2.specialEffectRepeat = stats.specialEffectRepeat;
 		instanceStats2.abilityIcon = stats.abilityIcon;
 		instanceStats2.abilityItem = stats.abilityItem;
+		instanceStats2.rarity = stats.rarity;
 
 		abilitySlot.resetStats();
 		player.GetComponent<PlayerController>().enabled = true; // Enable movement and attacking

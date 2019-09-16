@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class AbilityOptionInfo : MonoBehaviour {
 
-	public UseAbility abilityScript;
 	public int abilitySlot;
 	AbilityStats[] scripts;
 	public AbilityStats stats;
@@ -17,6 +16,7 @@ public class AbilityOptionInfo : MonoBehaviour {
 	public Text specialEffectDamageTxt;
 	public Text specialEffectDurationTxt;
 	public Text specialEffectRepeatTxt;
+	public Text rarityTxt;
 	public Image icon;
 	public GameObject foreground;
 
@@ -41,6 +41,30 @@ public class AbilityOptionInfo : MonoBehaviour {
 				specialEffectDamageTxt.text = "" + stats.specialEffectDamage;
 				specialEffectDurationTxt.text = "" + stats.specialEffectDuration;
 				specialEffectRepeatTxt.text = "" + stats.specialEffectRepeat;
+
+				switch (stats.rarity)
+				{
+					case 1:
+						rarityTxt.text = "Common";
+						rarityTxt.color = Color.gray;
+						break;
+					case 2:
+						rarityTxt.text = "Uncommon";
+						rarityTxt.color = Color.green;
+						break;
+					case 3:
+						rarityTxt.text = "Rare";
+						rarityTxt.color = Color.blue;
+						break;
+					case 4:
+						rarityTxt.text = "Epic";
+						rarityTxt.color = Color.magenta;
+						break;
+					case 5:
+						rarityTxt.text = "legendary";
+						rarityTxt.color = Color.yellow;
+						break;
+				}
 				icon.sprite = stats.abilityIcon;				
 			}
 

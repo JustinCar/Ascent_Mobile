@@ -26,8 +26,10 @@ public class BowAttack : MonoBehaviour
 		if (plyerCtrl.facingLeft) 
         {
 			arrowScript.travelingLeft = true;
-            Quaternion target = Quaternion.Euler(0, 0, 180);
-			abilityInstance.transform.rotation = Quaternion.Slerp(target, target, Time.deltaTime);
+
+            Vector3 scale = arrowScript.transform.localScale;
+            scale.x *= -1;
+            arrowScript.transform.localScale = scale;
         }
     }
 }

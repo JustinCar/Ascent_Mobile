@@ -533,7 +533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b14053c4e62f85448b13c159e76906d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityScript: {fileID: 0}
   abilitySlot: 0
   stats: {fileID: 0}
   abilityNameTxt: {fileID: 114991665296383456}
@@ -544,6 +543,7 @@ MonoBehaviour:
   specialEffectDamageTxt: {fileID: 114965391414235308}
   specialEffectDurationTxt: {fileID: 114302405839874912}
   specialEffectRepeatTxt: {fileID: 114946190727448736}
+  rarityTxt: {fileID: 114260981491528232}
   icon: {fileID: 114390395273138378}
   foreground: {fileID: 1040409277754698}
 --- !u!1 &1121772304375304
@@ -773,6 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a74da75dbe9e3b40a9d6d89265fdcbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemToBePickedUpStats: {fileID: 0}
   abilitySlot: {fileID: 0}
   item: {fileID: 0}
   ability: {fileID: 0}
@@ -926,7 +927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b14053c4e62f85448b13c159e76906d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityScript: {fileID: 0}
   abilitySlot: 1
   stats: {fileID: 0}
   abilityNameTxt: {fileID: 114461060129537116}
@@ -937,6 +937,7 @@ MonoBehaviour:
   specialEffectDamageTxt: {fileID: 114476286306373306}
   specialEffectDurationTxt: {fileID: 114248713661273114}
   specialEffectRepeatTxt: {fileID: 114312518010645824}
+  rarityTxt: {fileID: 114955683703675640}
   icon: {fileID: 114737432290460948}
   foreground: {fileID: 1350515876917288}
 --- !u!1 &1326109330849084
@@ -1647,6 +1648,7 @@ RectTransform:
   - {fileID: 224623944877325310}
   - {fileID: 224893763654628294}
   - {fileID: 224973929461071686}
+  - {fileID: 5669809821279183598}
   m_Father: {fileID: 224808638985937704}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1667,7 +1669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b14053c4e62f85448b13c159e76906d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityScript: {fileID: 0}
   abilitySlot: 2
   stats: {fileID: 0}
   abilityNameTxt: {fileID: 114931544976697652}
@@ -1678,6 +1679,7 @@ MonoBehaviour:
   specialEffectDamageTxt: {fileID: 114609551283885916}
   specialEffectDurationTxt: {fileID: 114447548917403108}
   specialEffectRepeatTxt: {fileID: 114664039619255672}
+  rarityTxt: {fileID: 3421399341314317569}
   icon: {fileID: 114314209761584620}
   foreground: {fileID: 0}
 --- !u!1 &1430729374043530
@@ -1692,7 +1694,7 @@ GameObject:
   - component: {fileID: 222020170652856606}
   - component: {fileID: 114955683703675640}
   m_Layer: 5
-  m_Name: ButtonTxt
+  m_Name: RarityTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1758,7 +1760,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Right MB
+  m_Text: Rarity
 --- !u!1 &1440294896990716
 GameObject:
   m_ObjectHideFlags: 0
@@ -2892,7 +2894,7 @@ GameObject:
   - component: {fileID: 222159098239265866}
   - component: {fileID: 114260981491528232}
   m_Layer: 5
-  m_Name: ButtonTxt
+  m_Name: RarityTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2958,7 +2960,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Left MB
+  m_Text: Rarity
 --- !u!1 &1599995319949094
 GameObject:
   m_ObjectHideFlags: 0
@@ -4519,6 +4521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a74da75dbe9e3b40a9d6d89265fdcbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemToBePickedUpStats: {fileID: 0}
   abilitySlot: {fileID: 0}
   item: {fileID: 0}
   ability: {fileID: 0}
@@ -5080,6 +5083,85 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: MANA
+--- !u!1 &3581821668717243643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5669809821279183598}
+  - component: {fileID: 976898618349618848}
+  - component: {fileID: 3421399341314317569}
+  m_Layer: 5
+  m_Name: RarityTxt (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5669809821279183598
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581821668717243643}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.72187483, y: 0.83124983, z: 1}
+  m_Children: []
+  m_Father: {fileID: 224146579882440708}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 130, y: 55.000027}
+  m_SizeDelta: {x: 358.2, y: 52.6}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &976898618349618848
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581821668717243643}
+  m_CullTransparentMesh: 0
+--- !u!114 &3421399341314317569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3581821668717243643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.8835707, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: bf10455662170a841b4e2af7b1ec722d, type: 3}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 100
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Rarity
 --- !u!1 &6982938648927009151
 GameObject:
   m_ObjectHideFlags: 0
@@ -5166,26 +5248,6 @@ PrefabInstance:
     - target: {fileID: 1449715469052268, guid: f6b86c6a453ec4449bbc80edf10e7fb5, type: 3}
       propertyPath: m_Name
       value: Close Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 114366546916421816, guid: f6b86c6a453ec4449bbc80edf10e7fb5,
-        type: 3}
-      propertyPath: m_TargetGraphic
-      value: 
-      objectReference: {fileID: 2972308141539532790}
-    - target: {fileID: 114366546916421816, guid: f6b86c6a453ec4449bbc80edf10e7fb5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 6801394283641115516}
-    - target: {fileID: 114366546916421816, guid: f6b86c6a453ec4449bbc80edf10e7fb5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: close
-      objectReference: {fileID: 0}
-    - target: {fileID: 114366546916421816, guid: f6b86c6a453ec4449bbc80edf10e7fb5,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224705991715667292, guid: f6b86c6a453ec4449bbc80edf10e7fb5,
         type: 3}
@@ -5301,6 +5363,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114366546916421816, guid: f6b86c6a453ec4449bbc80edf10e7fb5,
+        type: 3}
+      propertyPath: m_TargetGraphic
+      value: 
+      objectReference: {fileID: 2972308141539532790}
+    - target: {fileID: 114366546916421816, guid: f6b86c6a453ec4449bbc80edf10e7fb5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6801394283641115516}
+    - target: {fileID: 114366546916421816, guid: f6b86c6a453ec4449bbc80edf10e7fb5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: close
+      objectReference: {fileID: 0}
+    - target: {fileID: 114366546916421816, guid: f6b86c6a453ec4449bbc80edf10e7fb5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6b86c6a453ec4449bbc80edf10e7fb5, type: 3}

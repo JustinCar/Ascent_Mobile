@@ -13,6 +13,8 @@ public class Arrow : MonoBehaviour {
     LevelManager levelManager;
     public PlayerAudioManager audioManager;
 
+
+
     // Use this for initialization
     void Start()
     {
@@ -26,14 +28,14 @@ public class Arrow : MonoBehaviour {
 
 	void Update () 
 	{	
-		if (!travelingLeft) 
-		{
-			thisRigidbody.velocity = new Vector2 (speed * 1, thisRigidbody.velocity.y);
-		} else 
-		{
-			thisRigidbody.velocity = new Vector2 (speed * -1, thisRigidbody.velocity.y);
-		}
 
+        if (!travelingLeft) 
+        {
+            thisRigidbody.velocity = new Vector2 (speed * 1, thisRigidbody.velocity.y);
+        } else 
+        {
+            thisRigidbody.velocity = new Vector2 (speed * -1, thisRigidbody.velocity.y);
+        }
 	}
 
     void OnCollisionEnter2D(Collision2D collision)
