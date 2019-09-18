@@ -41,6 +41,8 @@ public class EnemyHealth : MonoBehaviour {
     public GameObject player;
     public GameObject sprite;
 
+    public List<GameObject> bloodSplatters;
+
     void Awake()
     {
         levelManager = GameObject.Find("Manager").GetComponent<LevelManager>();
@@ -249,6 +251,7 @@ public class EnemyHealth : MonoBehaviour {
         // The enemy is dead.
         isDead = true;
 
+        Instantiate(bloodSplatters[Random.Range(0, bloodSplatters.Count)], transform.position, transform.rotation);
         spawnLoot();
 
         state.death();
