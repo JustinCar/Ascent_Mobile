@@ -663,6 +663,7 @@ Transform:
   - {fileID: 4109650094943088}
   - {fileID: 4723869862702860}
   - {fileID: 8824094007391412399}
+  - {fileID: 3439342256416545910}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -706,13 +707,9 @@ MonoBehaviour:
   move: -1
   player: {fileID: 0}
   sprite: {fileID: 0}
-  bloodSplatters:
-  - {fileID: 6916503601140794751, guid: ed46b1e552514ea4e9feec146ae7052c, type: 3}
-  - {fileID: 8685900158242029028, guid: 3c5d48486dc6cb74aa137607e5cdc949, type: 3}
-  - {fileID: 7302969943222907364, guid: eaadacb2b6005a34a82a97121682acf0, type: 3}
-  - {fileID: 8664714372997468450, guid: 458467c8b8318e049b9e9f7c1a05d82c, type: 3}
-  - {fileID: 8412081782089554590, guid: d97ebd171fe4a4047935b84564c6340c, type: 3}
-  - {fileID: 6456066797074560547, guid: 67c142ee9d64c1f4f9efbb701fe816c7, type: 3}
+  bloodSpray: {fileID: 4423819921517255203, guid: f967c228a109eb94bae7b5cf5bff8c9e,
+    type: 3}
+  bloodSprayPos: {fileID: 3439342256416545910}
 --- !u!114 &114347806750236338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3755,6 +3752,36 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6295636593273932216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3439342256416545910}
+  m_Layer: 8
+  m_Name: SprayPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3439342256416545910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6295636593273932216}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.181, y: 0.074, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4739298275608622}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3801766668642073720
 PrefabInstance:
   m_ObjectHideFlags: 0

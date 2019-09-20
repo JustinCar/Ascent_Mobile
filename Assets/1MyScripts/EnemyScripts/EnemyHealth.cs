@@ -41,7 +41,8 @@ public class EnemyHealth : MonoBehaviour {
     public GameObject player;
     public GameObject sprite;
 
-    public List<GameObject> bloodSplatters;
+    public ParticleSystem bloodSpray;
+    public Transform bloodSprayPos;
 
     void Awake()
     {
@@ -108,6 +109,8 @@ public class EnemyHealth : MonoBehaviour {
             // ... no need to take damage so exit the function.
             return;
         }
+
+        Instantiate(bloodSpray, bloodSprayPos.transform.position, bloodSpray.transform.rotation);
 
         amount = (int) (amount * damageModifier); // Damage scales with the players damage modifier
 
@@ -251,7 +254,6 @@ public class EnemyHealth : MonoBehaviour {
         // The enemy is dead.
         isDead = true;
 
-        Instantiate(bloodSplatters[Random.Range(0, bloodSplatters.Count)], transform.position, transform.rotation);
         spawnLoot();
 
         state.death();
