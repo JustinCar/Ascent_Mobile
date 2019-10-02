@@ -14,6 +14,7 @@ public class EnemyState : MonoBehaviour {
 	public GameObject freezingFX;
 	public GameObject poisonFX;
 	public GameObject voidFX;
+    public GameObject castFX;
 
 	LevelManager manager;
 
@@ -75,6 +76,7 @@ public class EnemyState : MonoBehaviour {
 	public void death () 
 	{
 		Debug.Log("HIDING EFFECTS");
+        isDead = true;
 		burning = false;
 		burningFX.SetActive(false);
 		frozen = false;
@@ -83,5 +85,12 @@ public class EnemyState : MonoBehaviour {
 		poisonFX.SetActive(false);
 		tentacles = false;
 		voidFX.SetActive(false);
+
+        if (castFX)
+        {
+            castFX.SetActive(false);
+        }
 	}
+
+
 }
