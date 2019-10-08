@@ -285,10 +285,51 @@ public static class SaveLoadManager {
         }
     }
 
+
+    public static void SetFirstRun(bool firstRun)
+    {
+
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream stream = new FileStream(Application.persistentDataPath + "/firstrun.sav", FileMode.Create);
+
+        FirstRunData data = new FirstRunData(firstRun);
+
+        bf.Serialize(stream, data);
+        stream.Close();
+    }  
+
+    public static bool getFirstRun()
+    {
+        if (File.Exists(Application.persistentDataPath + "/firstrun.sav"))
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream stream = new FileStream(Application.persistentDataPath + "/firstrun.sav", FileMode.Open);
+
+            FirstRunData data = bf.Deserialize(stream) as FirstRunData;
+
+            stream.Close();
+            return data.firstRun;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 }
 
 
+[Serializable]
+public class FirstRunData
+{
+    public bool firstRun = true;
 
+    public FirstRunData(bool FirstRunVal)
+    {
+        firstRun = FirstRunVal;
+    }
+
+}
 
 [Serializable]
 public class FightingStyleData

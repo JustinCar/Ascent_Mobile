@@ -17,11 +17,17 @@ namespace Michsky.UI.Dark
 
         void Start()
         {
+            Debug.Log("FIRST RUN: " + SaveLoadManager.getFirstRun());
+
             if (disableSplashScreen == true)
             {
+
                 splashScreen.SetActive(true);
                 splashScreenAnimator = splashScreen.GetComponent<Animator>();
                 splashScreenAnimator.Play("Splash Out");
+        
+                
+
                 mainPanels.SetActive(true);
 
                 mainPanelsAnimator = mainPanels.GetComponent<Animator>();
@@ -32,7 +38,9 @@ namespace Michsky.UI.Dark
 
             else
             {
+
                 splashScreen.SetActive(true);
+                
                 // mainPanels.SetActive(false);
             }
         }

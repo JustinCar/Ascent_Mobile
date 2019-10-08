@@ -11,6 +11,7 @@ public class StyleChoice : MonoBehaviour
     public Button swordBtn;
 
     style fightingStyle;
+    public  Michsky.UI.Dark.SplashScreenManager splashScreen;
 
 
 
@@ -67,6 +68,8 @@ public class StyleChoice : MonoBehaviour
 
     public void saveStyle() 
     {
+        //SaveLoadManager.SetFirstRun(false);
+        splashScreen.disableSplashScreen = true;
         switch (fightingStyle) 
         {
             case style.BOW :
