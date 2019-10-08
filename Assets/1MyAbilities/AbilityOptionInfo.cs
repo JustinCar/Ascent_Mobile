@@ -54,7 +54,7 @@ public class AbilityOptionInfo : MonoBehaviour {
 						break;
 					case 3:
 						rarityTxt.text = "Rare";
-						rarityTxt.color = Color.blue;
+						rarityTxt.color = Color.cyan;
 						break;
 					case 4:
 						rarityTxt.text = "Epic";

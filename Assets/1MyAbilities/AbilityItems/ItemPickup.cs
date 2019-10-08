@@ -108,6 +108,30 @@ public class ItemPickup : MonoBehaviour {
 					info.specialEffectDurationTxt.text = "" + stats.specialEffectDuration;
 					info.specialEffectRepeatTxt.text = "" + stats.specialEffectRepeat;
 					info.icon.sprite = stats.abilityIcon;
+
+					switch (stats.rarity)
+					{
+						case 1:
+							info.rarityTxt.text = "Common";
+							info.rarityTxt.color = Color.gray;
+							break;
+						case 2:
+							info.rarityTxt.text = "Uncommon";
+							info.rarityTxt.color = Color.green;
+							break;
+						case 3:
+							info.rarityTxt.text = "Rare";
+							info.rarityTxt.color = Color.cyan;
+							break;
+						case 4:
+							info.rarityTxt.text = "Epic";
+							info.rarityTxt.color = Color.magenta;
+							break;
+						case 5:
+							info.rarityTxt.text = "legendary";
+							info.rarityTxt.color = Color.yellow;
+							break;
+					}
 				}	
 			}
 
