@@ -5,12 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-    void Start () 
-    {
-    }
+    public GameObject loadScreen;
     public void PlayGame()
     {
-        SceneManager.LoadScene("LevelGenerationTest");
+        //SceneManager.LoadScene("LevelGenerationTest");
+
+        StartCoroutine(LoadAsynchronously());
+    }
+
+    IEnumerator LoadAsynchronously() 
+    {
+        loadScreen.SetActive(true);
+        AsyncOperation operation = SceneManager.LoadSceneAsync("LevelGenerationTest");
+        
+
+        yield return null;
     }
 
     public void QuitGame()

@@ -17,15 +17,14 @@ namespace Michsky.UI.Dark
 
         void Start()
         {
-            Debug.Log("FIRST RUN: " + SaveLoadManager.getFirstRun());
-
-            if (disableSplashScreen == true)
+            if (!GameObject.FindGameObjectWithTag("gamejuststarted").GetComponent<GameJustStarted>().justStarted) 
             {
 
-                splashScreen.SetActive(true);
-                splashScreenAnimator = splashScreen.GetComponent<Animator>();
-                splashScreenAnimator.Play("Splash Out");
-        
+                //splashScreen.SetActive(true);
+                //splashScreenAnimator = splashScreen.GetComponent<Animator>();
+                //splashScreenAnimator.Play("Splash Out");
+                //Debug.Log("SPLASH SCREEN DISABLED");
+                splashScreen.SetActive(false);
                 
 
                 mainPanels.SetActive(true);
@@ -35,7 +34,6 @@ namespace Michsky.UI.Dark
                 homePanelAnimator = homePanel.GetComponent<Animator>();
                 homePanelAnimator.Play("Panel In");
             }
-
             else
             {
 
