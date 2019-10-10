@@ -31,6 +31,8 @@ public class PlayerHealth : MonoBehaviour {
 
     DebugInfo debugInfo;   
 
+    public LevelManager levelManager;
+
 
     void Awake()
     {
@@ -161,6 +163,7 @@ public class PlayerHealth : MonoBehaviour {
         anim.SetTrigger("Dead");
 
         SaveLoadManager.SetEssence(GameObject.Find("EssenceBackground").GetComponent<EssenceManager>().essence);
+        SaveLoadManager.SetHighestFloor(levelManager.floorNumber);
         
         // Turn off the movement and shooting scripts.
         playerController.enabled = false;

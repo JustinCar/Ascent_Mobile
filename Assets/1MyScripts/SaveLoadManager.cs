@@ -286,33 +286,33 @@ public static class SaveLoadManager {
     }
 
 
-    public static void SetFirstRun(bool firstRun)
+    public static void SetHighestFloor(int highestFloor)
     {
 
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream stream = new FileStream(Application.persistentDataPath + "/firstrun.sav", FileMode.Create);
+        FileStream stream = new FileStream(Application.persistentDataPath + "/highestFloor.sav", FileMode.Create);
 
-        FirstRunData data = new FirstRunData(firstRun);
+        HighestFloorData data = new HighestFloorData(highestFloor);
 
         bf.Serialize(stream, data);
         stream.Close();
     }  
 
-    public static bool getFirstRun()
+    public static int getHighestFloor()
     {
-        if (File.Exists(Application.persistentDataPath + "/firstrun.sav"))
+        if (File.Exists(Application.persistentDataPath + "/highestFloor.sav"))
         {
             BinaryFormatter bf = new BinaryFormatter();
-            FileStream stream = new FileStream(Application.persistentDataPath + "/firstrun.sav", FileMode.Open);
+            FileStream stream = new FileStream(Application.persistentDataPath + "/highestFloor.sav", FileMode.Open);
 
-            FirstRunData data = bf.Deserialize(stream) as FirstRunData;
+            HighestFloorData data = bf.Deserialize(stream) as HighestFloorData;
 
             stream.Close();
-            return data.firstRun;
+            return data.highestFloor;
         }
         else
         {
-            return false;
+            return 0;
         }
     }
 
@@ -320,13 +320,13 @@ public static class SaveLoadManager {
 
 
 [Serializable]
-public class FirstRunData
+public class HighestFloorData
 {
-    public bool firstRun = true;
+    public int highestFloor;
 
-    public FirstRunData(bool FirstRunVal)
+    public HighestFloorData(int highestFloorVal)
     {
-        firstRun = FirstRunVal;
+        highestFloor = highestFloorVal;
     }
 
 }
