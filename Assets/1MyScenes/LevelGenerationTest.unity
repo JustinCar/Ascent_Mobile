@@ -20726,6 +20726,7 @@ GameObject:
   - component: {fileID: 781778231}
   - component: {fileID: 781778230}
   - component: {fileID: 781778229}
+  - component: {fileID: 781778234}
   m_Layer: 5
   m_Name: RMBAbilityButton
   m_TagString: Untagged
@@ -20894,6 +20895,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781778227}
   m_CullTransparentMesh: 0
+--- !u!114 &781778234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781778227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b80b401c26b3248b192bcfdb234b9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: 3b5395abc17f33f4a941a4c9e0c91e28, type: 3}
+  clickSound: {fileID: 8300000, guid: dc682e1f543c77847b62a1aceb8e0a0f, type: 3}
+  notificationSound: {fileID: 0}
+  enableHoverSound: 1
+  enableClickSound: 1
+  isNotification: 0
 --- !u!1 &788114714
 GameObject:
   m_ObjectHideFlags: 0
@@ -26215,6 +26234,7 @@ GameObject:
   - component: {fileID: 980798483}
   - component: {fileID: 980798482}
   - component: {fileID: 980798481}
+  - component: {fileID: 980798485}
   m_Layer: 5
   m_Name: RMBAbilityButton
   m_TagString: Untagged
@@ -26366,6 +26386,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980798479}
   m_CullTransparentMesh: 0
+--- !u!114 &980798485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980798479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b80b401c26b3248b192bcfdb234b9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: 3b5395abc17f33f4a941a4c9e0c91e28, type: 3}
+  clickSound: {fileID: 8300000, guid: dc682e1f543c77847b62a1aceb8e0a0f, type: 3}
+  notificationSound: {fileID: 0}
+  enableHoverSound: 1
+  enableClickSound: 1
+  isNotification: 0
 --- !u!1 &1031406652
 GameObject:
   m_ObjectHideFlags: 0
@@ -27628,7 +27666,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1675837604}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1900417382}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
@@ -33346,6 +33384,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4589401259136529166}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1900417382 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1606710390373318, guid: 29f786b1049aa8d4083567f1da7d6587,
+    type: 3}
+  m_PrefabInstance: {fileID: 1675837604}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1955619911
 GameObject:
   m_ObjectHideFlags: 0
@@ -34758,6 +34802,11 @@ PrefabInstance:
       propertyPath: wastesParticleSystem
       value: 
       objectReference: {fileID: 179680555}
+    - target: {fileID: 4877165776022232534, guid: 5a3fcca2f1a82344dbf050506fd5dbeb,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1900417382}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a3fcca2f1a82344dbf050506fd5dbeb, type: 3}
 --- !u!1001 &6387153126160151991

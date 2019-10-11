@@ -66,7 +66,7 @@ public class PlayerArrow : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.tag);
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Ability" || collision.gameObject.tag == "FX") 
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Ability" || collision.gameObject.tag == "FX" || collided) 
         {
             return;
         }

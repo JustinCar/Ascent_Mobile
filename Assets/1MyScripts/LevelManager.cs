@@ -26,6 +26,8 @@ public class LevelManager : MonoBehaviour
     public GameObject wildsParticleSystem;
     public GameObject wastesParticleSystem;
 
+    public GameObject cam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +87,7 @@ public class LevelManager : MonoBehaviour
     public void setStartPos() 
     {
         player.transform.position = generatorScript.startRoom.transform.position;
+        cam.transform.position = player.transform.position;
     }
 
     // Level completed, new level is generated

@@ -640,6 +640,7 @@ GameObject:
   - component: {fileID: 114833659469719626}
   - component: {fileID: 114648713583011772}
   - component: {fileID: 114467972626237636}
+  - component: {fileID: 5127512288977900547}
   m_Layer: 5
   m_Name: LMBAbilityButton
   m_TagString: Untagged
@@ -782,6 +783,24 @@ MonoBehaviour:
   abilityMenu: {fileID: 0}
   player: {fileID: 0}
   audioManager: {fileID: 0}
+--- !u!114 &5127512288977900547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1211230677251758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b80b401c26b3248b192bcfdb234b9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: 3b5395abc17f33f4a941a4c9e0c91e28, type: 3}
+  clickSound: {fileID: 8300000, guid: dc682e1f543c77847b62a1aceb8e0a0f, type: 3}
+  notificationSound: {fileID: 0}
+  enableHoverSound: 1
+  enableClickSound: 1
+  isNotification: 0
 --- !u!1 &1229447306403834
 GameObject:
   m_ObjectHideFlags: 0
@@ -4388,6 +4407,7 @@ GameObject:
   - component: {fileID: 114439847577265670}
   - component: {fileID: 114014596406816508}
   - component: {fileID: 114871820791754304}
+  - component: {fileID: 1140135766444956337}
   m_Layer: 5
   m_Name: RMBAbilityButton
   m_TagString: Untagged
@@ -4530,6 +4550,24 @@ MonoBehaviour:
   abilityMenu: {fileID: 0}
   player: {fileID: 0}
   audioManager: {fileID: 0}
+--- !u!114 &1140135766444956337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786364908301600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86b80b401c26b3248b192bcfdb234b9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 8300000, guid: 3b5395abc17f33f4a941a4c9e0c91e28, type: 3}
+  clickSound: {fileID: 8300000, guid: dc682e1f543c77847b62a1aceb8e0a0f, type: 3}
+  notificationSound: {fileID: 0}
+  enableHoverSound: 1
+  enableClickSound: 1
+  isNotification: 0
 --- !u!1 &1826706179186754
 GameObject:
   m_ObjectHideFlags: 0

@@ -242,6 +242,7 @@ public class EnemyHealth : MonoBehaviour {
 
     void showFloatingText(int amount, bool toRight, bool shouldStun)
     {
+        Debug.Log("TEXT INSTANTIATED");
         Vector3 pos = gameObject.GetComponentInChildren<Canvas>().transform.position;
         GameObject text = Instantiate(floatingText, pos, Quaternion.identity, transform) as GameObject;
         text.gameObject.transform.SetParent(gameObject.GetComponentInChildren<Canvas>().transform);
