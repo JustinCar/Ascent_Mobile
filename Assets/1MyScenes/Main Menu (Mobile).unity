@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1027,6 +1027,7 @@ GameObject:
   - component: {fileID: 114261264}
   - component: {fileID: 114261265}
   - component: {fileID: 114261266}
+  - component: {fileID: 114261267}
   - component: {fileID: 114261268}
   m_Layer: 5
   m_Name: Home
@@ -1076,6 +1077,25 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!95 &114261267
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114261263}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: debec28adfc9b864f85f71a45db8e450, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114261268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5596,7 +5616,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1074, y: 207}
+  m_AnchoredPosition: {x: -925, y: 207}
   m_SizeDelta: {x: 850, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &506870671
@@ -5648,8 +5668,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 15.8
-  m_fontSizeBase: 15.8
+  m_fontSize: 9.3
+  m_fontSizeBase: 9.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9234,7 +9254,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 882695517}
   m_TextComponent: {fileID: 1174274578}
   m_materialReferenceIndex: 2
@@ -10676,7 +10696,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: value
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1303a6dde387e694f8da16b62d2cf437, type: 2}
   m_sharedMaterial: {fileID: 21513131424051102, guid: 1303a6dde387e694f8da16b62d2cf437,
@@ -10746,7 +10766,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 591.57806, w: 0}
   m_textInfo:
     textComponent: {fileID: 1091543220}
-    characterCount: 5
+    characterCount: 1
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -10781,7 +10801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63449fbbb4d12614a808efcc2fe1d30b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
+  text: {fileID: 1091543220}
 --- !u!222 &1091543222
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14581,7 +14601,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 1381770553}
   m_TextComponent: {fileID: 1946784948}
   m_materialReferenceIndex: 2
@@ -16396,8 +16416,7 @@ MonoBehaviour:
   m_text: 'When an enemy is killed, their essence is absorbed
 
 
-    Upon death, you awake at the town, where you can invest the essence you harvested
-    into your stats
+    In the main menu you can invest the essence you harvested into your stats
 
 
     The cost to increase a stat will scale with its modifier'
@@ -16470,10 +16489,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1629793297}
-    characterCount: 207
+    characterCount: 183
     spriteCount: 0
-    spaceCount: 39
-    wordCount: 38
+    spaceCount: 35
+    wordCount: 34
     linkCount: 0
     lineCount: 6
     pageCount: 1
@@ -16705,12 +16724,12 @@ PrefabInstance:
     - target: {fileID: 224285257788118906, guid: 738986601f3c7024eba34825abbf8078,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1678
+      value: -241
       objectReference: {fileID: 0}
     - target: {fileID: 224285257788118906, guid: 738986601f3c7024eba34825abbf8078,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -414
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224285257788118906, guid: 738986601f3c7024eba34825abbf8078,
         type: 3}
@@ -16725,22 +16744,22 @@ PrefabInstance:
     - target: {fileID: 224285257788118906, guid: 738986601f3c7024eba34825abbf8078,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224285257788118906, guid: 738986601f3c7024eba34825abbf8078,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0.425
       objectReference: {fileID: 0}
     - target: {fileID: 224285257788118906, guid: 738986601f3c7024eba34825abbf8078,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224285257788118906, guid: 738986601f3c7024eba34825abbf8078,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.425
       objectReference: {fileID: 0}
     - target: {fileID: 224285257788118906, guid: 738986601f3c7024eba34825abbf8078,
         type: 3}
@@ -18996,7 +19015,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817327177}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -24810,23 +24829,23 @@ PrefabInstance:
       propertyPath: m_Text
       value: +198%
       objectReference: {fileID: 0}
+    - target: {fileID: 1971459771715284, guid: 0b734904f6c60f744adf58bff67bd097, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114324801588507242, guid: 0b734904f6c60f744adf58bff67bd097,
         type: 3}
       propertyPath: m_Text
       value: 862
       objectReference: {fileID: 0}
-    - target: {fileID: 114148413280795098, guid: 0b734904f6c60f744adf58bff67bd097,
-        type: 3}
-      propertyPath: m_Text
-      value: 82
-      objectReference: {fileID: 0}
     - target: {fileID: 1407399200905906, guid: 0b734904f6c60f744adf58bff67bd097, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1971459771715284, guid: 0b734904f6c60f744adf58bff67bd097, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 114148413280795098, guid: 0b734904f6c60f744adf58bff67bd097,
+        type: 3}
+      propertyPath: m_Text
+      value: 82
       objectReference: {fileID: 0}
     - target: {fileID: 1816865418338152, guid: 0b734904f6c60f744adf58bff67bd097, type: 3}
       propertyPath: m_IsActive
