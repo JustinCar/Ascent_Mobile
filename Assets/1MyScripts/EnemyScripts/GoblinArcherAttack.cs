@@ -26,8 +26,9 @@ public class GoblinArcherAttack : MonoBehaviour {
     void Awake()
     {
         levelManager = GameObject.Find("Manager").GetComponent<LevelManager>();
-        damageLowerBound =  (int)(damageLowerBound * (levelManager.floorNumber));
-        damageUpperBound =  (int)(damageUpperBound * (levelManager.floorNumber));
+        float modifier = (1 + ((float)levelManager.floorNumber / 10));
+        damageLowerBound =  (int)(damageLowerBound * modifier);
+        damageUpperBound =  (int)(damageUpperBound * modifier);
         attackTimer = attackCooldown;
         shootAttackTimer = shootAttackCooldown;
     }

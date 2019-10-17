@@ -37,15 +37,13 @@ public class GoblinGruntAttack : MonoBehaviour {
 	{
 		playerRB = GameObject.Find("Player").GetComponent<Rigidbody2D>();
 		bellySmashKnockBackTimer = bellySmashKnockBackTime;
-
         cameraShake = GameObject.Find("Manager").GetComponent<CameraShake>();
-        
-
         levelManager = GameObject.Find("Manager").GetComponent<LevelManager>();
-        normalDamageLowerBound =  (int)(normalDamageLowerBound * (levelManager.floorNumber));
-        normalDamageUpperBound =  (int)(normalDamageUpperBound * (levelManager.floorNumber));
-        bellySmashDamageLowerBound =  (int)(bellySmashDamageLowerBound * (levelManager.floorNumber));
-        bellySmashDamageUpperBound =  (int)(bellySmashDamageUpperBound * (levelManager.floorNumber));
+        float modifier = (1 + ((float)levelManager.floorNumber / 10));
+        normalDamageLowerBound =  (int)(normalDamageLowerBound * modifier);
+        normalDamageUpperBound =  (int)(normalDamageUpperBound * modifier);
+        bellySmashDamageLowerBound =  (int)(bellySmashDamageLowerBound * modifier);
+        bellySmashDamageUpperBound =  (int)(bellySmashDamageUpperBound * modifier);
         audioManager = GameObject.Find("Player").GetComponent<PlayerAudioManager>();
 
         attackTimer = attackCooldown;

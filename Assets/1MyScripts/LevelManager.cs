@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class LevelManager : MonoBehaviour
 {
@@ -28,9 +29,12 @@ public class LevelManager : MonoBehaviour
 
     public GameObject cam;
 
+    CinemachineFramingTransposer framingTransposer;
+
     // Start is called before the first frame update
     void Start()
     {
+        framingTransposer = cam.GetComponent<CinemachineVirtualCamera>().GetCinemachineComponent<CinemachineFramingTransposer>();
         levelDirection = Random.Range(1, 4);
         level = Instantiate (levelGenerator);
         generatorScript = level.GetComponent<LevelGenerator>();
@@ -87,7 +91,7 @@ public class LevelManager : MonoBehaviour
     public void setStartPos() 
     {
         player.transform.position = generatorScript.startRoom.transform.position;
-        cam.transform.position = player.transform.position;
+        cam.GetComponent<CinemachineVirtualCamera>().OnTargetObjectWarped(player.transform, new Vector3(player.transform.position.x - cam.transform.position.x, player.transform.position.y - cam.transform.position.y));
     }
 
     // Level completed, new level is generated

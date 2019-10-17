@@ -30,10 +30,11 @@ public class GoblinSwordsmanAttack : MonoBehaviour {
     void Awake()
     {
         levelManager = GameObject.Find("Manager").GetComponent<LevelManager>();
-        normalDamageLowerBound =  (int)(normalDamageLowerBound * (levelManager.floorNumber));
-        normalDamageUpperBound =  (int)(normalDamageUpperBound * (levelManager.floorNumber));
-        spinDamageLowerBound =  (int)(spinDamageLowerBound * (levelManager.floorNumber));
-        spinDamageUpperBound =  (int)(spinDamageUpperBound * (levelManager.floorNumber));
+        float modifier = (1 + ((float)levelManager.floorNumber / 10));
+        normalDamageLowerBound =  (int)(normalDamageLowerBound * modifier);
+        normalDamageUpperBound =  (int)(normalDamageUpperBound * modifier);
+        spinDamageLowerBound =  (int)(spinDamageLowerBound * modifier);
+        spinDamageUpperBound =  (int)(spinDamageUpperBound * modifier);
         audioManager = GameObject.Find("Player").GetComponent<PlayerAudioManager>();
         attackTimer = attackCooldown;
         spinAttackTimer = spinAttackCooldown;

@@ -20493,6 +20493,11 @@ PrefabInstance:
       propertyPath: damageImage
       value: 
       objectReference: {fileID: 2110889972}
+    - target: {fileID: 114891676486533440, guid: 4f66c7ede307a064ba1205940635b85a,
+        type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 569175162}
     - target: {fileID: 212335596572655126, guid: 4f66c7ede307a064ba1205940635b85a,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -20508,6 +20513,11 @@ PrefabInstance:
       propertyPath: noManaTxt
       value: 
       objectReference: {fileID: 4589401260046185974}
+    - target: {fileID: 114299865184839558, guid: 4f66c7ede307a064ba1205940635b85a,
+        type: 3}
+      propertyPath: jumpPower
+      value: 170
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f66c7ede307a064ba1205940635b85a, type: 3}
 --- !u!224 &548677919 stripped
@@ -20558,6 +20568,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7738f61ff7c01bb429027c0bc216b0f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &569175162 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4877165776022232534, guid: 5a3fcca2f1a82344dbf050506fd5dbeb,
+    type: 3}
+  m_PrefabInstance: {fileID: 4877165775302598320}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569175158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d9fb974f98b394e8db9870ca77b6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &569175164
@@ -34807,6 +34829,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1900417382}
+    - target: {fileID: 4877165776022232534, guid: 5a3fcca2f1a82344dbf050506fd5dbeb,
+        type: 3}
+      propertyPath: levelLengthIncreaseAmount
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a3fcca2f1a82344dbf050506fd5dbeb, type: 3}
 --- !u!1001 &6387153126160151991

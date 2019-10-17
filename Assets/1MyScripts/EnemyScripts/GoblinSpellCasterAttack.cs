@@ -29,8 +29,9 @@ public class GoblinSpellCasterAttack : MonoBehaviour {
     void Awake()
     {
         levelManager = GameObject.Find("Manager").GetComponent<LevelManager>();
-        damageLowerBound =  (int)(damageLowerBound * (levelManager.floorNumber));
-        damageUpperBound =  (int)(damageUpperBound * (levelManager.floorNumber));
+        float modifier = (1 + ((float)levelManager.floorNumber / 10));
+        damageLowerBound =  (int)(damageLowerBound * modifier);
+        damageUpperBound =  (int)(damageUpperBound * modifier);
         audioManager = GameObject.Find("Player").GetComponent<PlayerAudioManager>();
         attackTimer = attackCooldown;
         spellAttackTimer = spellAttackCooldown;

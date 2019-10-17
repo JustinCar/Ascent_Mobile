@@ -155,15 +155,18 @@ public class PlayerHealth : MonoBehaviour {
 
     void death()
     {
+
+        
+
         // Set the death flag so this function won't be called again.
         isDead = true;
         Debug.Log("Dead");
 
-        anim.SetInteger("AnimState", 0);
-        anim.SetTrigger("Dead");
-
         SaveLoadManager.SetEssence(GameObject.Find("EssenceBackground").GetComponent<EssenceManager>().essence);
         SaveLoadManager.SetHighestFloor(levelManager.floorNumber);
+
+        anim.SetInteger("AnimState", 0);
+        anim.SetTrigger("Dead");
         
         // Turn off the movement and shooting scripts.
         playerController.enabled = false;
