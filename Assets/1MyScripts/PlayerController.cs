@@ -79,6 +79,7 @@ public class PlayerController : MonoBehaviour {
 			faze.gameObject.SetActive(true);
 			audioManager.phaseAudio();
 
+			rigidBody.velocity = Vector2.zero;
 			rigidBody.AddForce(Vector2.up * jumpPower);
 
 			jumpCounter++;

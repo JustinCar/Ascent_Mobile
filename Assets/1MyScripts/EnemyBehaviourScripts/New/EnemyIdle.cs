@@ -70,10 +70,8 @@ public class EnemyIdle : StateMachineBehaviour
 				hit = Physics2D.Raycast(animator.transform.parent.transform.position, -Vector2.right, rayDistance, mask);
 				if (hit) 
 				{
-                    Debug.Log(hit.collider.gameObject.tag);
 					if (hit.collider.gameObject.tag == "Player") 
 					{
-						Debug.Log("Player seen");
 						Debug.DrawRay(animator.transform.parent.transform.position, new Vector2(-rayDistance, 0), Color.green);
 
 						animator.SetBool("isChasing", true);
@@ -86,10 +84,8 @@ public class EnemyIdle : StateMachineBehaviour
 							
 				if (hit) 
 				{
-                    Debug.Log(hit.collider.gameObject.tag);
 					if (hit.collider.gameObject.tag == "Player") 
 					{
-						Debug.Log("Player seen");
 						Debug.DrawRay(animator.transform.parent.transform.position, new Vector2(rayDistance, 0), Color.green);
 
 						animator.SetBool("isChasing", true);
