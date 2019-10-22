@@ -14,6 +14,7 @@ public class SwordAttack : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        
     }
 
     public void attack (int multiplier) 

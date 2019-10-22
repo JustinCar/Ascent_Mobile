@@ -50,8 +50,6 @@ public class GoblinSpellCasterAttack : MonoBehaviour {
         if (player.Length > 0 && enemyHealth.currentHealth > 0) 
         {
             player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound), enemyCtrl.playerIsLeft);
-            player[0].gameObject.GetComponent<PlayerController>().attacking = false;
-            player[0].gameObject.GetComponent<PlayerController>().attacked = false;
         }
     } 
 
