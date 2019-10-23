@@ -120,6 +120,9 @@ public class UseAbility : MonoBehaviour {
         if (ability) 
         {
             audioManager.spellCastAudio();
+            playerCtrl.attacking = false;
+            playerCtrl.attacked = false;
+            playerCtrl.combo = false;
             anim.SetTrigger("Cast");
             GameObject abilityInstance = Instantiate(ability, transform.position, transform.rotation) as GameObject;
             AbilityStats instanceStats = abilityInstance.GetComponent<AbilityStats>();
