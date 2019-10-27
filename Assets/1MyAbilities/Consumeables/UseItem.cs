@@ -29,6 +29,7 @@ public class UseItem : MonoBehaviour {
 		audioManager = player.GetComponent<PlayerAudioManager>();
 
 		levelManager = GameObject.Find("Manager").GetComponent<LevelManager>();
+		GameObject.Find("Manager").GetComponent<LevelManager>().levelComponents.Add(gameObject);
 
 		amount =  (int)(amount * levelManager.floorNumber);
 	}

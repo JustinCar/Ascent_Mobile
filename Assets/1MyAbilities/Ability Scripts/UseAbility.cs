@@ -46,11 +46,6 @@ public class UseAbility : MonoBehaviour {
             timeBetweenAttacks = gameObject.GetComponent<AbilityStats>().coolDown;  
         }
 
-
-        // Set up the references.
-        // gunParticles = GetComponent <ParticleSystem> ();
-        // gunAudio = GetComponent <AudioSource> ();
-        // gunLight = GetComponent <Light> ();
     }
 
     public void resetStats() 
@@ -69,22 +64,11 @@ public class UseAbility : MonoBehaviour {
             coolDownBar.UpdateBar(timeBetweenAttacks - timer, timeBetweenAttacks); 
         }
         
-
-        // If the Fire1 button is being pressed, it's time to fire...
-        // if (Input.GetButton(button) && timer >= timeBetweenAttacks)
-        // {
-        
         if (activated && timer >= timeBetweenAttacks)
         {
 
-            // // Can't shoot if game is paused
-            // if (PauseMenu.gameIsPaused)
-            // {
-            //     return;
-            // }
             activated = false;
 
-            // ... shoot the gun.
             if (!((playerHealth.currentMana - manaCost) <= 0) && playerCtrl.enabled == true) 
             {
                 shoot();  

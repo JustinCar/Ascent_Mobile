@@ -19,6 +19,6 @@ public class SocialMediaLinks : MonoBehaviour
     }
     public void linkedin() 
     {
-        Application.OpenURL("https://www.linkedin.com/in/justin-carter-9382a3152C");
+        Application.OpenURL("https://www.linkedin.com/in/justin-carter-9382a3152");
     }
 }
