@@ -75,7 +75,6 @@ public class AbilityStats : MonoBehaviour {
 				// Time between effect ticks
 				specialEffectRepeat = Random.Range(specialEffectRepeatLowerBound, specialEffectRepeatUpperBound);	
 
-
 				// 1 = common
 				// 2 = uncommon
 				// 3 = rare
@@ -86,16 +85,16 @@ public class AbilityStats : MonoBehaviour {
 				if (randomNum >= 60) 
 				{
 					rarity = 1;
-				} else if (randomNum >= 30 && randomNum < 60) 
+				} else if (randomNum >= 20 && randomNum < 50) 
 				{
 					rarity = 2;
-				} else if (randomNum >= 15 && randomNum < 30) 
+				} else if (randomNum >= 6 && randomNum < 20) 
 				{
 					rarity = 3;
-				} else if (randomNum >= 5 && randomNum < 15) 
+				} else if (randomNum >= 1 && randomNum < 6) 
 				{
 					rarity = 4;
-				} else if (randomNum >= 0 && randomNum < 5) 
+				} else if (randomNum >= 0 && randomNum < 1) 
 				{
 					rarity = 5;
 				}
@@ -106,7 +105,7 @@ public class AbilityStats : MonoBehaviour {
 				{
 					case 1:
 						commonArt.SetActive(true);
-						manaCost *= 2;
+						manaCost = (int)(manaCost * 0.9);
 						damageLowerBound = (int)(damageLowerBound * 0.5);
 						damageUpperBound = (int)(damageUpperBound * 0.5);
 						coolDown *= 2;
@@ -119,17 +118,27 @@ public class AbilityStats : MonoBehaviour {
 						break;
 					case 3:
 						rareArt.SetActive(true);
-						manaCost = (int)(manaCost * 0.75);
-						damageLowerBound = (int)(damageLowerBound * 2);
-						damageUpperBound = (int)(damageUpperBound * 2);
-						coolDown = (int)(coolDown * 0.75);
-						specialEffectDamage = (int)(specialEffectDamage * 2);
-						specialEffectDuration = (int)(specialEffectDuration * 2);
-						specialEffectRepeat = (int)(specialEffectRepeat * 0.75);
+						manaCost = (int)(manaCost * 1.1);
+						damageLowerBound = (int)(damageLowerBound * 1.5);
+						damageUpperBound = (int)(damageUpperBound * 1.5);
+						coolDown = (int)(coolDown * 0.8);
+						specialEffectDamage = (int)(specialEffectDamage * 1.5);
+						specialEffectDuration = (int)(specialEffectDuration * 1.5);
+						specialEffectRepeat = (int)(specialEffectRepeat * 0.8);
 						break;
 					case 4:
 						epicArt.SetActive(true);
-						manaCost = (int)(manaCost * 0.5);
+						manaCost = (int)(manaCost * 1.3);
+						damageLowerBound = (int)(damageLowerBound * 2);
+						damageUpperBound = (int)(damageUpperBound * 2);
+						coolDown = (int)(coolDown * 0.6);
+						specialEffectDamage = (int)(specialEffectDamage * 2);
+						specialEffectDuration = (int)(specialEffectDuration * 2);
+						specialEffectRepeat = (int)(specialEffectRepeat * 0.6);
+						break;
+					case 5:
+						legendaryArt.SetActive(true);
+						manaCost = (int)(manaCost * 1.5);
 						damageLowerBound = (int)(damageLowerBound * 3);
 						damageUpperBound = (int)(damageUpperBound * 3);
 						coolDown = (int)(coolDown * 0.5);
@@ -137,22 +146,11 @@ public class AbilityStats : MonoBehaviour {
 						specialEffectDuration = (int)(specialEffectDuration * 3);
 						specialEffectRepeat = (int)(specialEffectRepeat * 0.5);
 						break;
-					case 5:
-						legendaryArt.SetActive(true);
-						manaCost = (int)(manaCost * 0.25);
-						damageLowerBound = (int)(damageLowerBound * 5);
-						damageUpperBound = (int)(damageUpperBound * 5);
-						coolDown = (int)(coolDown * 0.25);
-						specialEffectDamage = (int)(specialEffectDamage * 5);
-						specialEffectDuration = (int)(specialEffectDuration * 5);
-						specialEffectRepeat = (int)(specialEffectRepeat * 0.25);
-						break;
 				}
 				newItem = false;
 
 			} else 
 			{
-
 				Debug.Log("OLD INSTANTIATED: " + abilityName);
 				// Stats are further affected by their rarity	
 				// uncommon is the base stat

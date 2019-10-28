@@ -20429,11 +20429,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 114686331416162004, guid: 4f66c7ede307a064ba1205940635b85a,
-        type: 3}
-      propertyPath: noManaTxt
-      value: 
-      objectReference: {fileID: 4589401260046185974}
     - target: {fileID: 4290917153457350, guid: 4f66c7ede307a064ba1205940635b85a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.6
@@ -20483,6 +20478,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 114299865184839558, guid: 4f66c7ede307a064ba1205940635b85a,
+        type: 3}
+      propertyPath: jumpPower
+      value: 170
+      objectReference: {fileID: 0}
     - target: {fileID: 114891676486533440, guid: 4f66c7ede307a064ba1205940635b85a,
         type: 3}
       propertyPath: deathOverlay
@@ -20508,16 +20508,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 114686331416162004, guid: 4f66c7ede307a064ba1205940635b85a,
+        type: 3}
+      propertyPath: noManaTxt
+      value: 
+      objectReference: {fileID: 4589401260046185974}
     - target: {fileID: 114920507739670584, guid: 4f66c7ede307a064ba1205940635b85a,
         type: 3}
       propertyPath: noManaTxt
       value: 
       objectReference: {fileID: 4589401260046185974}
-    - target: {fileID: 114299865184839558, guid: 4f66c7ede307a064ba1205940635b85a,
-        type: 3}
-      propertyPath: jumpPower
-      value: 170
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f66c7ede307a064ba1205940635b85a, type: 3}
 --- !u!224 &548677919 stripped
@@ -27316,6 +27316,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1480898820}
   m_CullTransparentMesh: 0
+<<<<<<< Updated upstream
 --- !u!1 &1486590233
 GameObject:
   m_ObjectHideFlags: 0
@@ -27379,6 +27380,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!1001 &1486600104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34314,10 +34317,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4589401259506086573}
     m_Modifications:
-    - target: {fileID: 1632597781546608, guid: eb2d6a07240ea4c4aad9b1f630173706, type: 3}
-      propertyPath: m_Name
-      value: AbilityBar
-      objectReference: {fileID: 0}
     - target: {fileID: 224686866264768172, guid: eb2d6a07240ea4c4aad9b1f630173706,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34422,6 +34421,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1632597781546608, guid: eb2d6a07240ea4c4aad9b1f630173706, type: 3}
+      propertyPath: m_Name
+      value: AbilityBar
       objectReference: {fileID: 0}
     - target: {fileID: 224390851171973526, guid: eb2d6a07240ea4c4aad9b1f630173706,
         type: 3}
@@ -34937,16 +34940,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4589401259506086573}
     m_Modifications:
-    - target: {fileID: 6402368752102649957, guid: 550f83595fa5f8c4488822c1be2bf801,
-        type: 3}
-      propertyPath: m_Name
-      value: FloorNumberTxt
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402368752102649957, guid: 550f83595fa5f8c4488822c1be2bf801,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1641595942048276594, guid: 550f83595fa5f8c4488822c1be2bf801,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35051,6 +35044,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402368752102649957, guid: 550f83595fa5f8c4488822c1be2bf801,
+        type: 3}
+      propertyPath: m_Name
+      value: FloorNumberTxt
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402368752102649957, guid: 550f83595fa5f8c4488822c1be2bf801,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6487862095977616253, guid: 550f83595fa5f8c4488822c1be2bf801,
         type: 3}
