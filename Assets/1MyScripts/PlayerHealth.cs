@@ -115,7 +115,6 @@ public class PlayerHealth : MonoBehaviour {
 
     public void takeDamage(int amount, bool toRight)
     {
-
         if (!isDead) 
         {
             damaged = true;
@@ -126,11 +125,6 @@ public class PlayerHealth : MonoBehaviour {
             currentHealth -= amount;
 
             health.SetFloat("_Progress", convertRange(currentHealth, startingHealth));
-
-            anim.SetInteger("AnimState", 0);
-            anim.SetTrigger("Hurt");
-            playerController.combo = false;
-            playerController.attacking = false;
 
             rigidbody.velocity = Vector2.zero;
 
@@ -153,8 +147,6 @@ public class PlayerHealth : MonoBehaviour {
 
     void death()
     {
-
-        
 
         // Set the death flag so this function won't be called again.
         isDead = true;

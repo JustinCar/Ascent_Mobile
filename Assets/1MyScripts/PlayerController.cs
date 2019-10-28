@@ -208,7 +208,6 @@ public class PlayerController : MonoBehaviour {
 			//Bow attack animation
 			if (attacking && !attacked) 
 			{
-
 				if (comboNum == 1) 
 				{
 					anim.SetTrigger("BowAttack");

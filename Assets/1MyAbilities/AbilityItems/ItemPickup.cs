@@ -23,6 +23,7 @@ public class ItemPickup : MonoBehaviour {
 		player = GameObject.Find("Player");
 		canvas = GameObject.Find("Canvas");
 		pickupManager = GameObject.Find("Manager").GetComponent<ItemPickupManager>();
+		GameObject.Find("Manager").GetComponent<LevelManager>().levelComponents.Add(gameObject);
 	}
 	
 	// Update is called once per frame

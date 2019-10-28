@@ -98,8 +98,6 @@ public class GoblinGruntAttack : MonoBehaviour {
         if (player.Length > 0 && enemyHealth.currentHealth > 0) 
         {
             player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(bellySmashDamageLowerBound, bellySmashDamageUpperBound), enemyHealth.playerToLeft());
-            player[0].gameObject.GetComponent<PlayerController>().attacking = false;
-            player[0].gameObject.GetComponent<PlayerController>().attacked = false;
 
 			bellySmashed = true;
         }
