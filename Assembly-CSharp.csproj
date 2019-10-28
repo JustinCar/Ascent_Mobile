@@ -2,6 +2,8 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
+    <CscToolPath>C:\Program Files\Unity\Hub\Editor\2019.2.1f1\Editor\Data\Tools\RoslynScripts</CscToolPath>
+    <CscToolExe>unity_csc.bat</CscToolExe>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -100,7 +102,6 @@
      <Compile Include="Assets\1MyDark UI\Scripts\UIParticleRenderer.cs" />
      <Compile Include="Assets\1MyDark UI\Scripts\VirtualCursor.cs" />
      <Compile Include="Assets\1MyDark UI\Scripts\VirtualCursorAnimate.cs" />
-     <Compile Include="Assets\1MyNewEnemySprites\WOLF-artassets\wolfIMPACTeffect\DeleteBite.cs" />
      <Compile Include="Assets\1MyParticles\Blood\BloodSplatter.cs" />
      <Compile Include="Assets\1MyParticles\Blood\SpawnSplatter.cs" />
      <Compile Include="Assets\1MyScripts\BackgroundMusic.cs" />
@@ -120,7 +121,6 @@
      <Compile Include="Assets\1MyScripts\EnemyBehaviourScripts\New\GoblinShamanChase.cs" />
      <Compile Include="Assets\1MyScripts\EnemyBehaviourScripts\New\GoblinSwordsmanChase.cs" />
      <Compile Include="Assets\1MyScripts\EnemyBehaviourScripts\New\VoidDwellerChase.cs" />
-     <Compile Include="Assets\1MyScripts\EnemyBehaviourScripts\New\WolfChase.cs" />
      <Compile Include="Assets\1MyScripts\EnemyBehaviourScripts\WanderBehaviour.cs" />
      <Compile Include="Assets\1MyScripts\EnemyBehaviourScripts\ZombieChaseBehaviour.cs" />
      <Compile Include="Assets\1MyScripts\EnemyBehaviourScripts\ZombieIdleBehaviour.cs" />
@@ -140,7 +140,6 @@
      <Compile Include="Assets\1MyScripts\EnemyScripts\Loot\EssenceFollow.cs" />
      <Compile Include="Assets\1MyScripts\EnemyScripts\Loot\EssenceManager.cs" />
      <Compile Include="Assets\1MyScripts\EnemyScripts\Loot\LootSystem.cs" />
-     <Compile Include="Assets\1MyScripts\EnemyScripts\WolfAttack.cs" />
      <Compile Include="Assets\1MyScripts\FloatingText.cs" />
      <Compile Include="Assets\1MyScripts\FrameRateModify.cs" />
      <Compile Include="Assets\1MyScripts\GameJustStarted.cs" />
