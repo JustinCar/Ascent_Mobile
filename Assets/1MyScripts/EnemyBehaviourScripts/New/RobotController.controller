@@ -46,6 +46,10 @@ MonoBehaviour:
   disengageDistanceX: 1.87
   disengageDistanceY: 0.6
   attackRange: 0.2
+  bombCooldown: 3
+  bomb: {fileID: 3422625578827276417, guid: dffb01a978a4746429a4490889c5759e, type: 3}
+  yForce: 20
+  xForce: 200
 --- !u!1101 &-6981582524363820442
 AnimatorStateTransition:
   m_ObjectHideFlags: 3
@@ -203,6 +207,10 @@ MonoBehaviour:
   disengageDistanceX: 1.87
   disengageDistanceY: 0.6
   attackRange: 0.2
+  bombCooldown: 3
+  bomb: {fileID: 3422625578827276417, guid: dffb01a978a4746429a4490889c5759e, type: 3}
+  yForce: 20
+  xForce: 200
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0

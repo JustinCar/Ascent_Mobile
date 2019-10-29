@@ -20,6 +20,12 @@ public class RobotAttack : MonoBehaviour
 	public float attackCooldown; // The time between attacks
     public GameObject robotSlashEffect;
 
+    public float bombCooldown;
+    float bombTimer;
+    public GameObject bomb;
+    public float yForce;
+    public float xForce;
+
     void Awake()
     {
         levelManager = GameObject.Find("Manager").GetComponent<LevelManager>();
@@ -28,11 +34,31 @@ public class RobotAttack : MonoBehaviour
         damageUpperBound =  (int)(damageUpperBound * modifier);
         audioManager = GameObject.Find("Player").GetComponent<PlayerAudioManager>();
         attackTimer = attackCooldown;
+        bombTimer = 0.5f;
     }
 
     void Update()
     {
         attackTimer -= Time.deltaTime;
+
+        if (anim.GetBool("isChasing"))
+        {
+            bombTimer -= Time.deltaTime;
+            if (bombTimer <= 0)
+                releaseBomb();
+        }
+    }
+
+    void releaseBomb() 
+    {
+        bombTimer = bombCooldown;
+
+        GameObject newBomb = Instantiate(bomb, transform.position, bomb.transform.rotation) as GameObject;
+
+        if (enemyHealth.facingLeft)
+            newBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(-xForce, yForce));    
+        else
+            newBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(xForce, yForce));  
     }
 
     // Called from the attack animation 
