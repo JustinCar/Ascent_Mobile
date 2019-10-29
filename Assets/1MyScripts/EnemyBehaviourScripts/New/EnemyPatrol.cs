@@ -14,10 +14,6 @@ public class EnemyPatrol : StateMachineBehaviour
     private float timer = 0.0f;
     private float timeToSpendWandering = 0.0f;
 
-
-
-
-
     EnemyHealth health;
     bool stunned = false;
     public bool facingLeft;
