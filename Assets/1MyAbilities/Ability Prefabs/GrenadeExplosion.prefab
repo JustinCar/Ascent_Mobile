@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 212723131264699164}
   - component: {fileID: 95264105580836640}
   - component: {fileID: 9157587213443068464}
+  - component: {fileID: 4534930720464472832}
   m_Layer: 0
   m_Name: GrenadeExplosion
   m_TagString: Untagged
@@ -117,6 +118,18 @@ MonoBehaviour:
   cameraShake: {fileID: 0}
   duration: 0.3
   amplitude: 3
+--- !u!114 &4534930720464472832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858898902620120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e89c817205567545b473010a87c4825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4945793951565329175
 PrefabInstance:
   m_ObjectHideFlags: 0
