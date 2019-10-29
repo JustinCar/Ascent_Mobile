@@ -489,7 +489,7 @@ MonoBehaviour:
   attackTimer: 0
   attackCooldown: 1
   spellAttackTimer: 0
-  spellAttackCooldown: 3
+  spellAttackCooldown: 6
 --- !u!1 &1148467571201666
 GameObject:
   m_ObjectHideFlags: 0
@@ -3790,6 +3790,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4739298275608622}
     m_Modifications:
+    - target: {fileID: 7367721614356666843, guid: 603526f2f3b48944089a79dd8b23a324,
+        type: 3}
+      propertyPath: m_Name
+      value: Point Light 2D
+      objectReference: {fileID: 0}
     - target: {fileID: 5672261856880975063, guid: 603526f2f3b48944089a79dd8b23a324,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3845,11 +3850,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7367721614356666843, guid: 603526f2f3b48944089a79dd8b23a324,
-        type: 3}
-      propertyPath: m_Name
-      value: Point Light 2D
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 603526f2f3b48944089a79dd8b23a324, type: 3}
 --- !u!4 &8824094007391412399 stripped
@@ -3865,6 +3865,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4723869862702860}
     m_Modifications:
+    - target: {fileID: 5501030359705662605, guid: c0e4efe48e409ea41beca7d8115c9195,
+        type: 3}
+      propertyPath: m_Name
+      value: Void (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 5496024256788689249, guid: c0e4efe48e409ea41beca7d8115c9195,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3919,11 +3924,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5501030359705662605, guid: c0e4efe48e409ea41beca7d8115c9195,
-        type: 3}
-      propertyPath: m_Name
-      value: Void (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0e4efe48e409ea41beca7d8115c9195, type: 3}
