@@ -55,14 +55,6 @@ public class GoblinSwordsmanAttack : MonoBehaviour {
         {
             player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(normalDamageLowerBound, normalDamageUpperBound), enemyCtrl.playerIsLeft);
 			Rigidbody2D rb = player[0].gameObject.GetComponent<Rigidbody2D>();
-
-			if (enemyCtrl.playerIsLeft) 
-			{
-            	rb.AddForce(new Vector2(-spinAtkKnockPower / 2, 20));
-			} else 
-			{
-				rb.AddForce(new Vector2(spinAtkKnockPower / 2, 20));
-			}
         }
     } 
 
@@ -75,14 +67,6 @@ public class GoblinSwordsmanAttack : MonoBehaviour {
             player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(spinDamageLowerBound, spinDamageUpperBound), enemyCtrl.playerIsLeft);
 
 			Rigidbody2D rb = player[0].gameObject.GetComponent<Rigidbody2D>();
-
-			if (enemyCtrl.playerIsLeft) 
-			{
-            	rb.AddForce(new Vector2(-spinAtkKnockPower, 20));
-			} else 
-			{
-				rb.AddForce(new Vector2(spinAtkKnockPower, 20));
-			}
         }
     } 
 
