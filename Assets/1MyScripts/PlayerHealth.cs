@@ -113,7 +113,7 @@ public class PlayerHealth : MonoBehaviour {
         mana.SetFloat("_Progress", convertRange(currentMana, startingMana));
     }
 
-    public void takeDamage(int amount, bool toRight)
+    public void takeDamage(int amount)
     {
         if (!isDead) 
         {
@@ -128,14 +128,6 @@ public class PlayerHealth : MonoBehaviour {
 
             rigidbody.velocity = Vector2.zero;
 
-            if (toRight) 
-            {
-                rigidbody.AddForce(new Vector2(-knockPower, 0));
-            }
-            if(!toRight) 
-            {
-                rigidbody.AddForce(new Vector2(knockPower, 0));
-            }
         }
 
         if (currentHealth <= 0 && !isDead)

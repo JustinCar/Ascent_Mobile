@@ -50,7 +50,7 @@ public class Arrow : MonoBehaviour {
 
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound), travelingLeft);
+            collision.gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound));
 			Destroy(gameObject);
         }
         else if (collision.gameObject.tag != "FX" && collision.gameObject.tag != "Player")

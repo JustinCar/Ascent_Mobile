@@ -49,7 +49,7 @@ public class RobotBomb : MonoBehaviour
 
 		if (Vector2.Distance(gameObject.transform.position, player.transform.position) <= explosionRange)
         {
-            player.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound), false);
+            player.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound));
         }
 		Destroy(gameObject);
     }

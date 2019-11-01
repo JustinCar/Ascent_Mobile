@@ -58,17 +58,21 @@ public class AbilityStats : MonoBehaviour {
 				Debug.Log("NEW ITEM: " + abilityName);
 				manaCost = Random.Range(manaCostLowerBound, manaCostUpperBound);
 
+				float modifier = (1 + ((float)levelManager.floorNumber / 10));
+				Debug.Log("MODIFIER: " + modifier);
+
+
 				// Better items are available on higher levels
 				damageLowerBound = Random.Range(damageLBLowerBound, damageLBUpperBound);
-				damageLowerBound =  (int)(damageLowerBound * (levelManager.floorNumber));
+				damageLowerBound =  (int)(damageLowerBound * ((levelManager.floorNumber / 10) + 1));
 
 				damageUpperBound = Random.Range(damageUBLowerBound, damageUBUpperBound);
-				damageUpperBound =  (int)(damageUpperBound * (levelManager.floorNumber));
+				damageUpperBound =  (int)(damageUpperBound * ((levelManager.floorNumber / 10) + 1));
 
 				coolDown = Random.Range(coolDownLowerBound, coolDownUpperBound);
 
 				specialEffectDamage = Random.Range(specialEffectDamageLowerBound, specialEffectDamageUpperBound);
-				specialEffectDamage =  (int)(specialEffectDamage * (levelManager.floorNumber));
+				specialEffectDamage =  (int)(specialEffectDamage * ((levelManager.floorNumber / 10) + 1));
 
 				specialEffectDuration = Random.Range(specialEffectDurationLowerBound, specialEffectDurationUpperBound);
 

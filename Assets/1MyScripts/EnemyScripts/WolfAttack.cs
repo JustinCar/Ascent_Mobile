@@ -43,7 +43,7 @@ public class WolfAttack : MonoBehaviour
         if (player.Length > 0 && enemyHealth.currentHealth > 0) 
         {
             Instantiate(wolfBiteEffect, player[0].transform.position, Quaternion.identity);
-            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound), enemyHealth.playerToLeft());
+            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound));
         }
     } 
 

@@ -34167,10 +34167,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4589401259506086573}
     m_Modifications:
-    - target: {fileID: 1632597781546608, guid: eb2d6a07240ea4c4aad9b1f630173706, type: 3}
-      propertyPath: m_Name
-      value: AbilityBar
-      objectReference: {fileID: 0}
     - target: {fileID: 224686866264768172, guid: eb2d6a07240ea4c4aad9b1f630173706,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34275,6 +34271,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1632597781546608, guid: eb2d6a07240ea4c4aad9b1f630173706, type: 3}
+      propertyPath: m_Name
+      value: AbilityBar
       objectReference: {fileID: 0}
     - target: {fileID: 224390851171973526, guid: eb2d6a07240ea4c4aad9b1f630173706,
         type: 3}
@@ -34632,6 +34632,11 @@ PrefabInstance:
       propertyPath: levelLengthIncreaseAmount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4877165776022232534, guid: 5a3fcca2f1a82344dbf050506fd5dbeb,
+        type: 3}
+      propertyPath: enemyhealthMultiplierIncreaseAmount
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 4877165776022232535, guid: 5a3fcca2f1a82344dbf050506fd5dbeb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34790,16 +34795,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4589401259506086573}
     m_Modifications:
-    - target: {fileID: 6402368752102649957, guid: 550f83595fa5f8c4488822c1be2bf801,
-        type: 3}
-      propertyPath: m_Name
-      value: FloorNumberTxt
-      objectReference: {fileID: 0}
-    - target: {fileID: 6402368752102649957, guid: 550f83595fa5f8c4488822c1be2bf801,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1641595942048276594, guid: 550f83595fa5f8c4488822c1be2bf801,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34904,6 +34899,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402368752102649957, guid: 550f83595fa5f8c4488822c1be2bf801,
+        type: 3}
+      propertyPath: m_Name
+      value: FloorNumberTxt
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402368752102649957, guid: 550f83595fa5f8c4488822c1be2bf801,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6487862095977616253, guid: 550f83595fa5f8c4488822c1be2bf801,
         type: 3}

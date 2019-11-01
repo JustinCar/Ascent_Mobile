@@ -86,7 +86,7 @@ public class GoblinGruntAttack : MonoBehaviour {
         Collider2D[] player = Physics2D.OverlapCircleAll(normalAtkPos.position, normalAtkRange, playerLayer);
         if (player.Length > 0 && enemyHealth.currentHealth > 0) 
         {
-            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(normalDamageLowerBound, normalDamageUpperBound), enemyHealth.playerToLeft());
+            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(normalDamageLowerBound, normalDamageUpperBound));
             player[0].gameObject.GetComponent<PlayerController>().attacking = false;
             player[0].gameObject.GetComponent<PlayerController>().attacked = false;
         }
@@ -97,7 +97,7 @@ public class GoblinGruntAttack : MonoBehaviour {
         Collider2D[] player = Physics2D.OverlapCircleAll(bellySmashAtkPos.position, bellySmashAtkRange, playerLayer);
         if (player.Length > 0 && enemyHealth.currentHealth > 0) 
         {
-            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(bellySmashDamageLowerBound, bellySmashDamageUpperBound), enemyHealth.playerToLeft());
+            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(bellySmashDamageLowerBound, bellySmashDamageUpperBound));
 
 			bellySmashed = true;
         }

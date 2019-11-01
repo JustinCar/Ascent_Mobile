@@ -73,7 +73,7 @@ public class RobotAttack : MonoBehaviour
             if (enemyHealth.playerToLeft())
                 flip(slash);
 
-            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound), enemyHealth.playerToLeft());
+            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound));
         }
     } 
 

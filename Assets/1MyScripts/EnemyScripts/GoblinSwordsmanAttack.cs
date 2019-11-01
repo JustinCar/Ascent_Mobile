@@ -53,7 +53,7 @@ public class GoblinSwordsmanAttack : MonoBehaviour {
         Collider2D[] player = Physics2D.OverlapCircleAll(normalAtkPos.position, normalAtkRange, playerLayer);
         if (player.Length > 0 && enemyHealth.currentHealth > 0) 
         {
-            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(normalDamageLowerBound, normalDamageUpperBound), enemyCtrl.playerIsLeft);
+            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(normalDamageLowerBound, normalDamageUpperBound));
 			Rigidbody2D rb = player[0].gameObject.GetComponent<Rigidbody2D>();
         }
     } 
@@ -64,7 +64,7 @@ public class GoblinSwordsmanAttack : MonoBehaviour {
         Collider2D[] player = Physics2D.OverlapCircleAll(spinAtkPos.position, spinAtkRange, playerLayer);
         if (player.Length > 0 && enemyHealth.currentHealth > 0) 
         {
-            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(spinDamageLowerBound, spinDamageUpperBound), enemyCtrl.playerIsLeft);
+            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(spinDamageLowerBound, spinDamageUpperBound));
 
 			Rigidbody2D rb = player[0].gameObject.GetComponent<Rigidbody2D>();
         }

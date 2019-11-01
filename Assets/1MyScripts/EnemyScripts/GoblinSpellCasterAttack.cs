@@ -49,7 +49,7 @@ public class GoblinSpellCasterAttack : MonoBehaviour {
         Collider2D[] player = Physics2D.OverlapCircleAll(atkPos.position, atkRange, playerLayer);
         if (player.Length > 0 && enemyHealth.currentHealth > 0) 
         {
-            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound), enemyCtrl.playerIsLeft);
+            player[0].gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound));
         }
     } 
 

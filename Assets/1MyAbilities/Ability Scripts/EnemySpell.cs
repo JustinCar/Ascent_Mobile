@@ -77,7 +77,7 @@ public class EnemySpell : MonoBehaviour {
         if (collision.gameObject.tag == "Player")
         {
 			audioManager.iceHitAudio();
-            collision.gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound), playerToLeft(collision.gameObject));
+            collision.gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound));
             Instantiate(explosionPrefab, new Vector3(collision.contacts[0].point.x, collision.contacts[0].point.y, 0),  explosionPrefab.transform.rotation);
 			Destroy(gameObject);
         }
