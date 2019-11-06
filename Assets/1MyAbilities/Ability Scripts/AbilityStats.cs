@@ -116,7 +116,6 @@ public class AbilityStats : MonoBehaviour {
 						coolDown *= 2;
 						specialEffectDamage = (int)(specialEffectDamage * 0.5);
 						specialEffectDuration = (int)(specialEffectDuration * 0.5);
-						specialEffectRepeat *= 2;
 						break;
 					case 2:
 						uncommonArt.SetActive(true);
@@ -129,7 +128,6 @@ public class AbilityStats : MonoBehaviour {
 						coolDown = (int)(coolDown * 0.8);
 						specialEffectDamage = (int)(specialEffectDamage * 1.5);
 						specialEffectDuration = (int)(specialEffectDuration * 1.5);
-						specialEffectRepeat = (int)(specialEffectRepeat * 0.8);
 						break;
 					case 4:
 						epicArt.SetActive(true);
@@ -139,7 +137,6 @@ public class AbilityStats : MonoBehaviour {
 						coolDown = (int)(coolDown * 0.6);
 						specialEffectDamage = (int)(specialEffectDamage * 2);
 						specialEffectDuration = (int)(specialEffectDuration * 2);
-						specialEffectRepeat = (int)(specialEffectRepeat * 0.5);
 						break;
 					case 5:
 						legendaryArt.SetActive(true);
@@ -149,7 +146,6 @@ public class AbilityStats : MonoBehaviour {
 						coolDown = (int)(coolDown * 0.5);
 						specialEffectDamage = (int)(specialEffectDamage * 3);
 						specialEffectDuration = (int)(specialEffectDuration * 3);
-						specialEffectRepeat = (int)(specialEffectRepeat * 0.5);
 						break;
 				}
 				newItem = false;

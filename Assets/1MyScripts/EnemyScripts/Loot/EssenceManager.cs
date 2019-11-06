@@ -19,7 +19,6 @@ public class EssenceManager : MonoBehaviour {
         
     }
 
-
     void Update()
     {
         // Set the displayed text to be the word "Score" followed by the score value.

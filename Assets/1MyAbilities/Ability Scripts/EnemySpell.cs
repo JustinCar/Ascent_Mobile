@@ -17,6 +17,8 @@ public class EnemySpell : MonoBehaviour {
 
 	public PlayerAudioManager audioManager;
 
+	Vector2 target;
+
     // Use this for initialization
     void Start()
     {
@@ -30,6 +32,10 @@ public class EnemySpell : MonoBehaviour {
         stats = gameObject.GetComponent<AbilityStats>();
 		spellTimer = spellDuration;
 		audioManager = GameObject.Find("Player").GetComponent<PlayerAudioManager>();
+
+		target = playerCtrl.gameObject.transform.position;
+		target.y += 0.3f;
+		target.x -= 0.1f;
     }
 
 	void Update () 
@@ -43,9 +49,9 @@ public class EnemySpell : MonoBehaviour {
 			Destroy(gameObject);
 		}
 
-		Vector2 target = playerCtrl.gameObject.transform.position;
-		target.y += 0.3f;
-		target.x -= 0.1f;
+		// Vector2 target = playerCtrl.gameObject.transform.position;
+		// target.y += 0.3f;
+		// target.x -= 0.1f;
 		float step = speed * Time.deltaTime;
 
         // move sprite towards the target location
