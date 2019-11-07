@@ -152,6 +152,17 @@ public class PlayerHealth : MonoBehaviour {
         
         // Turn off the movement and shooting scripts.
         playerController.enabled = false;
+
+        GameCenter gameCenter = GameObject.FindGameObjectWithTag("GameCenter").GetComponent<GameCenter>();
+
+        if (gameCenter) 
+        {
+            gameCenter.UpdateEssenceLeaderBoard(GameObject.Find("EssenceBackground").GetComponent<EssenceManager>().essence);
+            gameCenter.UpdateFloorLeaderBoard(levelManager.floorNumber);
+        } else 
+        {
+            Debug.LogError("GAME CENTER NOT FOUND");
+        }
     }
 
     // Converts a range of numbers to a range of 0 - 1
