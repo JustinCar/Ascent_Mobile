@@ -814,6 +814,7 @@ MonoBehaviour:
   poisonFX: {fileID: 1903168676619612}
   voidFX: {fileID: 1148467571201666}
   castFX: {fileID: 1826657427569734}
+  anim: {fileID: 95114304368183618}
 --- !u!1 &1241913367413922
 GameObject:
   m_ObjectHideFlags: 0
@@ -3789,6 +3790,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4739298275608622}
     m_Modifications:
+    - target: {fileID: 7367721614356666843, guid: 603526f2f3b48944089a79dd8b23a324,
+        type: 3}
+      propertyPath: m_Name
+      value: Point Light 2D
+      objectReference: {fileID: 0}
     - target: {fileID: 5672261856880975063, guid: 603526f2f3b48944089a79dd8b23a324,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3843,11 +3849,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7367721614356666843, guid: 603526f2f3b48944089a79dd8b23a324,
-        type: 3}
-      propertyPath: m_Name
-      value: Point Light 2D
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 603526f2f3b48944089a79dd8b23a324, type: 3}

@@ -13,6 +13,8 @@ public class Arrow : MonoBehaviour {
     LevelManager levelManager;
     public PlayerAudioManager audioManager;
 
+    bool enemyDamaged = false;
+
 
 
     // Use this for initialization
@@ -48,8 +50,31 @@ public class Arrow : MonoBehaviour {
 
         audioManager.arrowHitAudio();
 
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !enemyDamaged)
         {
+            enemyDamaged = true;
+            collision.gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound));
+			Destroy(gameObject);
+        }
+        else if (collision.gameObject.tag != "FX" && collision.gameObject.tag != "Player")
+        {
+			Destroy(gameObject);
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Ability") 
+        {
+            return;
+        }
+
+        audioManager.arrowHitAudio();
+
+        if (collision.gameObject.tag == "Player" && !enemyDamaged)
+        {
+            enemyDamaged = true;
             collision.gameObject.GetComponent<PlayerHealth>().takeDamage(Random.Range(damageLowerBound, damageUpperBound));
 			Destroy(gameObject);
         }

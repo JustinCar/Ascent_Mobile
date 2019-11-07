@@ -17,8 +17,6 @@ public class Freeze : MonoBehaviour {
 
     Rigidbody2D rigidBody;
     public Animator anim;
-
-    int enemyType;
     Vector2 position;
 
     
@@ -43,63 +41,28 @@ public class Freeze : MonoBehaviour {
         anim.enabled = false;
         rigidBody.velocity = Vector3.zero;
         position = enemyState.gameObject.transform.position;
-
-        if (enemy.gameObject.name == "Enemy") 
-        {  
-            enemyType = 1;
-            enemy.gameObject.GetComponent<EnemyController>().enabled = false;
-        } else if (enemy.gameObject.name == "Goblin_Archer") 
-        {  
-            enemyType = 2;
-            enemy.gameObject.GetComponent<GoblinArcherController>().enabled = false;
-        }else if (enemy.gameObject.name == "Goblin_Grunt") 
-        {  
-            enemyType = 3;
-            enemy.gameObject.GetComponent<GoblinGruntController>().enabled = false;
-        }else if (enemy.gameObject.name == "Goblin_Shaman") 
-        {  
-            enemyType = 4;
-            enemy.gameObject.GetComponent<GoblinSpellCasterController>().enabled = false;
-        }else if (enemy.gameObject.name == "Goblin_Swordsman") 
-        {  
-            enemyType = 5;
-            enemy.gameObject.GetComponent<GoblinSwordsmanController>().enabled = false;
-        }
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        effectTimer += Time.deltaTime;
-        totalEffectTimer += Time.deltaTime;
-        enemyState.gameObject.transform.position = position;
-
-        if (totalEffectTimer >= totalEffectTime) 
+        if (!enemyState.isDead) 
         {
-            rigidBody.velocity = Vector3.zero;
+            effectTimer += Time.deltaTime;
+            totalEffectTimer += Time.deltaTime;
+            enemyState.gameObject.transform.position = position;
 
-
-            if (enemyType == 1) 
-            {  
-                enemy.gameObject.GetComponent<EnemyController>().enabled = true;
-            } else if (enemyType == 2) 
-            {  
-                enemy.gameObject.GetComponent<GoblinArcherController>().enabled = true;
-            }else if (enemyType == 3) 
-            {  
-                enemy.gameObject.GetComponent<GoblinGruntController>().enabled = true;
-            }else if (enemyType == 4) 
-            {  
-                enemy.gameObject.GetComponent<GoblinSpellCasterController>().enabled = true;
-            }else if (enemyType == 5) 
-            {  
-                enemy.gameObject.GetComponent<GoblinSwordsmanController>().enabled = true;
+            if (totalEffectTimer >= totalEffectTime) 
+            {
+                rigidBody.velocity = Vector3.zero;
+                anim.enabled = true;
+                enemyState.frozen = false;
+                Destroy(gameObject);
             }
 
-			//enemy.GetComponent<EnemyController>().enabled = true;
-			anim.enabled = true;
-            enemyState.frozen = false;
+        }
+        else 
+        {
             Destroy(gameObject);
         }
 	}

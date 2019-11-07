@@ -18,7 +18,9 @@ public class EnemyState : MonoBehaviour {
 
 	LevelManager manager;
 
-	bool isDead;
+	public bool isDead;
+
+	public Animator anim;
 
 	void Start () 
 	{
@@ -75,6 +77,9 @@ public class EnemyState : MonoBehaviour {
 
 	public void death () 
 	{
+
+		anim.enabled = true;
+
 		Debug.Log("HIDING EFFECTS");
         isDead = true;
 		burning = false;
