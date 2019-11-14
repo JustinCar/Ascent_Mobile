@@ -45,6 +45,7 @@ public class SwapAbility : MonoBehaviour {
 
 	public void swap() 
 	{
+		FaceBookEvents.LogItemPickedUpOrConsumedEvent(itemToBePickedUpStats.abilityName);
 		abilityPanel.sprite = itemToBePickedUpStats.abilityIcon;
 
 		// Drop current item

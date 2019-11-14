@@ -153,6 +153,7 @@
      <Compile Include="Assets\1MyScripts\EnemyScripts\Loot\LootSystem.cs" />
      <Compile Include="Assets\1MyScripts\EnemyScripts\RobotAttack.cs" />
      <Compile Include="Assets\1MyScripts\EnemyScripts\WolfAttack.cs" />
+     <Compile Include="Assets\1MyScripts\FaceBookEvents.cs" />
      <Compile Include="Assets\1MyScripts\FloatingText.cs" />
      <Compile Include="Assets\1MyScripts\FrameRateModify.cs" />
      <Compile Include="Assets\1MyScripts\GameCenter.cs" />
@@ -185,6 +186,17 @@
      <Compile Include="Assets\1MyScripts\TouchWeapon.cs" />
      <Compile Include="Assets\1MyScripts\TownPlayerController.cs" />
      <Compile Include="Assets\DeathAdvice.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\ConsoleBase.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\LogView.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\MenuBase.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AccessTokenMenu.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppEvents.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppLinks.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\AppRequests.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\DialogShare.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\GraphRequest.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\MainMenu.cs" />
+     <Compile Include="Assets\FacebookSDK\Examples\Scripts\SubMenus\Pay.cs" />
      <Compile Include="Assets\FriendlyCleanUI\scripts\ButtonAnimator.cs" />
      <Compile Include="Assets\Scripts\Managers\OptionsMenu.cs" />
      <Compile Include="Assets\Scripts\Managers\PauseMenu.cs" />
@@ -247,6 +259,7 @@
      <None Include="Assets\Tayx\Graphy - Ultimate Stats Monitor\Shaders\GraphStandard.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+     <None Include="Assets\FacebookSDK\link.xml" />
      <None Include="Assets\1MyDark UI\Shaders\Masked UI Blur.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
@@ -526,6 +539,18 @@
  </Reference>
  <Reference Include="UnityEngine.XRModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="Facebook.Unity">
+ <HintPath>C:/Users/b6038386/Documents/GitHub/Ascent_Mobile/Assets/FacebookSDK/Plugins/Facebook.Unity.dll</HintPath>
+ </Reference>
+ <Reference Include="Facebook.Unity.Gameroom">
+ <HintPath>C:/Users/b6038386/Documents/GitHub/Ascent_Mobile/Assets/FacebookSDK/Plugins/Gameroom/Facebook.Unity.Gameroom.dll</HintPath>
+ </Reference>
+ <Reference Include="FacebookNamedPipeClient">
+ <HintPath>C:/Users/b6038386/Documents/GitHub/Ascent_Mobile/Assets/FacebookSDK/Plugins/Gameroom/FacebookNamedPipeClient.dll</HintPath>
+ </Reference>
+ <Reference Include="Facebook.Unity.Settings">
+ <HintPath>C:/Users/b6038386/Documents/GitHub/Ascent_Mobile/Assets/FacebookSDK/Plugins/Settings/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
  <HintPath>C:/Users/b6038386/Documents/GitHub/Ascent_Mobile/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>

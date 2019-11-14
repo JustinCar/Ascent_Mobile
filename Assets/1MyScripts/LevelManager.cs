@@ -90,6 +90,7 @@ public class LevelManager : MonoBehaviour
 
     public void setStartPos() 
     {
+        FaceBookEvents.LogLevelReachedEvent(floorNumber);
         player.transform.position = generatorScript.startRoom.transform.position;
         cam.GetComponent<CinemachineVirtualCamera>().OnTargetObjectWarped(player.transform, new Vector3(player.transform.position.x - cam.transform.position.x, player.transform.position.y - cam.transform.position.y));
     }

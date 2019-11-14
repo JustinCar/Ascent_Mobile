@@ -63,6 +63,7 @@ public class LoadStats : MonoBehaviour
 		{
 			essence -= healthCost;
 			healthModifier += 1;	
+			FaceBookEvents.LogUpgradePurchasedEvent("HEALTH", healthModifier);
 		}
 	}
 
@@ -72,6 +73,7 @@ public class LoadStats : MonoBehaviour
 		{
 			essence -= manaCost;
 			manaModifier += 1;
+			FaceBookEvents.LogUpgradePurchasedEvent("MANA", manaModifier);
 		}
 	}
 	public void increaseDamageModifier() 
@@ -80,6 +82,7 @@ public class LoadStats : MonoBehaviour
 		{
 			essence -= damageCost;
 			damageModifier += 1;
+			FaceBookEvents.LogUpgradePurchasedEvent("DAMAGE", damageModifier);
 		}
 	}
 }

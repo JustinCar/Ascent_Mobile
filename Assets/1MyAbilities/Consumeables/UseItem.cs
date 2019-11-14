@@ -19,6 +19,8 @@ public class UseItem : MonoBehaviour {
 	public PlayerAudioManager audioManager;
 	LevelManager levelManager;
 
+	public string name;
+
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find("Player");
@@ -64,7 +66,7 @@ public class UseItem : MonoBehaviour {
 		}
 	}
 
-	public void consume () 
+	public void consume() 
 	{
 		if (healthItem) 
 		{
@@ -75,6 +77,8 @@ public class UseItem : MonoBehaviour {
 		}
 		controller.showBubbles();
 		audioManager.buffAudio();
+
+		FaceBookEvents.LogItemPickedUpOrConsumedEvent(name);
 
 		Destroy(gameObject);
 	}

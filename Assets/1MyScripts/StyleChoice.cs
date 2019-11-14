@@ -72,16 +72,19 @@ public class StyleChoice : MonoBehaviour
             case style.BOW :
             SaveLoadManager.SetFightingStyle(0);
             Debug.Log("FIGHTING STYLE = BOW");
+            FaceBookEvents.LogLevelStartedEvent("BOW");
             break;
 
             case style.MARTIAL :
             SaveLoadManager.SetFightingStyle(1);
             Debug.Log("FIGHTING STYLE = MARTIAL");
+            FaceBookEvents.LogLevelStartedEvent("MARTIAL");
             break;
 
             case style.SWORD :
             SaveLoadManager.SetFightingStyle(2);
             Debug.Log("FIGHTING STYLE = SWORD");
+            FaceBookEvents.LogLevelStartedEvent("SWORD");
             break;
         }
     }

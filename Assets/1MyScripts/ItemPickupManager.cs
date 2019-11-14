@@ -135,6 +135,8 @@ public class ItemPickupManager : MonoBehaviour {
 		abilityPanel.sprite = itemToBePickedUpStats.abilityIcon;
 
 		audioManager.pickupAudio();
+
+		FaceBookEvents.LogItemPickedUpOrConsumedEvent(itemToBePickedUpStats.abilityName);
 		
 		// pickup new item
 		abilitySlot.ability = ability;
