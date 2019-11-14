@@ -17,7 +17,7 @@ namespace Michsky.UI.Dark
 
         void Start()
         {
-            if (!GameObject.FindGameObjectWithTag("gamejuststarted").GetComponent<GameJustStarted>().justStarted) 
+            if (!GameObject.FindGameObjectWithTag("gamejuststarted").GetComponent<GameJustStarted>().justStarted || disableSplashScreen) 
             {
 
                 //splashScreen.SetActive(true);

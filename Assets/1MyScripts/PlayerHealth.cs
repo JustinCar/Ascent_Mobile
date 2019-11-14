@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour {
     public Rigidbody2D rigidbody;
     public GameObject deathOverlay;
 
-    float deathTimer = 8f;
+    float deathTimer = 3f;
 
     bool damaged = false;
     public Image damageImage;     

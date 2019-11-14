@@ -43,16 +43,16 @@ public class LootSystem : MonoBehaviour {
 			} else if (itemNum > 100 && itemNum <= 150) 
 			{
 				Instantiate(LargeHealthPot, transform.position, LargeHealthPot.transform.rotation); // Spawn a large health pot
-			} else if (itemNum > 150 && itemNum <= 300) 
+			} else if (itemNum > 150 && itemNum <= 400) 
 			{
 				Instantiate(LargeManaPot, transform.position, LargeManaPot.transform.rotation); // Spawn a large mana pot
-			} else if (itemNum > 300 && itemNum <= 400) 
+			} else if (itemNum > 400 && itemNum <= 500) 
 			{
 				Instantiate(smallHealthPot, transform.position, smallHealthPot.transform.rotation); // Spawn a small health pot
-			} else if (itemNum > 400 && itemNum <= 600) 
+			} else if (itemNum > 500 && itemNum <= 700) 
 			{
 				Instantiate(smallManaPot, transform.position, smallManaPot.transform.rotation); // Spawn a small mana pot
-			} else if (itemNum > 600 && itemNum <= 800) 
+			} else if (itemNum > 700 && itemNum <= 800) 
 			{
 				Instantiate(meal, transform.position, meal.transform.rotation); // Spawn a meal
 			} else if (itemNum > 800 && itemNum <= 1000) 

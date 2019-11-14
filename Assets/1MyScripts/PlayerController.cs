@@ -49,6 +49,16 @@ public class PlayerController : MonoBehaviour {
 
 	int weapon = 1;
 
+	public Joystick joyStick;
+
+	public float jumpCoolDown;
+	float jumpTimer;
+
+	public float fallCoolDown;
+	float fallTimer;
+
+	bool falling = false;
+
 	// Use this for initialization
 	void Start () {
 		rigidBody = GetComponent<Rigidbody2D>();
@@ -56,10 +66,20 @@ public class PlayerController : MonoBehaviour {
 		spaceButtonTimer = timeBetweenSpaceButtons;
 		weapon = SaveLoadManager.getFightingStyle();
 		// fazeTimer = fazeTime;
+		jumpTimer = jumpCoolDown;
+		fallTimer = fallCoolDown;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		float verticalMove = joyStick.Vertical;
+
+		if (joyStick.Horizontal >= 0.1f)
+			move = 1;
+		else if (joyStick.Horizontal <= -0.1f) 
+			move = -1;
+		else
+			move = 0;
 
 		if (anim.GetInteger("AnimState") == 5) 
 		{
@@ -67,7 +87,17 @@ public class PlayerController : MonoBehaviour {
 			attacked = false;
 		}
 
-		if ((Input.GetKeyDown(KeyCode.W) || upButtonPressed) && jumpCounter < 1 && !attacking) 
+		if (jumpCounter >= 1) 
+		{
+			jumpTimer -= Time.deltaTime;
+			if (jumpTimer <= 0) 
+			{
+				jumpCounter = 0;
+				jumpTimer = jumpCoolDown;
+			}
+		}
+
+		if ((Input.GetKeyDown(KeyCode.W) || upButtonPressed || verticalMove >= 0.5f) && jumpCounter < 1 && !attacking) 
 		{
 			// Cancel any previous force
 			Vector2 v = rigidBody.velocity;
@@ -85,9 +115,19 @@ public class PlayerController : MonoBehaviour {
 			jumpCounter++;
 		}
 
-		if ((Input.GetKeyDown(KeyCode.S) || downButtonPressed) && !attacking) 
+		if (falling) 
 		{
-			//collider.enabled = false;
+			fallTimer -= Time.deltaTime;
+			if (fallTimer <= 0) 
+			{
+				falling = false;
+				fallTimer = fallCoolDown;
+			}
+		}
+
+		if ((Input.GetKeyDown(KeyCode.S) || downButtonPressed || verticalMove <= -0.5f) && !falling && !attacking) 
+		{
+			falling = true;
 			Physics2D.IgnoreLayerCollision(9, 12, true); // Ignore collisions between player and soft ground
 			Physics2D.IgnoreLayerCollision(12, 9, true);
 			fazing = true;
@@ -113,10 +153,10 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 
-		if (grounded && jumpCounter != 0) 
-		{
-			jumpCounter = 0;
-		}
+		// if (grounded && jumpCounter != 0) 
+		// {
+		// 	jumpCounter = 0;
+		// }
 
 		if (groundedNum == 1) 
 		{

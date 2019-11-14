@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour {
 
-	public float distance = 0.5f;
+	public float distance = 1.5f;
 	CanvasRenderer canvasRenderer;
 	GameObject canvas;
 	GameObject player;
@@ -15,7 +15,7 @@ public class ItemPickup : MonoBehaviour {
 
 	float timer = 0.2f;
 
-	GameObject abilityOptionsInstance = null;
+	public GameObject abilityOptionsInstance = null;
 
 	// Use this for initialization
 	void Start () {
@@ -77,82 +77,87 @@ public class ItemPickup : MonoBehaviour {
 		}
 		if (showAbilityOptions && !abilityOptionsInstance)
 		{
-			abilityOptionsInstance = Instantiate(abilityOptions) as GameObject;
-			abilityOptionsInstance.transform.SetParent(canvas.transform, false);
-			abilityOptionsInstance.GetComponent<CloseAbilityOptions>().itemPickupScript = this;
+			createAbilityOptionsWindow();
+		}
+	}
 
-			AbilityStats stats;
-			if (gameObject.GetComponent<AbilityStats>()) 
-			{
-				stats = gameObject.GetComponent<AbilityStats>();
-			} else 
-			{
-				stats = ability.GetComponent<AbilityStats>();	
-			}
+	public void createAbilityOptionsWindow() 
+	{
+		abilityOptionsInstance = Instantiate(abilityOptions) as GameObject;
+		abilityOptionsInstance.transform.SetParent(canvas.transform, false);
+		abilityOptionsInstance.GetComponent<CloseAbilityOptions>().itemPickupScript = this;
+
+		AbilityStats stats;
+		if (gameObject.GetComponent<AbilityStats>()) 
+		{
+			stats = gameObject.GetComponent<AbilityStats>();
+		} else 
+		{
+			stats = ability.GetComponent<AbilityStats>();	
+		}
 			
-			SwapAbility left;
-			SwapAbility right;
+		SwapAbility left;
+		SwapAbility right;
 
-			AbilityOptionInfo[] scripts = abilityOptionsInstance.GetComponentsInChildren<AbilityOptionInfo>();
-			SwapAbility[] swapScripts = abilityOptionsInstance.GetComponentsInChildren<SwapAbility>();
+		AbilityOptionInfo[] scripts = abilityOptionsInstance.GetComponentsInChildren<AbilityOptionInfo>();
+		SwapAbility[] swapScripts = abilityOptionsInstance.GetComponentsInChildren<SwapAbility>();
 
-			foreach (AbilityOptionInfo info in scripts) 
+		foreach (AbilityOptionInfo info in scripts) 
+		{
+			if (info.abilitySlot == 2) 
 			{
-				if (info.abilitySlot == 2) 
-				{
-					info.abilityNameTxt.text = stats.abilityName;
-					info.damageTxt.text = stats.damageLowerBound + " - " + stats.damageUpperBound;
-					info.manaTxt.text = "" + stats.manaCost;
-					info.coolDownTxt.text = "" + stats.coolDown;
-					info.specialEffectTxt.text = stats.specialEffectName;
-					info.specialEffectDamageTxt.text = "" + stats.specialEffectDamage;
-					info.specialEffectDurationTxt.text = "" + stats.specialEffectDuration;
-					info.specialEffectRepeatTxt.text = "" + stats.specialEffectRepeat;
-					info.icon.sprite = stats.abilityIcon;
+				info.abilityNameTxt.text = stats.abilityName;
+				info.damageTxt.text = stats.damageLowerBound + " - " + stats.damageUpperBound;
+				info.manaTxt.text = "" + stats.manaCost;
+				info.coolDownTxt.text = "" + stats.coolDown;
+				info.specialEffectTxt.text = stats.specialEffectName;
+				info.specialEffectDamageTxt.text = "" + stats.specialEffectDamage;
+				info.specialEffectDurationTxt.text = "" + stats.specialEffectDuration;
+				info.specialEffectRepeatTxt.text = "" + stats.specialEffectRepeat;
+				info.icon.sprite = stats.abilityIcon;
 
-					switch (stats.rarity)
-					{
-						case 1:
-							info.rarityTxt.text = "Common";
-							info.rarityTxt.color = Color.gray;
-							break;
-						case 2:
-							info.rarityTxt.text = "Uncommon";
-							info.rarityTxt.color = Color.green;
-							break;
-						case 3:
-							info.rarityTxt.text = "Rare";
-							info.rarityTxt.color = Color.cyan;
-							break;
-						case 4:
-							info.rarityTxt.text = "Epic";
-							info.rarityTxt.color = Color.magenta;
-							break;
-						case 5:
-							info.rarityTxt.text = "legendary";
-							info.rarityTxt.color = Color.yellow;
-							break;
-					}
-				}	
-			}
-
-			foreach (SwapAbility s in swapScripts) 
-			{
-				if (s.gameObject.name == "LMBAbilityButton") 
+				switch (stats.rarity)
 				{
-					left = s;
-					left.ability = ability;
-					left.stats = stats;
-					left.item = gameObject;
-					left.abilityMenu = abilityOptionsInstance;
-				} else if (s.gameObject.name == "RMBAbilityButton") 
-				{
-					right = s;
-					right.ability = ability;
-					right.stats = stats;
-					right.item = gameObject;
-					right.abilityMenu = abilityOptionsInstance;
+					case 1:
+						info.rarityTxt.text = "Common";
+						info.rarityTxt.color = Color.gray;
+						break;
+					case 2:
+						info.rarityTxt.text = "Uncommon";
+						info.rarityTxt.color = Color.green;
+						break;
+					case 3:
+						info.rarityTxt.text = "Rare";
+						info.rarityTxt.color = Color.cyan;
+						break;
+					case 4:
+						info.rarityTxt.text = "Epic";
+						info.rarityTxt.color = Color.magenta;
+						break;
+					case 5:
+						info.rarityTxt.text = "legendary";
+						info.rarityTxt.color = Color.yellow;
+						break;
 				}
+			}	
+		}
+
+		foreach (SwapAbility s in swapScripts) 
+		{
+			if (s.gameObject.name == "LMBAbilityButton") 
+			{
+				left = s;
+				left.ability = ability;
+				left.stats = stats;
+				left.item = gameObject;
+				left.abilityMenu = abilityOptionsInstance;
+			} else if (s.gameObject.name == "RMBAbilityButton") 
+			{
+				right = s;
+				right.ability = ability;
+				right.stats = stats;
+				right.item = gameObject;
+				right.abilityMenu = abilityOptionsInstance;
 			}
 		}
 	}

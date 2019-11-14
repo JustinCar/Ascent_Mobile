@@ -14,10 +14,4 @@ public class DeathAdvice : MonoBehaviour
         text = gameObject.GetComponent<Text>();
         text.text = advice[Random.Range(0, advice.Count)];
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 95950127599542926}
   - component: {fileID: 50336138495017340}
   - component: {fileID: 61535363376176228}
+  - component: {fileID: 7584967472181451263}
   - component: {fileID: 114299865184839558}
   - component: {fileID: 4258940741718391495}
   - component: {fileID: 114891676486533440}
@@ -160,6 +161,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17, y: 0.29}
   m_EdgeRadius: 0
+--- !u!114 &7584967472181451263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135450434695518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d67a7e36e17f644a8470fb0f43b1f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114299865184839558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +349,7 @@ MonoBehaviour:
   flashSpeed: 5
   flashColour: {r: 0.5849056, g: 0, b: 0, a: 0.62352943}
   playerHurtAudio: {fileID: 8300000, guid: 0100ff51c214141e1b726485e4ae197e, type: 3}
+  levelManager: {fileID: 0}
 --- !u!82 &1129078954
 AudioSource:
   m_ObjectHideFlags: 0
