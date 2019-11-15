@@ -33,6 +33,7 @@ public class LoadScreenTips : MonoBehaviour
             }
             previousIndex = newIndex;
             text.text = advice[newIndex];
+            timer = coolDown;
         }
     }
 }
