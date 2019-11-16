@@ -74,6 +74,11 @@ public class ItemPickupManager : MonoBehaviour {
 
 	void autoPickupConsumeable()
 	{
+		if (!closestItem) 
+		{
+			return;
+		}
+
 		UseItem item = closestItem.GetComponent<UseItem>();
 		if (item)
 		{
@@ -89,6 +94,11 @@ public class ItemPickupManager : MonoBehaviour {
 
 	void autoPickupSpell() 
 	{
+		if (!closestItem) 
+		{
+			return;
+		}
+		
 		ItemPickup spell = closestItem.GetComponent<ItemPickup>();
 
 		if (spell) 

@@ -34,6 +34,8 @@ public class EnemySpell : MonoBehaviour {
 		audioManager = GameObject.Find("Player").GetComponent<PlayerAudioManager>();
 
 		target = playerCtrl.gameObject.transform.position - transform.position;
+		target.y += 0.3f;
+		target.x -= 0.1f;
     }
 
 	void Update () 
@@ -47,9 +49,6 @@ public class EnemySpell : MonoBehaviour {
 			Destroy(gameObject);
 		}
 
-		// Vector2 target = playerCtrl.gameObject.transform.position;
-		// target.y += 0.3f;
-		// target.x -= 0.1f;
 		float step = speed * Time.deltaTime;
 
         // move sprite towards the target location

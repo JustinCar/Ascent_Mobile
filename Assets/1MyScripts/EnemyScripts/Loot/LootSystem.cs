@@ -26,15 +26,15 @@ public class LootSystem : MonoBehaviour {
 
 		int num = Random.Range(1, 1000);
 
-		if (num < 100) 
+		if (num < 200) 
 		{
-			droppingItem = true; // Roughly ten percent chance of spawning an item
+			droppingItem = true;
 		}
 		droppingItem = true;
 
 		if (droppingItem == true) 
 		{
-			int itemNum = Random.Range(1, 1400);
+			int itemNum = Random.Range(1, 1700);
 
 			if (itemNum <= 100 || itemNum > 1000 ) 
 			{

@@ -8,9 +8,6 @@ public class UseAbility : MonoBehaviour {
     public float timeBetweenAttacks;        // The time between each shot.
     float timer;                                    // A timer to determine when to fire.               
 
-    // AudioSource gunAudio;                           // Reference to the audio source.
-    // Light gunLight;                                 // Reference to the light component.
-
     public PlayerController playerCtrl;
     public PlayerHealth playerHealth;
     public Animator anim;

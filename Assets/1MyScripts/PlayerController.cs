@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour {
 
 	public float move = 0;
 
-	int weapon = 1;
+	int weapon = 2;
 
 	public Joystick joyStick;
 
