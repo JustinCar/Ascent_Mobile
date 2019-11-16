@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Facebook.Unity;
 
 public class GameJustStarted : MonoBehaviour
 {
     public bool justStarted = true;
+    public bool FBSyncSuccessful;
 
     void Start() 
     {
@@ -17,6 +19,8 @@ public class GameJustStarted : MonoBehaviour
             NOTE: You should enter the number only and not the "ID" prefix */
             AppsFlyer.setAppID ("1484939499");
             AppsFlyer.trackAppLaunch();
+
+            FB.Init(this.OnInitComplete);
         #elif UNITY_ANDROID
             /* Mandatory - set your Android package name */
             AppsFlyer.setAppID ("YOUR_ANDROID_PACKAGE_NAME_HERE");
@@ -33,5 +37,10 @@ public class GameJustStarted : MonoBehaviour
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void OnInitComplete()
+    {
+        FBSyncSuccessful = true;
     }
 }
