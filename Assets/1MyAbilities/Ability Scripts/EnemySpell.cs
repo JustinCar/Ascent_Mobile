@@ -50,9 +50,9 @@ public class EnemySpell : MonoBehaviour {
 		}
 
 		float step = speed * Time.deltaTime;
-
+		
         // move sprite towards the target location
-        transform.position += target * step;
+        transform.position += target.normalized * step;
 	}
 
 	bool playerToLeft(GameObject player) 

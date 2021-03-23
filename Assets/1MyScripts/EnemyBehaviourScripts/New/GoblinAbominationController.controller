@@ -44,7 +44,7 @@ MonoBehaviour:
   facingLeft: 0
   disengageDistanceX: 1.87
   disengageDistanceY: 0.8
-  attackRange: 0.1
+  attackRange: 0.2
 --- !u!1101 &-6803540972742809921
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -86,7 +86,7 @@ MonoBehaviour:
   facingLeft: 0
   disengageDistanceX: 1.87
   disengageDistanceY: 0.8
-  attackRange: 0.1
+  attackRange: 0.2
 --- !u!114 &-5620362140306136514
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,7 +103,7 @@ MonoBehaviour:
   timeToSpendIdleLowerBound: 3
   timeToSpendIdleUpperBound: 6
   facingLeft: 0
-  rayDistance: 2
+  rayDistance: 5
   isSpellCaster: 0
 --- !u!1101 &-4295623550869579452
 AnimatorStateTransition:
@@ -443,7 +443,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: chase
-  m_Speed: 1
+  m_Speed: 2.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101275295159792192}
@@ -460,7 +460,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 83d4ab3763159b4448c7b886b555df13, type: 2}
+  m_Motion: {fileID: 7400000, guid: 37923305e0b13bb428ae5ecb313ba825, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -474,7 +474,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Idle
-  m_Speed: 1
+  m_Speed: 2.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101773243439029098}
@@ -489,7 +489,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 45d4dbc7baa50344f9954366e4b6a234, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8ec366b1cb11aec4fac1ecbe7b959677, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -503,7 +503,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Attack
-  m_Speed: 1
+  m_Speed: 2.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4751031200357396726}
@@ -517,7 +517,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 235c8807874d9bb48bf437bb7896292e, type: 2}
+  m_Motion: {fileID: 7400000, guid: 31e1d82f1ae1c004798c3b85288621f0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -531,7 +531,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Death
-  m_Speed: 1
+  m_Speed: 2.5
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -543,7 +543,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 84e8557ba0465cd46a040d42b7147a1f, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5cc6f33015cb528459be709a51e40edb, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -623,7 +623,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: BellySmash
-  m_Speed: 1
+  m_Speed: 2.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -2593161748891253370}
@@ -637,7 +637,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 94cd2ca1203f30241897284ff43f60ca, type: 2}
+  m_Motion: {fileID: 7400000, guid: ba2a1f043230af3468bbab4977025a83, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -651,7 +651,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Patrol
-  m_Speed: 1
+  m_Speed: 2.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 8497600100561699429}
@@ -666,7 +666,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6cf308ee4e4e9a14fb00684ff4f43351, type: 2}
+  m_Motion: {fileID: 7400000, guid: 405505c7142940b46b50754f3c173120, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -811,7 +811,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CombatIdle
-  m_Speed: 1
+  m_Speed: 2.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6803540972742809921}
@@ -828,7 +828,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: ea6c9127ee8caf049bfdd0727f0d8cfb, type: 2}
+  m_Motion: {fileID: 7400000, guid: 01570cf2a12feac408e1bae228ed4c86, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
