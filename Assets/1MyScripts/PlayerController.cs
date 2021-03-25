@@ -347,7 +347,6 @@ public class PlayerController : MonoBehaviour {
 	// Flip the character horizontally
 	void flip() 
 	{
-		Debug.Log("Flipping");
 		facingLeft = !facingLeft;
 		Vector3 scale = transform.localScale;
 		scale.x *= -1;

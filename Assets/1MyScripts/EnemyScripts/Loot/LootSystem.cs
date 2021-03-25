@@ -66,10 +66,6 @@ public class LootSystem : MonoBehaviour {
 	{
 		int numPartsToSpawn = essenceVal / 2;
 
-		Debug.Log("ESSENCE VALUE " + essenceVal);
-
-		Debug.Log("SPAWNING " + numPartsToSpawn + " BODY PARTS");
-
 		if (numPartsToSpawn > maxParts) 
 		{
 			numPartsToSpawn = maxParts;

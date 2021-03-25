@@ -77,7 +77,6 @@ public class EnemyPatrol : StateMachineBehaviour
 				{
 					if (hit.collider.gameObject.tag == "Player") 
 					{
-						Debug.Log("Player seen");
 						Debug.DrawRay(animator.transform.parent.transform.position, new Vector2(-rayDistance, 0), Color.green);
 
 						animator.SetBool("isChasing", true);
@@ -92,7 +91,6 @@ public class EnemyPatrol : StateMachineBehaviour
 				{
 					if (hit.collider.gameObject.tag == "Player") 
 					{
-						Debug.Log("Player seen");
 						Debug.DrawRay(animator.transform.parent.transform.position, new Vector2(rayDistance, 0), Color.green);
 
 						animator.SetBool("isChasing", true);

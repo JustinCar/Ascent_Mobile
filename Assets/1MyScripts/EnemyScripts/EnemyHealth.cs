@@ -44,6 +44,11 @@ public class EnemyHealth : MonoBehaviour {
     public ParticleSystem bloodSpray;
     public Transform bloodSprayPos;
 
+    public delegate void OnDeathDelegate();
+    public OnDeathDelegate OnDeath;
+
+    public bool ShouldSpawnLootOnDeath = true;
+
     void Awake()
     {
         levelManager = GameObject.Find("Manager").GetComponent<LevelManager>();
@@ -242,7 +247,6 @@ public class EnemyHealth : MonoBehaviour {
 
     void showFloatingText(int amount, bool toRight, bool shouldStun)
     {
-        Debug.Log("TEXT INSTANTIATED");
         Vector3 pos = gameObject.GetComponentInChildren<Canvas>().transform.position;
         GameObject text = Instantiate(floatingText, pos, Quaternion.identity, transform) as GameObject;
         text.gameObject.transform.SetParent(gameObject.GetComponentInChildren<Canvas>().transform);
@@ -255,8 +259,17 @@ public class EnemyHealth : MonoBehaviour {
         // The enemy is dead.
         isDead = true;
 
-        spawnLoot();
+        if (OnDeath != null)
+        {
+            OnDeath();
+        }
 
+        if (ShouldSpawnLootOnDeath)
+        {
+            spawnLoot();  
+            FaceBookEvents.LogEnemyKilledEvent();
+        }
+        
         state.death();
 
         canvas.enabled = false;
@@ -265,8 +278,6 @@ public class EnemyHealth : MonoBehaviour {
 
         // Tell the animator that the enemy is dead.
         anim.SetBool("isDead", true);
-
-        FaceBookEvents.LogEnemyKilledEvent();
     }
 
     public void spawnLoot () 
@@ -279,10 +290,8 @@ public class EnemyHealth : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-		Debug.Log("trigger");
         if (other.gameObject.tag == "PlatformEdge" && !anim.GetBool("isChasing")) 
 		{
-			Debug.Log("edge found");
 			if (move == -1) 
 			{
 				move = 1;
@@ -304,7 +313,6 @@ public class EnemyHealth : MonoBehaviour {
 			{
 				return true;
 			}
-			Debug.Log("ERROR");
 			return false;
 		}
 

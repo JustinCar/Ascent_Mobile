@@ -48,7 +48,6 @@ public class Burn : MonoBehaviour {
         if (effectTimer >= effectTime) 
         {
             effectTimer = 0;
-            Debug.Log("burn");
             enemy.TakeDamage(specialEffectDamage, travelingLeft, false, 0);            
         }
 	}

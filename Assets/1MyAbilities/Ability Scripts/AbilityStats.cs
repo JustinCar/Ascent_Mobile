@@ -55,12 +55,9 @@ public class AbilityStats : MonoBehaviour {
 
 			if (newItem) 
 			{
-				Debug.Log("NEW ITEM: " + abilityName);
 				manaCost = Random.Range(manaCostLowerBound, manaCostUpperBound);
 
 				float modifier = (1 + ((float)levelManager.floorNumber / 10));
-				Debug.Log("MODIFIER: " + modifier);
-
 
 				// Better items are available on higher levels
 				damageLowerBound = Random.Range(damageLBLowerBound, damageLBUpperBound);
@@ -152,8 +149,6 @@ public class AbilityStats : MonoBehaviour {
 
 			} else 
 			{
-
-				Debug.Log("OLD INSTANTIATED: " + abilityName);
 				// Stats are further affected by their rarity	
 				// uncommon is the base stat
 				switch (rarity)

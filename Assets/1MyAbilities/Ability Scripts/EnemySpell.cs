@@ -65,7 +65,6 @@ public class EnemySpell : MonoBehaviour {
 		{
 			return true;
 		}
-		Debug.Log("ERROR");
 		return false;
 	}
 

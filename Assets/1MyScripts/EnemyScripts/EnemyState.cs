@@ -79,8 +79,6 @@ public class EnemyState : MonoBehaviour {
 	{
 
 		anim.enabled = true;
-
-		Debug.Log("HIDING EFFECTS");
         isDead = true;
 		burning = false;
 		burningFX.SetActive(false);

@@ -10,8 +10,6 @@ public class HighestLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("TEST");
-        Debug.Log("HIGHEST FLOOR: " + SaveLoadManager.getHighestFloor());
         text.SetText("" + SaveLoadManager.getHighestFloor());
     }
 }

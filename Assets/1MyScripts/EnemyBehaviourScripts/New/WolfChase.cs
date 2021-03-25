@@ -6,9 +6,9 @@ public class WolfChase : StateMachineBehaviour
 {
 
     private Transform playerPos;
-    public float speed;
-
-
+    public float minSpeed;
+    public float MaxSpeed;
+    private float speed;
     EnemyHealth health;
     bool stunned = false;
     public bool facingLeft;
@@ -26,6 +26,7 @@ public class WolfChase : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        speed = Random.Range(minSpeed, MaxSpeed); 
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         sprite = animator.gameObject;
         rigidBody = animator.gameObject.GetComponentInParent<Rigidbody2D>();
@@ -42,10 +43,10 @@ public class WolfChase : StateMachineBehaviour
         move = health.move;
 
         Vector2 difference = animator.transform.parent.transform.position - playerPos.position;
-		if (Mathf.Abs(difference.x) > disengageDistanceX) 
-		{
-			animator.SetBool("isChasing", false);
-		}
+		// if (Mathf.Abs(difference.x) > disengageDistanceX) 
+		// {
+		// 	animator.SetBool("isChasing", false);
+		// }
 		if (Mathf.Abs(difference.y) > disengageDistanceY) 
 		{
 			animator.SetBool("isChasing", false);

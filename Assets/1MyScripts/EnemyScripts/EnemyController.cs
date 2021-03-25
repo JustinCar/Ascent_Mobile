@@ -129,7 +129,6 @@ public class EnemyController : MonoBehaviour {
 							{
 								if (hit.collider.gameObject.tag == "Player") 
 								{
-									Debug.Log("Player seen");
 									Debug.DrawRay(transform.position, new Vector2(-rayDistance, 0), Color.green);
 
 									chasing = true;
@@ -145,7 +144,6 @@ public class EnemyController : MonoBehaviour {
 							{
 								if (hit.collider.gameObject.tag == "Player") 
 								{
-									Debug.Log("Player seen");
 									Debug.DrawRay(transform.position, new Vector2(rayDistance, 0), Color.green);
 
 									chasing = true;
@@ -244,10 +242,8 @@ public class EnemyController : MonoBehaviour {
 	// Prevent from falling off platform
 	private void OnTriggerEnter2D(Collider2D other)
     {
-		Debug.Log("trigger");
         if (other.gameObject.tag == "PlatformEdge" && !chasing) 
 				{
-					Debug.Log("edge found");
 					if (move == -1) 
 					{
 						move = 1;
@@ -268,7 +264,6 @@ public class EnemyController : MonoBehaviour {
 			{
 				return true;
 			}
-			Debug.Log("ERROR");
 			return false;
 		}
 

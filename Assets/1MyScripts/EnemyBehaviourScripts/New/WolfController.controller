@@ -162,7 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ff66554b53e6d4dbe809f162cbf30e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  minSpeed: 0.5
+  MaxSpeed: 1.5
   facingLeft: 0
   disengageDistanceX: 1.87
   disengageDistanceY: 0.8
@@ -509,7 +510,7 @@ AnimatorStateMachine:
     m_Position: {x: 350, y: 50, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102019224233564524}
-    m_Position: {x: 530, y: -110, z: 0}
+    m_Position: {x: 540, y: -110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102898132447169496}
     m_Position: {x: 680, y: -300, z: 0}
@@ -529,7 +530,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 170, y: 230, z: 0}
-  m_EntryPosition: {x: 70, y: 30, z: 0}
+  m_EntryPosition: {x: 90, y: 60, z: 0}
   m_ExitPosition: {x: 1020, y: 490, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1102546726824370936}
@@ -658,7 +659,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ff66554b53e6d4dbe809f162cbf30e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  minSpeed: 0.5
+  MaxSpeed: 1.5
   facingLeft: 0
   disengageDistanceX: 1.87
   disengageDistanceY: 0.8

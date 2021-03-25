@@ -140,7 +140,6 @@ public class GoblinGruntController : MonoBehaviour {
 					{
 						if (hit.collider.gameObject.tag == "Player") 
 						{
-							Debug.Log("Player seen");
 							Debug.DrawRay(transform.position, new Vector2(-rayDistance, 0), Color.green);
 
 							chasing = true;
@@ -156,7 +155,6 @@ public class GoblinGruntController : MonoBehaviour {
 					{
 						if (hit.collider.gameObject.tag == "Player") 
 						{
-							Debug.Log("Player seen");
 							Debug.DrawRay(transform.position, new Vector2(rayDistance, 0), Color.green);
 
 							chasing = true;
@@ -275,7 +273,6 @@ public class GoblinGruntController : MonoBehaviour {
     {
         if (other.gameObject.tag == "PlatformEdge" && !chasing) 
 		{
-			Debug.Log("edge found");
 			if (move == -1) 
 			{
 				move = 1;
@@ -296,7 +293,7 @@ public class GoblinGruntController : MonoBehaviour {
 		{
 			return true;
 		}
-		Debug.Log("ERROR");
+
 		return false;
 	}
 

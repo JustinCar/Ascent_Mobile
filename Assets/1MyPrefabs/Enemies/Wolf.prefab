@@ -645,6 +645,7 @@ GameObject:
   - component: {fileID: 1056745104043585158}
   - component: {fileID: 1063643262825254824}
   - component: {fileID: 1121237722829481632}
+  - component: {fileID: 8703374121617199442}
   m_Layer: 8
   m_Name: Wolf
   m_TagString: Enemy
@@ -717,6 +718,7 @@ MonoBehaviour:
   bloodSpray: {fileID: 4423819921517255203, guid: f967c228a109eb94bae7b5cf5bff8c9e,
     type: 3}
   bloodSprayPos: {fileID: 2961237279427673801}
+  ShouldSpawnLootOnDeath: 1
 --- !u!50 &1056745104043585158
 Rigidbody2D:
   serializedVersion: 4
@@ -751,7 +753,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07, y: -0.14}
+  m_Offset: {x: -0.07, y: -0.05}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -786,7 +788,27 @@ MonoBehaviour:
   poisonFX: {fileID: 1016996889437720366}
   voidFX: {fileID: 1017745593230552226}
   castFX: {fileID: 0}
+  isDead: 0
   anim: {fileID: 1102718226934979258}
+--- !u!114 &8703374121617199442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016797188832622638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba9d73c277b2614b9098cc6a6164494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WolfToSpawn: {fileID: 1016797188832622638, guid: 3b9907263f8f56f4282410b1a71691f6,
+    type: 3}
+  NumberToSpawn: 3
+  MinDistanceToSpawn: 1
+  MaxDistanceToSpawn: 2
+  RaycastLayer: 11
+  SpawnOffset: 0.1
 --- !u!1 &1016878278325694426
 GameObject:
   m_ObjectHideFlags: 0

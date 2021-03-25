@@ -142,7 +142,6 @@ public class PlayerHealth : MonoBehaviour {
 
         // Set the death flag so this function won't be called again.
         isDead = true;
-        Debug.Log("Dead");
 
         SaveLoadManager.SetEssence(GameObject.Find("EssenceBackground").GetComponent<EssenceManager>().essence);
         SaveLoadManager.SetHighestFloor(levelManager.floorNumber);
