@@ -34,6 +34,7 @@ public class EnemyController : MonoBehaviour {
 	public float disengageDistanceY; // The distance on the y axis before the enemy will stop chasing
 
 	EnemyHealth health;
+	LayerMask mask;
 
 
 	// Use this for initialization
@@ -43,7 +44,7 @@ public class EnemyController : MonoBehaviour {
 		health = GetComponent<EnemyHealth>();
 		patrolTimer = Random.Range(patrolTimerLowerBound, patrolTimerUpperBound);
 		idleTimer = Random.Range(idleTimerLowerBound, idleTimerUpperBound);
-
+		mask = LayerMask.GetMask("Player");
 	}
 	
 	// Update is called once per frame
@@ -89,69 +90,46 @@ public class EnemyController : MonoBehaviour {
 
 		if (!stunned) 
 		{
-			  RaycastHit2D hit;
-				LayerMask mask = LayerMask.GetMask("Player");
+			if (chasing) 
+			{
+				attackTimer -= Time.deltaTime;
 
-				if (chasing) 
+				if (!attacking && Vector2.Distance(transform.position, player.transform.position) > attackRange) 
 				{
-					attackTimer -= Time.deltaTime;
+					transform.position = Vector2.MoveTowards(transform.position, player.transform.position, chaseSpeed * Time.deltaTime);						
+				}
 
-					if (!attacking && Vector2.Distance(transform.position, player.transform.position) > attackRange) 
+				if (Vector2.Distance(transform.position, player.transform.position) < attackRange && attackTimer <= 0) 
+				{
+					attacking = true;
+					rigidBody.velocity = new Vector2(0,0);
+				}
+
+				if (!attacking) 
+				{
+					// Always face the player
+					if (playerIsLeft && !facingLeft) 
 					{
-						transform.position = Vector2.MoveTowards(transform.position, player.transform.position, chaseSpeed * Time.deltaTime);						
+						flip();
 					}
-
-					if (Vector2.Distance(transform.position, player.transform.position) < attackRange && attackTimer <= 0) 
+					if (!playerIsLeft && facingLeft) 
 					{
-						attacking = true;
-						rigidBody.velocity = new Vector2(0,0);
-					}
-
-					if (!attacking) 
-					{
-						// Always face the player
-						if (playerIsLeft && !facingLeft) 
-						{
-							flip();
-						}
-						if (!playerIsLeft && facingLeft) 
-						{
-							flip();
-						}
+						flip();
 					}
 				}
-				else if (!attacking)
+			}
+			else if (!attacking)
+			{
+				int direction = facingLeft ? -1 : 1;
+
+				RaycastHit2D hit = Physics2D.Raycast(transform.position, direction * Vector2.right, rayDistance, mask);
+				if (hit) 
 				{
-					if (facingLeft) 
-					{
-							hit = Physics2D.Raycast(transform.position, -Vector2.right, rayDistance, mask);
-							if (hit) 
-							{
-								if (hit.collider.gameObject.tag == "Player") 
-								{
-									Debug.DrawRay(transform.position, new Vector2(-rayDistance, 0), Color.green);
-
-									chasing = true;
-									patroling = false;
-								}
-							}
-					}
-					else
-					{
-							hit = Physics2D.Raycast(transform.position, Vector2.right, rayDistance, mask);
-							
-							if (hit) 
-							{
-								if (hit.collider.gameObject.tag == "Player") 
-								{
-									Debug.DrawRay(transform.position, new Vector2(rayDistance, 0), Color.green);
-
-									chasing = true;
-									patroling = false;
-								}
-							}
-					}
+					Debug.DrawRay(transform.position, direction * Vector2.right, Color.green);
+					chasing = true;
+					patroling = false;
 				}
+			}
 		}
 	}
 

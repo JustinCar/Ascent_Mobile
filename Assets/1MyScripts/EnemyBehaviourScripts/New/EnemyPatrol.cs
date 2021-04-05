@@ -17,7 +17,7 @@ public class EnemyPatrol : StateMachineBehaviour
     EnemyHealth health;
     bool stunned = false;
     public bool facingLeft;
-    int enemyLayer = 8;
+    int playerLayer = 9;
     int mask;
     public float rayDistance;
     GameObject sprite;
@@ -31,7 +31,7 @@ public class EnemyPatrol : StateMachineBehaviour
         timer = 0.0f;
         timeToSpendWandering = Random.Range(timeToSpendWanderingLowerBound, timeToSpendWanderingUpperBound);
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-        mask = ~(1 << enemyLayer); //Exclude enemy layer
+        mask = LayerMask.GetMask("Player", "HardGround");
         sprite = animator.gameObject;
         rigidBody = animator.gameObject.GetComponentInParent<Rigidbody2D>();
         health = animator.gameObject.GetComponentInParent<EnemyHealth>();
@@ -68,48 +68,14 @@ public class EnemyPatrol : StateMachineBehaviour
             animator.SetBool("isChasing", true);
         }
 
-        RaycastHit2D hit;
+        int direction = facingLeft ? -1 : 1;
 
-        if (facingLeft) 
-			{
-				hit = Physics2D.Raycast(animator.transform.parent.transform.position, -Vector2.right, rayDistance, mask);
-				if (hit) 
-				{
-					if (hit.collider.gameObject.tag == "Player") 
-					{
-						Debug.DrawRay(animator.transform.parent.transform.position, new Vector2(-rayDistance, 0), Color.green);
-
-						animator.SetBool("isChasing", true);
-					}
-				}
-		}
-		else
+		RaycastHit2D hit = Physics2D.Raycast(animator.transform.parent.transform.position, direction * Vector2.right, rayDistance, mask);
+		if (hit && hit.collider.gameObject.layer == playerLayer) 
 		{
-				hit = Physics2D.Raycast(animator.transform.parent.transform.position, Vector2.right, rayDistance, mask);
-							
-				if (hit) 
-				{
-					if (hit.collider.gameObject.tag == "Player") 
-					{
-						Debug.DrawRay(animator.transform.parent.transform.position, new Vector2(rayDistance, 0), Color.green);
-
-						animator.SetBool("isChasing", true);
-					}
-				}
+			Debug.DrawRay(animator.transform.parent.transform.position, direction * Vector2.right, Color.green);
+			animator.SetBool("isChasing", true);
 		}
-
-        // // Occasionally change direction
-		// if (Random.Range(1, 200) <= 1) 
-		// {
-		// 	if (move == -1) 
-		// 	{
-		// 		health.move = 1;
-		// 	} else if (move == 1) 
-		// 	{
-		// 		health.move = -1;
-		// 	}
-        //     flip();
-		// }
 
         if (move > 0 && facingLeft) 
 		{

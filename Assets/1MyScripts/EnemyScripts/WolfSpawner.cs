@@ -10,12 +10,14 @@ public class WolfSpawner : MonoBehaviour
     public float MinDistanceToSpawn;
     public float MaxDistanceToSpawn;
     public int RaycastLayer;
+    int Mask;
 
     public float SpawnOffset;
     // Start is called before the first frame update
     void Start()
     {
         gameObject.GetComponent<EnemyHealth>().OnDeath = OnWolfDeath;
+        Mask = 1 << RaycastLayer;
     }
 
     void OnWolfDeath()
@@ -37,21 +39,9 @@ public class WolfSpawner : MonoBehaviour
         }
     }
 
-    bool LeftSideClear()
+    bool IsDirectionClear(int Direction)
     {
-        RaycastHit2D 
-        hit = Physics2D.Raycast(gameObject.transform.position, -Vector2.right, MaxDistanceToSpawn, RaycastLayer);
-		if (hit) 
-		{
-			return false;
-		}
-
-        return true;
-    }
-    bool RightSideClear()
-    {
-        RaycastHit2D 
-        hit = Physics2D.Raycast(gameObject.transform.position, Vector2.right, MaxDistanceToSpawn, RaycastLayer);
+        RaycastHit2D hit = Physics2D.Raycast(gameObject.transform.position, Direction * Vector2.right, MaxDistanceToSpawn, Mask);
 		if (hit) 
 		{
 			return false;
@@ -64,7 +54,7 @@ public class WolfSpawner : MonoBehaviour
     {
             if (Random.Range(1, 3) == 1)
             {
-                if(RightSideClear())
+                if(IsDirectionClear(1))
                 {
                     return 1; 
                 }
@@ -75,7 +65,7 @@ public class WolfSpawner : MonoBehaviour
             }
             else
             {
-                if(LeftSideClear())
+                if(IsDirectionClear(-1))
                 {
                     return -1; 
                 }

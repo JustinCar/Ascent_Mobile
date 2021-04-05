@@ -10,14 +10,10 @@ public class EnemyIdle : StateMachineBehaviour
     public float timeToSpendIdleUpperBound;
     private float timer = 0.0f;
     private float timeToSpendIdle = 0.0f;
-
-
-
-
     EnemyHealth health;
     bool stunned = false;
     public bool facingLeft;
-    int enemyLayer = 8;
+    int playerLayer = 9;
     int mask;
     public float rayDistance;
     GameObject sprite;
@@ -30,7 +26,7 @@ public class EnemyIdle : StateMachineBehaviour
         timer = 0.0f;
         timeToSpendIdle = Random.Range(timeToSpendIdleLowerBound, timeToSpendIdleUpperBound);
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-        mask = ~(1 << enemyLayer); //Exclude enemy layer
+        mask = LayerMask.GetMask("Player", "HardGround");
         sprite = animator.gameObject;
         health = animator.gameObject.GetComponentInParent<EnemyHealth>();
     }
@@ -63,37 +59,15 @@ public class EnemyIdle : StateMachineBehaviour
         {
             animator.SetBool("isChasing", true);
         }
-        RaycastHit2D hit;
 
-        if (facingLeft) 
-			{
-				hit = Physics2D.Raycast(animator.transform.parent.transform.position, -Vector2.right, rayDistance, mask);
-				if (hit) 
-				{
-					if (hit.collider.gameObject.tag == "Player") 
-					{
-						Debug.DrawRay(animator.transform.parent.transform.position, new Vector2(-rayDistance, 0), Color.green);
+        int direction = facingLeft ? -1 : 1;
 
-						animator.SetBool("isChasing", true);
-					}
-				}
-		}
-		else
+		RaycastHit2D hit = Physics2D.Raycast(animator.transform.parent.transform.position, direction * Vector2.right, rayDistance, mask);
+		if (hit && hit.collider.gameObject.layer == playerLayer) 
 		{
-				hit = Physics2D.Raycast(animator.transform.parent.transform.position, Vector2.right, rayDistance, mask);
-							
-				if (hit) 
-				{
-					if (hit.collider.gameObject.tag == "Player") 
-					{
-						Debug.DrawRay(animator.transform.parent.transform.position, new Vector2(rayDistance, 0), Color.green);
-
-						animator.SetBool("isChasing", true);
-					}
-				}
+			Debug.DrawRay(animator.transform.parent.transform.position, direction * Vector2.right, Color.green);
+			animator.SetBool("isChasing", true);
 		}
-
-
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state

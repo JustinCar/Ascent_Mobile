@@ -304,17 +304,17 @@ public class EnemyHealth : MonoBehaviour {
     }
 
 	public bool playerToLeft() 
+	{
+		if ((transform.position.x - player.transform.position.x) < 0) 
 		{
-			if ((transform.position.x - player.transform.position.x) < 0) 
-			{
-				return false;
-			}
-			if ((transform.position.x - player.transform.position.x) > 0) 
-			{
-				return true;
-			}
 			return false;
 		}
+		if ((transform.position.x - player.transform.position.x) > 0) 
+		{
+			return true;
+		}
+		return false;
+	}
 
     void flip() 
 	{
@@ -323,4 +323,16 @@ public class EnemyHealth : MonoBehaviour {
 		scale.x *= -1;
 		sprite.transform.localScale = scale;
 	}
+
+    public void FlipIfNeeded() 
+	{
+        if (facingLeft && !playerToLeft())
+        {
+            flip();
+        }
+        else if (!facingLeft && playerToLeft())
+        {
+            flip();
+        }
+    }
 }
